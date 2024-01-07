@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+
+    <title></title>
+
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/grid12.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!--輪播-->
+    <link href="css/swiper.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body class="introduce">
+    <div class="breadCrumb">
+      <ul class="container">
+        <li class=" back">
+          <a href="javascript:;">
+            <picture>
+              <source media="(max-width: 768px)" srcset="./img/back_white.png">
+              <img src="./img/back.png" alt="">
+            </picture>
+          </a>
+        </li>
+        <li><a href="javascript:;">首頁</a></li>｜
+        <li><a href="javascript:;">商店照片</a></li>｜
+        <li><a href="javascript:;">新增照片</a></li>
+      </ul>
+    </div>
+
+    <!--內容-->
+    <main>
+      <!-- 訊息彈跳視窗 START -->
+      <div class="K_popup transform-out messagePopup">
+        <div class="popupBg"></div>
+        <div>
+          <div class="popupContent">
+            <div class="popupHeader">
+              <span class="popAdPage">儲存工作</span>
+              <button
+                type="button"
+                class="popupClose"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">× </span>
+              </button>
+            </div>
+            <div class="popupBody">
+              <!-- 刪除 -->
+              <ul>
+                <li>
+                  <h6 class="textCenter">追蹤企業</h6>
+                  <p>
+                    你將訂閱(1)家企業相關職缺，當企業有符合你希望職務的新職缺時，將用Email通知你，確定訂閱?
+                  </p>
+                  <p>
+                    你將取消訂閱(2)家企業相關職缺，當企業有符合你希望職務的新職缺時，將不再用Email通知你，確定取消訂閱?
+                  </p>
+                </li>
+              </ul>
+              <!-- 刪除 -->
+
+              <section class="popupBtn">
+                <button class="mt-20 close" type="button">取消</button>
+                <button class="mt-20" type="button">確認</button>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 訊息彈跳視窗 END -->
+
+      <div class="container">
+        <div class="row">
+          <ul class="listAll">
+            <li>
+              <div class="avatar-upload" id="pic_upload_1">
+                <div class="avatar-edit">
+                  <input
+                    type="file"
+                    name="pic_name_1"
+                    id="pic_name_1"
+                    accept=".gif, .png, .jpg, .jpeg"
+                    onchange=""
+                  />
+                   <label for="pic_name_1">選取相片</label>
+                </div>
+                <div class="avatar-preview">
+                  <!-- <img src="./img/merchandise/歐姆蛋套餐.jpg" alt="" id="pic_preview_1" /> -->
+                </div>
+              </div>
+            </li>
+
+            
+            <li class="listAdd">
+              <section>
+                <span
+                  class="icon"
+                  style="background-image: url(./img/introduce/address.png)"
+                ></span
+                >相片分類*
+              </section>
+              <div>
+                <select
+                  name="p_city"
+                  id="p_city"
+                  class="must_check1 option_w93 s_mr10"
+                  onchange="set_zone();"
+                >
+                  <option value="促銷優惠">LOGO</option>
+                  <option value="產品新訊">主視覺</option>
+                </select>
+              </div>
+              <!-- <span id="address_err" class="s_mt16_negative hide" style="color:#FF0000;">請輸入縣市區域</span> -->
+            </li>
+
+
+            <li class="listText">
+              <label>
+                <section>
+                  <span
+                    class="icon"
+                    style="background-image: url(./img/activity/icon/title.png)"
+                  ></span>相片標題
+
+                </section>
+                <input
+                  type="text"
+                  placeholder=" "
+                  value=""
+									maxlength="20"
+                  required
+                />
+              </label>
+            </li>
+          </ul>
+          <section class="belowBtn">
+            <a href="javascript:;" class="cancel">取消</a>
+            <a href="javascript:;">儲存</a>
+          </section>
+        </div>
+      </div>
+    </main>
+    <!--END 內容-->
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/swiper.js "></script>
+    <script src="js/index.js "></script>
+    <script>
+      window.onload = function () {
+        dateToday()
+
+
+        function dateToday() {
+          var date = new Date();
+
+          var day = date.getDate();
+          var month = date.getMonth() + 1;
+          var year = date.getFullYear();
+
+          if (month < 10) month = "0" + month;
+          if (day < 10) day = "0" + day;
+
+          var today = year + "-" + month + "-" + day;       
+          $("#theDate").attr("value", today);
+        }
+      };
+    </script>
+  </body>
+</html>

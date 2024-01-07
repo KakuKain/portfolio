@@ -1,0 +1,84 @@
+﻿body
+{
+  margin:0px;
+  padding:0px;
+  font-size: 12px;
+  color: #000000;
+  font-family:細明體, Arial, Verdana, Helvetica, sans-serif;
+  background-color: #DADAE9;
+  letter-spacing: 0.1em;
+}
+/* 設定 letter-spacing 會導致 IE 中的 <br> 失效，解決方案 */
+br { letter-spacing:normal;}
+
+table.tbMain
+{
+  border: 1px #B1B4D1 solid ; 
+  background-color: #FFFFFF;
+  width:400px; 
+  margin-top:50px; margin-left:auto; margin-right:auto;
+}
+th.headC
+{
+  background-color: #B1B4D1;
+  color: #006666; 
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 20px;
+  text-align:center;
+}
+td.darkL
+{
+  text-align:left;
+  background-color: #EAEAF3;
+  padding:4px 4px;
+  vertical-align:middle;
+}
+td.darkC
+{
+  text-align:center;
+  background-color: #EAEAF3;
+  padding:4px 4px;
+  vertical-align:middle;
+}
+td.lightL
+{
+  text-align:left;
+  background-color:#F3F3FA;
+  padding:4px 4px;
+  vertical-align:middle;
+}
+td.lightC
+{
+  text-align:center;
+  background-color:#F3F3FA;
+  padding:4px 4px;
+  vertical-align:middle;
+}
+input.txtBox
+{
+  font-size: 12px;
+  font-weight: normal;
+  border: 1px solid #B1B4D1;
+}
+input.cmd
+{
+  background-image:url('../images/btn_bk.gif');
+  background-color:#999999;
+  height:20px;
+  font-size: 12px;
+  font-weight:normal;
+  line-height:20px;
+  color: #006666; 
+  border: 1px solid #B1B4D1;
+  cursor:pointer;  cursor:hand;
+}
+.msg
+{
+  font-family:Arial, 細明體, Verdana, Helvetica, sans-serif;
+  color:Red;
+  font-weight:bold;
+  font-size:12px;
+  line-height:20px;
+  vertical-align:middle;
+}

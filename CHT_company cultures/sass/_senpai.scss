@@ -1,0 +1,318 @@
+.FSenpai {
+  .md_section1 {
+    margin-top: 130px;
+
+    .md1_flex {
+      width: 85%;
+
+      &:nth-child(even) {
+        float: right;
+      }
+
+      .md1_item {
+        .senpai {
+          display: flex;
+
+          .senpaiImg {
+            width: 100%;
+          }
+
+          .senpaiTxt {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            margin: 10px -39%;
+
+            .sp_notice {
+              margin-top: 10%;
+            }
+
+            p {
+              width: 210px;
+              font-family: "微軟正黑體";
+              font-size: 14px;
+              letter-spacing: 1px;
+              margin-top: 5%;
+              line-height: 2;
+            }
+
+            .sp_readMore {
+              margin-top: 10%;
+            }
+          }
+        }
+      }
+    }
+
+    .md1_buttom {
+      a {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: -20px;
+        margin-right: 5px;
+      }
+
+      .prev {
+        >img {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  .sp_modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 99;
+
+    .sp_content {
+      display: flex;
+      margin: 15vh auto;
+      background-color: $blueColor;
+      width: 900px;
+
+      .sp_img {
+        >img {
+          width: 306px;
+        }
+      }
+
+      .sp_txt {
+        position: relative;
+        padding: 50px 35px 0px 35px;
+        letter-spacing: 4px;
+
+        .sp_title {
+          margin-bottom: 20px;
+        }
+
+        .sp_part {
+          padding-bottom: 25px;
+        }
+
+        h2 {
+          font-size: 25px;
+          line-height: 22px;
+          color: white;
+          font-weight: bold;
+          margin-bottom: 10px;
+          font-family: "微軟正黑體";
+        }
+
+        h3 {
+          font-size: 18px;
+          line-height: 22px;
+          color: white;
+          margin-bottom: 10px;
+          font-family: "微軟正黑體";
+        }
+
+        h4 {
+          font-size: 17px;
+          line-height: 22px;
+          color: white;
+          font-weight: bold;
+          font-family: "微軟正黑體";
+        }
+
+        h5 {
+          font-size: 15px;
+          line-height: 22px;
+          color: #80acd1;
+          margin-bottom: 10px;
+          font-family: "微軟正黑體";
+        }
+
+        p {
+          font-size: 14px;
+          line-height: 22px;
+          color: white;
+          font-family: "微軟正黑體";
+        }
+      }
+    }
+
+    .modal_close {
+      cursor: pointer;
+      position: absolute;
+      top: 1vh;
+      right: 1vh;
+      padding: 5px;
+      color: #fff;
+      font-size: 25px;
+    }
+  }
+
+  .modal_hide {
+    display: none;
+  }
+}
+
+.sp_model_rwd {
+  display: none;
+  max-width: 400px;
+  margin: 0 auto;
+
+  .sp_content {
+    .sp_txt {
+      position: relative;
+      padding: 50px 35px 0px 35px;
+      letter-spacing: 4px;
+
+      .sp_part {
+        padding-bottom: 25px;
+      }
+
+      h4 {
+        font-size: 17px;
+        line-height: 22px;
+        color: black;
+        font-weight: bold;
+        font-family: "微軟正黑體";
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 22px;
+        color: black;
+        font-family: "微軟正黑體";
+      }
+    }
+  }
+
+}
+
+@include breakpoint(max-width 1200px) {
+  .FSenpai {
+    .md_section1 {
+      position: relative;
+      height: 20vw;
+
+      .md1_flex {
+        width: 100%;
+
+        &:nth-child(even) {
+          float: left;
+        }
+
+        .md1_item {
+          position: absolute;
+          width: 100%;
+
+          .senpai {
+            display: flex;
+
+            .senpaiImg {
+              width: 100%;
+
+              img {
+                margin: 0 auto;
+              }
+            }
+
+            .senpaiTxt {
+              display: none;
+
+            }
+          }
+        }
+      }
+
+      .md1_buttom {
+        a {
+          display: inline-block;
+          position: absolute;
+          top: 20vw;
+        }
+
+        .prev {
+          left: 0;
+        }
+      }
+    }
+
+    .md1_buttom {
+      a {
+        top: 20vw;
+      }
+    }
+
+    .sp_model_rwd {
+      display: block;
+
+    }
+  }
+
+}
+
+@include breakpoint(max-width 980px) {
+  .FSenpai {
+    .md_section1 {
+
+      height: 25vw;
+
+      .md1_buttom {
+        a {
+
+          top: 25vw;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint(max-width 768px) {
+  .FSenpai {
+    .md_section1 {
+
+      height: 30vw;
+
+      .md1_buttom {
+        a {
+
+          top: 30vw;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint(max-width 480px) {
+  .FSenpai {
+    .md_section1 {
+      height: 45vw;
+
+      .senpaiImg {
+        img {
+          width: 95%;
+        }
+      }
+
+      .md1_buttom {
+        a {
+
+          top: 45vw;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint(max-width 375px) {
+  .FSenpai {
+    .md_section1 {
+      .senpaiImg {
+        img {
+          width: 90%;
+        }
+      }
+    }
+  }
+}

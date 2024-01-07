@@ -1,0 +1,1331 @@
+<style>
+  /*  Tree--START  */
+
+  /*Now the CSS*/
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  #tree {
+    max-width: 1440px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  #tree li {
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 5px 0 5px;
+
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+  }
+
+  #tree li::before,
+  #tree li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border-top: 1px solid #E55A25;
+    width: 50%;
+    height: 20px;
+  }
+
+  #tree li::after {
+    right: auto;
+    left: 50%;
+    border-left: 1px solid #E55A25;
+  }
+
+  #tree li:only-child::after,
+  #tree li:only-child::before {
+    display: none;
+  }
+
+  #tree li:only-child {
+    padding-top: 0;
+  }
+
+  #tree li:first-child::before,
+  #tree li:last-child::after {
+    border: 0 none;
+  }
+
+  #tree li:last-child::before {
+    border-right: 1px solid #E55A25;
+  }
+
+
+
+  #tree .box1 {
+    box-sizing: border-box;
+    padding: 20px 10px;
+    display: flex;
+    align-items: center;
+    max-width: 330px;
+    background-color: #FDEAD6;
+    transition: all 0.5s;
+    margin: 0 auto;
+    position: relative;
+    flex-wrap: wrap;
+  }
+
+  #tree .box1::after {
+    content: "";
+    width: 8px;
+    height: 100%;
+    background-color: #F58A1F;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  #tree .box1>div {
+    text-align: left;
+  }
+
+  #tree .box1 a {
+    /* text-align: left; */
+    padding-left: 15px;
+    font-weight: bold;
+  }
+
+  #tree .box1 p {
+    line-height: 25px;
+    padding-left: 15px;
+  }
+
+  #tree .box2 {
+    padding-bottom: 15px;
+  }
+
+  #tree .getLine {
+    position: relative;
+  }
+
+  #tree .getLine::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    right: 50%;
+    border-right: 1px solid #E55A25;
+    width: 50%;
+    height: 20px;
+  }
+
+
+  #tree .floor2:nth-child(1) .box2>div:nth-child(1) {
+    border: 1px solid #FCB813;
+    border-bottom: none;
+  }
+
+  #tree .box2>div:nth-child(1) {
+    box-sizing: border-box;
+    padding: 20px 10px;
+    display: flex;
+    align-items: center;
+    max-width: 195px;
+    background-color: #FEF1DA;
+    transition: all 0.5s;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  #tree .box2>div:nth-child(1)::after {
+    content: "";
+    width: 8px;
+    height: 100%;
+    background-color: #FCB813;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  #tree .box2>div:nth-child(2) {
+    box-sizing: border-box;
+    padding: 20px 15px;
+    border: 1px solid #FCB813;
+    border-top: transparent;
+    max-width: 195px;
+    min-height: 250px;
+    margin: 0 auto;
+    text-align: left;
+    text-indent: -10px;
+    position: relative;
+  }
+
+  #tree .box2 a {
+    padding-left: 8px;
+    font-weight: bold;
+    margin: 0 auto;
+  }
+
+  #tree .box2.small a {
+    padding-left: 8px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+
+
+  #tree .box2 p {
+    line-height: 25px;
+    padding-left: 15px;
+  }
+
+
+  #tree .boxRight {
+    float: right;
+  }
+
+  .ulRight {
+    float: right;
+  }
+
+
+  #tree .small div:nth-child(1) {
+    max-width: 160px;
+    background-color: #FEF8DE;
+    text-align: left;
+  }
+
+  #tree .small div:nth-child(1)::after {
+    background-color: #FFDD00;
+  }
+
+  #tree .boxGreen {
+    max-width: 380px;
+    background-color: #F6F7DF;
+    z-index: 1;
+  }
+
+  #tree .boxGreen::after {
+    background-color: #D5DF30;
+  }
+
+
+  #tree a,
+  #tree p {
+    text-decoration: none;
+    color: #666;
+    font-family: arial, "微軟正黑體", verdana, tahoma;
+    font-size: 15px;
+  }
+
+  #tree #floorH {
+    display: flex;
+    padding-top: 180px;
+    box-sizing: border-box;
+    align-items: flex-start;
+  }
+
+  #tree #floorH::after {
+    height: 180px;
+  }
+
+  #tree #floorH::before {
+    border: none;
+  }
+
+  #tree .floor1 {
+    Position: relative;
+  }
+
+
+  #tree .floor1>li::after {
+    border-left-style: solid;
+    border-top-style: none;
+  }
+
+  #tree .floor2 {
+    position: relative;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+
+  #tree .floor2:nth-child(1) {
+    /* padding-right: 20px; */
+    width: 80%;
+  }
+
+
+  #tree .floor2 ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  #tree .floor2::before {
+    height: 220px;
+  }
+
+  #tree .floor2::after {
+    border: none;
+  }
+
+  #tree .floor2:nth-child(1) li:last-child:after {
+    border-top: 1px solid #E55A25;
+  }
+
+  #tree .floor2:nth-child(2) {
+    border: 1px solid #FCB813;
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  #tree .floor2:nth-child(2) li {
+    margin-top: -40px;
+    padding-top: 40px;
+  }
+
+
+  #tree .floor2:nth-child(2) li:first-child:after {
+    border-top: 1px solid #E55A25;
+  }
+
+  #tree .floor2:nth-child(2) li:first-child::before {
+    border-top: 1px solid #E55A25;
+    padding-left: 20px;
+  }
+
+  #tree .other {
+    position: absolute;
+    top: 220px;
+    margin-left: calc(50% + 175px);
+  }
+
+  #tree .other::before,
+  #tree .other::after {
+    content: '';
+    position: absolute;
+    top: 60%;
+    left: -45%;
+    border-top: 1px solid #E55A25;
+    width: 50%;
+    height: 20px;
+  }
+
+  #tree .other:last-child::before {
+    border-right: none;
+    border-left: none;
+  }
+
+  @media (max-width: 1440px) {}
+
+
+  @media (max-width: 1280px) {
+    #tree {
+      transform: scale(0.96);
+    }
+  }
+
+  @media (max-width: 1080px) {
+    #tree {
+      height: 1360px;
+    }
+
+    #floorH {
+      margin-left: 5px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    #tree {
+      display: none;
+    }
+  }
+
+
+  /*  Tree--END  */
+
+  /*  Tree_m--START  */
+
+
+  #tree_m {
+    max-width: 1440px;
+    display: none;
+  }
+
+  #tree_m ul {
+    padding-top: 20px;
+    position: relative;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+  }
+
+  #tree_m li {
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    margin-right: 5px;
+    box-sizing: border-box;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+  }
+
+  #tree_m li::before {
+    content: '';
+    position: absolute;
+    width: calc((100% - 80%) - 5px);
+    height: 0.5px;
+    background-color: #E55A25;
+    top: 50%;
+    left: -18%;
+  }
+
+  /* #tree_m li:nth-child(odd):before {
+    top: 130px;
+    right: -22%;
+  }
+
+
+  #tree_m li:nth-child(even):before {
+    top: 180px;
+    left: -22%;
+  } */
+
+  #tree_m li:only-child::before {
+    display: none;
+  }
+
+  #tree_m li:only-child {
+    padding-top: 0;
+  }
+
+  #tree_m ul ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 5%;
+    width: 0.5px;
+    background-color: #E55A25;
+    height: 1087px;
+    margin-top: -140px;
+  }
+
+  #tree_m .box1 {
+    padding: 20px 10px;
+
+    margin: 0 5px 0 5px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 100%;
+    background-color: #FDEAD6;
+    transition: all 0.5s;
+    margin: 0 auto;
+    position: relative;
+    flex-wrap: wrap;
+  }
+
+  #tree_m .box1::after {
+    content: "";
+    width: 8px;
+    height: 100%;
+    background-color: #F58A1F;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  #tree_m .box1>div {
+    text-align: left;
+  }
+
+  #tree_m .box1 a {
+    padding-left: 15px;
+    font-weight: bold;
+    line-height: 25px;
+  }
+
+  #tree_m .box1 p {
+    line-height: 25px;
+    padding-left: 15px;
+  }
+
+  #tree_m .boxGreen {
+    max-width: 80%;
+    top: 30px;
+    margin-right: 5px;
+    background-color: #F6F7DF;
+    z-index: 1;
+  }
+
+  #tree_m .boxGreen::after {
+    background-color: #D5DF30;
+  }
+
+  #tree_m .boxGreen::before {
+    content: '';
+    position: absolute;
+    top: 110px;
+    left: 50%;
+    width: 0.5px;
+    background-color: #E55A25;
+    height: 30px;
+    margin-top: -140px;
+  }
+
+
+  #tree_m .box2 {
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #FCB813;
+    /* border-top: transparent; */
+  }
+
+  #tree_m .box2>div:nth-child(1) {
+    box-sizing: border-box;
+    padding: 20px 10px;
+    display: flex;
+    align-items: center;
+    /* max-width: 195px; */
+    background-color: #FEF1DA;
+    transition: all 0.5s;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  #tree_m .box2>div:nth-child(1)::after {
+    content: "";
+    width: 8px;
+    height: 100%;
+    background-color: #FCB813;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  #tree_m .box2>div:nth-child(2) {
+    padding: 20px 15px;
+    margin: 0 auto;
+    /* max-width: 195px; */
+    /* min-height: 250px; */
+    text-align: left;
+    text-indent: -10px;
+    position: relative;
+    background: white;
+  }
+
+  #tree_m .box2 a {
+    padding-left: 8px;
+    font-weight: bold;
+    margin: 0 auto;
+  }
+
+  #tree_m .box2.small a {
+    padding-left: 8px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  #tree_m .box2 p {
+    line-height: 25px;
+    padding-left: 15px;
+  }
+
+
+  #tree_m a,
+  #tree_m p {
+    text-decoration: none;
+    color: #666;
+    font-family: arial, "微軟正黑體", verdana, tahoma;
+    font-size: 15px;
+  }
+
+  #tree_m p {
+    text-decoration: none;
+    color: #666;
+    font-family: arial, "微軟正黑體", verdana, tahoma;
+    font-size: 14px;
+  }
+
+
+  #tree_m .floor1>li::after {
+    border: none;
+  }
+
+  #tree_m .floor2 {
+    padding-top: 40px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+  }
+
+  #tree_m .floor2::before {
+    height: 100%;
+    margin-top: -140px;
+  }
+
+  #tree_m .floor2::after,
+  #tree_m li::after {
+    border: none;
+  }
+
+
+  .floor2 li {
+    width: 80%;
+  }
+
+
+  #tree_m .floor3 {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+
+
+  .floor3 li {
+    width: 80%;
+  }
+
+  #tree_m .floor3 li:before {
+    top: calc((100% - 15px) / 2);
+    right: -22%;
+  }
+
+
+
+  #tree_m .small>div:nth-child(1) {
+    max-width: 100%;
+    background-color: #FEF8DE;
+    text-align: left;
+  }
+
+  #tree_m .small>div:nth-child(1)::after {
+    background-color: #FFDD00;
+  }
+
+  @media (max-width: 1024px) {
+    #tree_m {
+      display: block;
+    }
+  }
+
+
+  /*  Tree_m--END  */
+
+
+
+  /*  EPCenter --START  */
+
+  .epCenter {
+    max-width: 100%;
+    margin-right: 20px;
+    box-sizing: border-box;
+  }
+
+  .floor2:nth-child(2) .epCenter {
+    margin-right: 0;
+  }
+
+  #tree .epCenter {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #epCenter {
+    position: absolute;
+    bottom: 15px;
+    right: 100%;
+    max-width: 310%;
+    width: 310%;
+  }
+
+  .epCenter h3 {
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: 1px;
+    color: #F58A1F;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    border-bottom: 1px solid #F58A1F;
+  }
+
+  .epCenter .epCenter2 h3 {
+    color: #666;
+    border-bottom: none;
+    text-align: left;
+  }
+
+
+  .epCenter p {
+    font-size: 16px;
+    line-height: 35px;
+    letter-spacing: 1px;
+    /* text-align: justify; */
+    text-align: left;
+    text-indent: -10px;
+  }
+
+
+  #tree .epCenter p.noIcon,
+  #tree_m .epCenter p.noIcon {
+    text-indent: 0;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .epCenter p.pnop {
+    text-indent: 20px;
+    position: relative;
+  }
+
+  .epCenter p.pnop::before {
+    content: "";
+    position: absolute;
+    top: 14px;
+    left: 7px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 3.5px 0 3.5px 6px;
+    border-color: transparent transparent transparent #414141;
+
+  }
+
+  #epCenter1 {
+    width: 100%;
+  }
+
+  .epCenter1 {
+    width: 73%;
+    /* position: absolute;
+    top: 63%;
+    min-height: 350px; */
+    /*margin-top: -355px;*/
+    /*margin-bottom: 15px;*/
+    background-color: #FEF1DA;
+    box-sizing: border-box;
+    padding: 0 30px 25px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .epCenter1>div {
+    width: 100%;
+  }
+
+  .epCenter2 {
+    /* width: 38%; */
+    /*background-color: #FEF8DE;*/
+    box-sizing: border-box;
+    padding: 0 30px 25px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+  @media (max-width: 1080px) {
+
+    .epCenter {
+      width: 80%;
+      margin-right: 5px;
+    }
+
+    .epCenter1,
+    .epCenter2 {
+      width: 100%;
+      flex-direction: column;
+      margin-bottom: 30px;
+    }
+
+    .epCenter1>div:nth-child(1) {
+      width: 100%;
+    }
+
+    .epCenter1>div:nth-child(2) {
+      width: 100%;
+    }
+  }
+
+
+  @media (max-width: 800px) {
+
+    .epCenter {
+      width: 80%;
+      flex-direction: column;
+      margin-bottom: 30px;
+    }
+
+    .floor3 .epCenter1,
+    .floor3 .epCenter2 {
+      width: 100%;
+    }
+
+  }
+
+  /*  EPCenter --END  */
+
+
+  /*  Prevention--START  */
+
+  .prevention>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+
+  .prevention>div>div {
+    width: 22.5%;
+    background-color: #F2F2F2;
+  }
+
+  .preventionTitle {
+    width: 100%;
+    height: 50px;
+    background-color: #FCB813;
+  }
+
+  .preventionTitle h3 {
+    font-size: 18px;
+    line-height: 50px;
+    letter-spacing: 1px;
+    color: #fff;
+    text-align: center;
+  }
+
+  .preventionText {
+    padding: 20px 30px;
+  }
+
+  .preventionText p {
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 1px;
+    /*text-align: justify;*/
+  }
+
+
+  @media (max-width: 1440px) {}
+
+  @media (max-width: 1080px) {
+    .prevention>div {
+      flex-wrap: wrap;
+    }
+
+    .prevention>div>div {
+      width: 48%;
+      flex-direction: column;
+      margin-bottom: 30px;
+    }
+  }
+
+
+  @media (max-width: 800px) {
+    .prevention>div>div {
+      width: auto;
+    }
+  }
+
+  /*  Prevention--END  */
+
+  /*  Strategy--START  */
+
+  .strategy>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+
+  .strategy>div>div {
+    width: 48%;
+    margin-bottom: 30px;
+  }
+
+  .strategyTitle {
+    width: 100%;
+    height: 130px;
+    background-color: #969696;
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  .strategyTitle h3 {
+    font-size: 24px;
+    line-height: 35px;
+    color: #fff;
+    display: inline-block;
+    letter-spacing: 1px;
+    /*text-align: justify;*/
+  }
+
+  .strategyTitle div {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    font-size: 24px;
+    line-height: 30px;
+    background-color: #fff;
+    color: #F58A1F;
+    text-align: center;
+    border-radius: 50%;
+    margin-left: 12px
+  }
+
+  .strategyTitle p {
+    font-size: 16px;
+    line-height: 30px;
+    color: #fff;
+    letter-spacing: 1px;
+    /*text-align: justify;*/
+  }
+
+  .strategyText {
+    padding: 18px;
+  }
+
+  .strategyText p {
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 1px;
+    /*text-align: justify;*/
+  }
+
+
+  @media (max-width: 1440px) {}
+
+  @media (max-width: 1280px) {}
+
+  @media (max-width: 1170px) {
+    .strategyTitle {
+      height: 160px;
+    }
+  }
+
+  @media (max-width: 880px) {
+    .strategyTitle {
+      height: auto;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .strategy>div {
+      flex-direction: column;
+    }
+
+    .strategy>div>div {
+      width: auto;
+      flex-direction: column;
+      margin-bottom: 30px;
+    }
+  }
+
+  @media (max-width: 340px) {
+    .strategyTitle p {
+      font-size: 15px;
+    }
+  }
+
+  /*  Strategy--END  */
+
+  /*  置中--START  */
+  .ericTitle1,
+  .ericTitle2,
+  .ericTitle3,
+  .ericBodyText,
+  .ericImgBox,
+  .ericImgBox img,
+  .prevention,
+  .strategy {
+    max-width: 1440px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+
+  @media (max-width: 1480px) {
+
+    .ericTitle1,
+    .ericTitle2,
+    .ericTitle3,
+    .ericBodyText,
+    #tree,
+    #tree_m,
+    .prevention,
+    .strategy {
+      width: auto;
+      margin-left: 22px;
+      margin-right: 22px;
+    }
+  }
+
+  /*  置中--END  */
+</style>
+
+<div id="tree">
+  <ul class="floor1">
+    <div class="box1">
+      <div><a href="#">Commander(GSS)</a></div>
+      <div>
+        <p>• Master COVID-19 situation in CTCI Group's global operations</p>
+        <p>• Command and dispatch CTCI group’s COVID-19 prevention operations</p>
+        <p>• Release internal and external information related to COVID-19 prevention</p>
+        <p>• Supervise and coordinate the operation of COVID-19 prevention center</p>
+      </div>
+    </div>
+    <li id="floorH" style="width: 100%;">
+      <div id="floor2" class="floor2">
+
+        <ul>
+          <li>
+            <div class="box2">
+              <div><a href="#">Legal & Compliance</a></div>
+              <div>
+                <p>• Supervise group's operation management and impact assessment</p>
+                <p>• Contract force majeure clause evaluation and response</p>
+                <p>• Supervision of project insurance claims</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="box2">
+              <div><a href="#">HR</a></div>
+              <div>
+                <p>• Changes in labor conditions due to COVID-19 prevention, planning labor rights response plans</p>
+                <p>• Travel and mobilization information management</p>
+                <p>• Cooperate with leave of absence for COVID-19 prevention</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="box2">
+              <div><a href="#">PSA</a></div>
+              <div>
+                <p>• Supervise the inventory and management of COVID-19 prevention materials at the project sites</p>
+                <p>• Supervise site staff's attendance, leave, and medical conditions</p>
+              </div>
+            </div>
+          </li>
+          <li style="padding-right: 20px;">
+            <div class="box2">
+              <div><a href="#">AGS&PR</a></div>
+              <div>
+                <p>• Submit Group COVID-19 Daily Situation Report</p>
+                <p>• Integrate group COVID-19 prevention administrative information ( including quarantine
+                  information such as border management, traffic, blockade, etc.)</p>
+                <p>• Coordination of group COVID-19 prevention materials</p>
+                <p>• Supervision of COVID-19 prevention management in the offices of each companies</p>
+              </div>
+            </div>
+            <div class="box2 getLine">
+              <div><a href="#">Healthcare Center</a></div>
+              <div>
+                <p>• Control and report of epidemic regulations</p>
+                <p>• Propaganda and communication for COVID-19 prevention</p>
+                <p>• Concerned cases management and tracking</p>
+                <p>• Contact with health-related organizations</p>
+              </div>
+              <div id="epCenter" class="epCenter">
+                <div id="epCenter1" class="epCenter1">
+                  <div>
+                    <h3>Other related supporting dept.</h3>
+                    <p class="noIcon">Finance Dept. / Corporate Administration Dept. / Procurement Division</p>
+                    <p>• Assess Operation Management with Legal & Compliance dept. IT Division</p>
+                    <br />
+                    <p class="noIcon">HSE Dept.</p>
+                    <p>• Supervise epidemic control and prevention actions in project site</p>
+                    <p>• OSH regulations collect and consult</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+
+        </ul>
+      </div>
+      <div class="floor2">
+        <ul>
+
+          <li>
+            <div class="box2 small">
+              <div><a href="#">HBO</a></div>
+            </div>
+            <div class="box2 small">
+              <div><a href="#">IEPBO</a></div>
+            </div>
+            <div class="box2 small">
+              <div><a href="#">EPCO</a></div>
+            </div>
+            <div class="box2 small">
+              <div><a href="#">CTCI MAC</a></div>
+            </div>
+            <div class="box2 small">
+              <div><a href="#">CTCI CHC</a></div>
+            </div>
+          </li>
+          <li>
+            <div class="box2 small">
+              <div><a href="#">CTCI Beijing</a></div>
+            </div>
+            <div class="box2 small">
+              <div><a href="#">CINDA</a></div>
+            </div>
+            <div class="box2 small">
+              <div><a href="#">CTCI Thailand</a></div>
+            </div>
+            <div class="box2 small">
+              <div><a href="#">CIMAS</a></div>
+            </div>
+            <div class="box2 small">
+              <div><a href="#">CTCIA</a></div>
+            </div>
+            <div class="box2 small">
+              <div><a href="#">MIEI</a></div>
+            </div>
+          </li>
+          <li>
+            <div class="box2 small">
+              <div><a href="#">GISB</a></div>
+            </div>
+            <div class="box2 small">
+              <div><a href="#">GRCB</a></div>
+            </div>
+          </li>
+        </ul>
+        <div class="epCenter">
+          <div class="epCenter2">
+            <div>
+              <h3>Group Executive Supervisor for COVID-19 Prevention</h3>
+              <p>• Collect epidemic status of local country</p>
+              <p>• Measures and strategy commands in each responsible area</p>
+              <p>• Operational management & report the impact</p>
+              <p>• Daily info confirm & Internal coordinate with Group, includes</p>
+              <p class="pnop">Epidemic control information and resources</p>
+              <p class="pnop">Epidemic prevention and control actions</p>
+              <p class="pnop">Operational management and affects</p>
+              <p class="pnop">Concerned personnel notification</p>
+              <p class="pnop">Support from GSS & other related units</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </li>
+    <li class="other">
+      <div class="box1 boxRight boxGreen">
+        <div><a href="#">Executive Secretary(HSE)</a></div>
+        <div>
+          <p>• Assisting COVID-19 prevention commander in planning, supervision and coordination</p>
+          <p>• Providing the recommendations and promotion of Contingency Policy</p>
+          <p>• Update the SOPs for COVID-19 prevention</p>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div id="tree_m">
+  <ul class="floor1">
+    <li id="floorH">
+      <div class="box1">
+        <div><a href="#">Commander(GSS)</a></div>
+        <div>
+          <p>•Master COVID-19 situation in CTCI Group's global operations</p>
+          <p>•Command and dispatch CTCI group’s COVID-19 prevention operations</p>
+          <p>• Release internal and external information related to COVID-19 prevention</p>
+          <p>• Supervise and coordinate the operation of COVID-19 prevention center</p>
+        </div>
+      </div>
+      <div class="box1 boxGreen">
+        <div><a href="#">Executive Secretary(HSE)</a></div>
+        <div>
+          <p>• Assisting COVID-19 prevention commander in planning, supervision and coordination</p>
+          <p>• Providing the recommendations and promotion of Contingency Policy</p>
+          <p>• Update the SOPs for COVID-19 prevention</p>
+        </div>
+      </div>
+      <ul class="floor2">
+        <li>
+          <div class="box2">
+            <div><a href="#">Legal & Compliance</a></div>
+            <div>
+              <p>• Supervise group's operation management and impact assessment</p>
+              <p>• Contract force majeure clause evaluation and response</p>
+              <p>• Supervision of project insurance claims</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="box2">
+            <div><a href="#">HR</a></div>
+            <div>
+              <p>•Changes in labor conditions due to COVID-19 prevention, planning labor rights response plans</p>
+              <p>• Travel and mobilization information management</p>
+              <p>• Cooperate with leave of absence for COVID-19 prevention</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="box2">
+            <div><a href="#">PSA</a></div>
+            <div>
+              <p>• Supervise the inventory and management of COVID-19 prevention materials at the project sites</p>
+              <p>• Supervise site staff's attendance, leave, and medical conditions</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="box2">
+            <div><a href="#">AGS&PR</a></div>
+            <div>
+              <p>•Submit Group COVID-19 Daily Situation Report</p>
+              <p>• Integrate group COVID-19 prevention administrative information ( including quarantine information
+                such as border management, traffic, blockade, etc.)</p>
+              <p>• Coordination of group COVID-19 prevention materials</p>
+              <p>• Supervision of COVID-19 prevention management in the offices of each companies</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="box2">
+            <div><a href="#">Healthcare Center</a></div>
+            <div>
+              <p>• Control and report of epidemic regulations</p>
+              <p>• Propaganda and communication for COVID-19 prevention</p>
+              <p>• Concerned cases management and tracking</p>
+              <p>• Contact with health-related organizations</p>
+            </div>
+          </div>
+        </li>
+
+        <div class="epCenter">
+          <div class="epCenter1">
+            <div>
+              <h3>Other related supporting dept.</h3>
+              <p class="noIcon">Finance Dept. / Corporate Administration Dept. / Procurement Division</p>
+              <p>• Assess Operation Management with Legal & Compliance dept. IT Division</p>
+              <br />
+              <p class="noIcon">HSE Dept.</p>
+              <p>• Supervise epidemic control and prevention actions in project site</p>
+              <p>• OSH regulations collect and consult</p>
+            </div>
+          </div>
+        </div>
+      </ul>
+
+      <ul class="floor3">
+        <li>
+          <div class="box2 small">
+            <div><a href="#">HBO</a></div>
+          </div>
+        </li>
+        <li>
+          <div class="box2 small">
+            <div><a href="#">IEPBO</a></div>
+          </div>
+        </li>
+        <li>
+          <div class="box2 small">
+            <div><a href="#">EPCO</a></div>
+          </div>
+        </li>
+        <li>
+          <div class="box2 small">
+            <div><a href="#">CTCI MAC</a></div>
+          </div>
+        </li>
+        <li>
+          <div class="box2 small">
+            <div><a href="#">CTCI CHC</a></div>
+          </div>
+        </li>
+        <li>
+          <div class="box2 small">
+            <div><a href="#">CTCI Beijing</a></div>
+          </div>
+        <li>
+
+          <div class="box2 small">
+            <div><a href="#">CINDA</a></div>
+          </div>
+        </li>
+        <li>
+          <div class="box2 small">
+            <div><a href="#">CTCI Thailand</a></div>
+          </div>
+        </li>
+        <li>
+          <div class="box2 small">
+            <div><a href="#">CIMAS</a></div>
+          </div>
+        </li>
+        <li>
+          <div class="box2 small">
+            <div><a href="#">CTCIA</a></div>
+          </div>
+        </li>
+        <li>
+          <div class="box2 small">
+            <div><a href="#">MIEI</a></div>
+          </div>
+        </li>
+        <li>
+          <div class="box2 small">
+            <div><a href="#">GISB</a></div>
+          </div>
+        </li>
+        <li>
+          <div class="box2 small">
+            <div><a href="#">GRCB</a></div>
+          </div>
+        </li>
+        <div class="epCenter">
+          <div class="epCenter2">
+            <div>
+              <h3>Group Executive Supervisor for COVID-19 Prevention</h3>
+              <p>• Collect epidemic status of local country</p>
+              <p>• Measures and strategy commands in each responsible area</p>
+              <p>• Operational management & report the impact</p>
+              <p>• Daily info confirm & Internal coordinate with Group, includes</p>
+              <p class="pnop">Epidemic control information and resources</p>
+              <p class="pnop">Epidemic prevention and control actions</p>
+              <p class="pnop">Operational management and affects</p>
+              <p class="pnop">Concerned personnel notification</p>
+              <p class="pnop">Support from GSS & other related units</p>
+            </div>
+          </div>
+        </div>
+      </ul>
+    </li>
+  </ul>
+</div>
+<script>
+
+  var mm = window.matchMedia("(max-width: 1024px)");
+  mm.addListener(resizeWidth);
+  resizeWidth(mm);
+
+  function resizeWidth(pMatchMedia) {
+    if (pMatchMedia.matches) {
+      //小於時執行的js
+
+    } else {
+      //大於時執行的js
+
+      var $epCenter1 = document.getElementById('epCenter1');
+      var $floor2 = document.getElementById('floor2');
+      var $floor2Size = $floor2.clientHeight;
+      console.log($floor2Size)
+      // $epCenter1.style.top = $floor2Size * 0.68 + "px"
+    }
+  }
+
+</script>

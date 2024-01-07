@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+
+    <title></title>
+
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/grid12.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!--輪播-->
+    <link href="css/swiper.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body class="merchandise">
+    <!--END 手機 頭-->
+
+    <!--內容-->
+    <main>
+      <!-- 訊息彈跳視窗 START -->
+      <div class="K_popup transform-out messagePopup">
+        <div class="popupBg"></div>
+        <div>
+          <div class="popupContent">
+            <div class="popupHeader">
+              <span class="popAdPage">儲存工作</span>
+              <button
+                type="button"
+                class="popupClose"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">× </span>
+              </button>
+            </div>
+            <div class="popupBody">
+              <!-- 刪除 -->
+              <ul>
+                <li>
+                  <h6 class="textCenter">追蹤企業</h6>
+                  <p>
+                    你將訂閱(1)家企業相關職缺，當企業有符合你希望職務的新職缺時，將用Email通知你，確定訂閱?
+                  </p>
+                  <p>
+                    你將取消訂閱(2)家企業相關職缺，當企業有符合你希望職務的新職缺時，將不再用Email通知你，確定取消訂閱?
+                  </p>
+                </li>
+              </ul>
+              <!-- 刪除 -->
+
+              <section class="popupBtn">
+                <button class="mt-20 close" type="button">取消</button>
+                <button class="mt-20" type="button">確認</button>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 訊息彈跳視窗 END -->
+
+      <div class="container">
+        <div class="row">
+          <section class="modeCheck">
+            <p>請選擇版型：</p>
+            <div>
+              <label for="mode1Check">
+                <input
+                  type="radio"
+                  name="modeCheck"
+                  id="mode1Check"
+                  checked
+                /><span>列表模式</span>
+                <div>
+                  <img src="./img/merchandise/mode1.jpg" alt="" />
+                </div>
+              </label>
+              <label for="mode2Check">
+                <input type="radio" name="modeCheck" id="mode2Check" /><span
+                  >單欄模式</span
+                >
+
+                <div>
+                  <img src="./img/merchandise/mode2.jpg" alt="" />
+                </div>
+              </label>
+              <label for="mode3Check">
+                <div>
+                  <input type="radio" name="modeCheck" id="mode3Check" /><span
+                    >多欄模式</span
+                  >
+                </div>
+                <div>
+                  <img src="./img/merchandise/mode3.jpg" alt="" />
+                </div>
+              </label>
+            </div>
+          </section>
+          <section class="modeCheck">
+            <label for="pullOffShelves"
+              ><input
+                type="checkbox"
+                name="pullOffShelves"
+                id="pullOffShelves"
+              /><span>顯示已下架的商品</span></label
+            >
+            <div>
+              <ul class="category">
+                <li class="selected">全部</li>
+                <li>
+                  <a href="#p2022121201">新品</a>
+                </li>
+                <li><a href="#p2022121202">新萃精品茶</a></li>
+              </ul>
+              <ul class="allProduct mode1">
+                <p id="p2022121201">新品</p>
+                <li class="categories">
+                  <ul>
+                    <li class="commodity mode1Open">
+                      <div>
+                        <img src="img/merchandise/菜單_2022-1.png" />
+                      </div>
+                      <div>
+                        <section class="pName">
+                          歐姆蛋套餐歐姆蛋套餐歐姆蛋套餐歐姆蛋套餐
+                        </section>
+                        <section class="pFormat">
+                          <span>總共十五字總共十五字總共十五字</span>
+                          <span>/</span>
+                          <span>85</span>
+                        </section>
+                      </div>
+                      <div>
+                        <section>商品介紹</section>
+                        <section class="pHastag">
+                          <ul>
+                            <li>熱門商品</li>
+                            <li>套餐有附飲料</li>
+                            <li>冷熱皆可</li>
+                          </ul>
+                        </section>
+                      </div>
+
+                      <div class="moreEdit">
+                        <input
+                          type="checkbox"
+                          name="moreEdit"
+                          id="p202212120101"
+                        />
+                        <label for="p202212120101" name="moreEdit">
+                          <img src="./img/more.png" alt="" />
+                        </label>
+                        <ul>
+                          <li>編輯</li>
+                          <li>複製</li>
+                          <li>排序</li>
+                          <li>下架</li>
+                          <li>刪除</li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="commodity mode1Close">
+                      <div>
+                        <img src="img/merchandise/香雞蛋堡.jpg" />
+                      </div>
+                      <div>
+                        <section class="pName">
+                          香雞蛋堡香雞蛋堡香雞蛋堡
+                        </section>
+                        <section class="pFormat">
+                          <span>單點</span>
+                          <span>/</span>
+                          <span>40</span>
+                        </section>
+                      </div>
+                      <div>
+                        <section>商品介紹</section>
+                        <section class="pHastag">
+                          <ul>
+                            <li>經典</li>                    
+                          </ul>
+                        </section>
+                      </div>
+
+                      <div class="moreEdit">
+                        <input
+                          type="checkbox"
+                          name="moreEdit"
+                          id="p202212120102"
+                        />
+                        <label for="p202212120102" name="moreEdit">
+                          <img src="./img/more.png" alt="" />
+                        </label>
+                        <ul>
+                          <li>編輯</li>
+                          <li>複製</li>
+                          <li>排序</li>
+                          <li>下架</li>
+                          <li>刪除</li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="commodity mode1Open mode1Edit">
+                      <div>
+                        <img src="img/merchandise/歐姆蛋套餐.jpg" />
+                      </div>
+                      <div>
+                        <section class="pName">
+                          歐姆蛋套餐歐姆蛋套餐歐姆蛋套餐歐姆蛋套餐
+                        </section>
+                        <section class="pFormat">
+                          <span>套餐</span>
+                          <span>/</span>
+                          <span>85</span>
+                        </section>
+                      </div>
+                      <div>
+                        <section>商品介紹</section>
+                        <section class="pHastag">
+                          <ul>
+                            <li>經典</li>                    
+                          </ul>
+                        </section>
+                      </div>
+
+                      <div class="moreEdit">
+                        <input
+                          type="checkbox"
+                          name="moreEdit"
+                          id="p202212120103"
+                          checked
+                        />
+                        <label for="p202212120103" name="moreEdit">
+                          <img src="./img/more.png" alt="" />
+                        </label>
+                        <ul>
+                          <li>編輯</li>
+                          <li>複製</li>
+                          <li>排序</li>
+                          <li>下架</li>
+                          <li>刪除</li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+
+                <p id="p2022121202">新萃精品茶</p>
+                <li class="categories">
+                  <ul>
+                    <li class="commodity mode1Close discontinued">
+                      <div>
+                        <img src="img/merchandise/歐姆蛋套餐.jpg" />
+                      </div>
+                      <div>
+                        <section class="pName">歐姆蛋套餐</section>
+                        <section class="pFormat">
+                          <span>套餐</span>
+                          <span>/</span>
+                          <span>85</span>
+                        </section>
+                      </div>
+                      <div>
+                        <section>商品介紹</section>
+                        <section class="pHastag">
+                          <ul>
+                            <li>經典</li>                    
+                          </ul>
+                        </section>
+                      </div>
+
+                      <div class="moreEdit">
+                        <input
+                          type="checkbox"
+                          name="moreEdit"
+                          id="p202212120201"
+                        />
+                        <label for="p202212120201" name="moreEdit">
+                          <img src="./img/more.png" alt="" />
+                        </label>
+                        <ul>
+                          <li>編輯</li>
+                          <li>複製</li>
+                          <li>排序</li>
+                          <li>下架</li>
+                          <li>刪除</li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="commodity mode1Close discontinued">
+                      <div>
+                        <img src="img/merchandise/歐姆蛋套餐.jpg" />
+                      </div>
+                      <div>
+                        <section class="pName">歐姆蛋套餐</section>
+                        <section class="pFormat">
+                          <span>套餐</span>
+                          <span>/</span>
+                          <span>85</span>
+                        </section>
+                      </div>
+                      <div>
+                        <section>商品介紹</section>
+                        <section class="pHastag">
+                          <ul>
+                            <li>經典</li>                    
+                          </ul>
+                        </section>
+                      </div>
+
+                      <div class="moreEdit">
+                        <input
+                          type="checkbox"
+                          name="moreEdit"
+                          id="p202212120202"
+                        />
+                        <label for="p202212120202" name="moreEdit">
+                          <img src="./img/more.png" alt="" />
+                        </label>
+                        <ul>
+                          <li>編輯</li>
+                          <li>複製</li>
+                          <li>排序</li>
+                          <li>下架</li>
+                          <li>刪除</li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="commodity mode1Close">
+                      <div>
+                        <img src="img/merchandise/歐姆蛋套餐.jpg" />
+                      </div>
+                      <div>
+                        <section class="pName">
+                          歐姆蛋套餐歐姆蛋套餐歐姆蛋套餐歐姆蛋套餐
+                        </section>
+                        <section class="pFormat">
+                          <span>套餐</span>
+                          <span>/</span>
+                          <span>85</span>
+                        </section>
+                      </div>
+                      <div>
+                        <section>商品介紹</section>
+                        <section class="pHastag">
+                          <ul>
+                            <li>經典</li>                    
+                          </ul>
+                        </section>
+                      </div>
+
+                      <div class="moreEdit">
+                        <input
+                          type="checkbox"
+                          name="moreEdit"
+                          id="p202212120203"
+                        />
+                        <label for="p202212120203" name="moreEdit">
+                          <img src="./img/more.png" alt="" />
+                        </label>
+                        <ul>
+                          <li>編輯</li>
+                          <li>複製</li>
+                          <li>排序</li>
+                          <li>下架</li>
+                          <li>刪除</li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <a href="javascript:;" class="addProduct">+<span>新增商品</span></a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <!--END 內容-->
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/swiper.js "></script>
+    <script src="js/index.js "></script>
+    <script>
+      window.onload = function () {
+        openingHour();
+        function openingHour() {
+          if ($(".openingHour-checkbox").is(":checked") == true) {
+            $(this)
+              .parents(".listDate")
+              .removeClass("timeOff")
+              .addClass("timeOn");
+          } else {
+            $(this)
+              .parents(".listDate")
+              .removeClass("timeOn")
+              .addClass("timeOff");
+          }
+        }
+
+        if($(".merchandise .mode1Open").find('input').is(':checked')) {
+          $(this).addClass("mode1Edit")
+        }
+      };
+    </script>
+  </body>
+</html>

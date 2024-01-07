@@ -1,0 +1,109 @@
+﻿/* menu 用 */
+table.itemMain
+{
+  border-collapse: collapse;
+  margin: 0px;
+}
+table.itemMain td, table.itemMain td.center
+{
+  border: 1px solid #F0EFEC;
+  padding: 5px 3px 5px 3px;
+  height: 22px; line-height:14px;
+  text-align: center;
+  vertical-align:middle;
+  text-align: center;
+  font-family: Arial, 細明體, Verdana, Helvetica, sans-serif;
+}
+table.itemMain td.title
+{
+  background-color: #F0EFEC;
+}
+/* memb resume 用 */
+table.item
+{
+  border-collapse: collapse;
+  margin: 0px;
+  width: 750px;
+}
+table.item1
+{
+  border-collapse: collapse;
+  margin: 0px;
+}
+table.item td, table.item1 td
+{
+  border: 1px solid #808080;
+  height: 20px; line-height:14px;
+  vertical-align: middle;
+  font-family: Arial, 細明體, Verdana, Helvetica, sans-serif;
+}
+table.item td.title, table.item1 td.title
+{
+  background-color: #E1E1E1;
+  border: 1px solid #808080;
+  height: 20px; line-height:14px;
+  vertical-align:middle;
+  text-align: center;
+  font-family: Arial, 細明體, Verdana, Helvetica, sans-serif;
+}
+table.item td input, table.item1 td input
+{
+  font-family: Arial, 細明體, Verdana, Helvetica, sans-serif;
+  font-size: 12px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+table.outer
+{
+  border-collapse: collapse;
+}
+/*
+table.item td select
+{
+  font-family: Arial, 細明體, Verdana, Helvetica, sans-serif;
+  font-size: 12px;
+}
+*/
+.readonly
+{
+  /*background-color: #EEEEEE;*/
+  background-color: #E0E0E0;
+  border: 1px solid #B1B4D1;
+}
+div.divbody
+{
+  top: 0px;
+  left: 0px;
+  padding: 20px;
+  background-color: #EEEEEE;
+}
+table.item td.statusbar, table.item1 td.statusbar
+{
+  border: 0px solid #808080;
+  line-height: 14px;
+  vertical-align: middle;
+  font-family: Arial, 細明體, Verdana, Helvetica, sans-serif;
+}
+table.item td.statusbar .message, table.item1 td.statusbar .message
+{
+  font-family: Arial, 細明體, Verdana, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: Red;
+}
+table.item td.statusbar input.command, table.item1 td.statusbar input.command
+{
+  font-family: Arial, 細明體, Verdana, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  color: Blue;
+}
+input[type="text"], input[type="password"]
+{
+  border: 1px solid #999999;
+}
+input[type="button"], input.command
+{
+  border: 1px solid #999999;
+  cursor: pointer;
+}

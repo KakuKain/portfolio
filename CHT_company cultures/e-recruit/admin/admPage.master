@@ -1,0 +1,51 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="SC.admPage" Codebehind="admPage.master.cs" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+  <title>中華電信人才招募網-後台管理</title>
+  <link rel="stylesheet" href="./css/admPage.css" type="text/css" id="admPageCssFile" runat="server" />
+  <script type="text/javascript" src="js/SC_ckAdmin.js"></script>
+  <script src="js/robJsLib.js" type="text/javascript"></script>
+  <asp:ContentPlaceHolder ID="head" runat="server">
+  </asp:ContentPlaceHolder>
+</head>
+<body class="admPageBody">
+  <form id="form1" runat="server">
+  <input type="hidden" name="__robArg1" id="__robArg1" value="" />
+  <input type="hidden" name="__robArg2" id="__robArg2" value="" />
+  <input runat="server" type="hidden" name="__robMenuState" id="__robMenuState" />
+  
+  <div class="bodyDiv">
+    <table class="bodyHeadTb" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td id="tdMenuDT" runat="server" class="bodyHeadTbLeftTd"></td>
+      <td class="bodyHeadTbMidTd">中華電信人才招募網 後台管理系統</td>
+    </tr>
+    </table>
+    <table class="bodyHeadTb" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td style="width:150px; padding:0px; margin:0px;"></td>
+        <td style="width:850px; padding:0px; margin:0px;"></td>
+      </tr>
+      <tr>
+        <td id="bodyTbLeftTd" runat="server" class="bodyTbLeftTd" enableviewstate="false"></td>
+        <td class="bodyTbRightTd">
+          <div style="z-index: 1; position:relative; width:850px; ">
+          <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+          </asp:ContentPlaceHolder>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <asp:TextBox ID="hidAdminD00" runat="server" Visible="False"></asp:TextBox>
+  <asp:TextBox ID="hidAdminID" runat="server" Visible="False"></asp:TextBox>
+  <asp:TextBox ID="hidAdminNAME" runat="server" Visible="False"></asp:TextBox>
+  <asp:TextBox ID="hidAdminQX" runat="server" Visible="False"></asp:TextBox>
+  <asp:TextBox ID="hidMenuOnOff" runat="server" Visible="False"></asp:TextBox>
+  <asp:TextBox ID="hidAdminCOLOR" runat="server" Visible="False"></asp:TextBox>
+  <asp:Label ID="lblMsg1" runat="server" Text=""></asp:Label>
+  </form>
+  <script src="js/admPage.js" type="text/javascript"></script>
+</body>
+</html>

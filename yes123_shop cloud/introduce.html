@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+
+    <title></title>
+
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/grid12.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!--輪播-->
+    <link href="css/swiper.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body class="introduce">
+    <!--END 手機 頭-->
+
+    <!--內容-->
+    <main>
+      <!-- 訊息彈跳視窗 START -->
+      <div class="K_popup transform-out messagePopup">
+        <div class="popupBg"></div>
+        <div>
+          <div class="popupContent">
+            <div class="popupHeader">
+              <span class="popAdPage">儲存工作</span>
+              <button
+                type="button"
+                class="popupClose"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">× </span>
+              </button>
+            </div>
+            <div class="popupBody">
+              <!-- 刪除 -->
+              <ul>
+                <li>
+                  <h6 class="textCenter">追蹤企業</h6>
+                  <p>
+                    你將訂閱(1)家企業相關職缺，當企業有符合你希望職務的新職缺時，將用Email通知你，確定訂閱?
+                  </p>
+                  <p>
+                    你將取消訂閱(2)家企業相關職缺，當企業有符合你希望職務的新職缺時，將不再用Email通知你，確定取消訂閱?
+                  </p>
+                </li>
+              </ul>
+              <!-- 刪除 -->
+
+              <section class="popupBtn">
+                <button class="mt-20 close" type="button">取消</button>
+                <button class="mt-20" type="button">確認</button>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 訊息彈跳視窗 END -->
+
+      <div class="container">
+        <div class="row">
+          <ul class="listAll">
+            <li class="listText">
+              <label>
+                <section>
+                  <span
+                    class="icon"
+                    style="background-image: url(./img/introduce/shop.png)"
+                  ></span
+                  >商店名稱*
+                </section>
+                <input
+                  type="text"
+                  placeholder="請輸入商店名稱"
+                  value="小幸運早午餐"
+                  required
+                />
+              </label>
+            </li>
+            <li class="listText">
+              <label>
+                <section>
+                  <span
+                    class="icon"
+                    style="background-image: url(./img/introduce/badge.png)"
+                  ></span
+                  >品牌名稱
+                </section>
+                <input
+                  type="text"
+                  placeholder="請輸入品牌或招牌名稱"
+                  value=""
+                />
+              </label>
+            </li>
+            <li class="listPhone">
+              <label>
+                <section>
+                  <span
+                    class="icon"
+                    style="background-image: url(./img/introduce/phone.png)"
+                  ></span
+                  >聯絡電話*
+                </section>
+                <div>
+                  <input
+                    type="tel"
+                    placeholder="讓客戶直接連絡你"
+                    value="02-2785-3135"
+                    maxlength="20"
+                    oninput="value=value.replace(/[^\d]/g,'')"
+                    required
+                  />
+                  <a href="javascript:;">X</a>
+                </div>
+                <div>
+                  <input
+                    type="tel"
+                    placeholder="讓客戶直接連絡你"
+                    value=""
+                    maxlength="20"
+                    oninput="value=value.replace(/[^\d]/g,'')"
+                  />
+                  <a href="javascript:;">X</a>
+                </div>
+                <a
+                  class="addBtn"
+                  href="javascript:;"
+                  onclick="add_obj('p_tel_tr_',3,'p_tel_new_tr');"
+                  ><span>+</span>新增</a
+                >
+              </label>
+            </li>
+            <li class="listAdd">
+              <section>
+                <span
+                  class="icon"
+                  style="background-image: url(./img/introduce/address.png)"
+                ></span
+                >商店地址
+              </section>
+              <div>
+                <select
+                  name="p_city"
+                  id="p_city"
+                  class="must_check1 option_w93 s_mr10"
+                  onchange="set_zone();"
+                >
+                  <option value="">縣市</option>
+                  <option value="基隆市">基隆市</option>
+                  <option value="新北市">新北市</option>
+                  <option value="台北市">台北市</option>
+                  <option value="桃園市">桃園市</option>
+                  <option value="新竹縣">新竹縣</option>
+                  <option value="新竹市">新竹市</option>
+                  <option value="苗栗縣">苗栗縣</option>
+                  <option value="台中市">台中市</option>
+                  <option value="彰化縣">彰化縣</option>
+                  <option value="南投縣">南投縣</option>
+                  <option value="雲林縣">雲林縣</option>
+                  <option value="嘉義市">嘉義市</option>
+                  <option value="嘉義縣">嘉義縣</option>
+                  <option value="台南市">台南市</option>
+                  <option value="高雄市">高雄市</option>
+                  <option value="屏東縣">屏東縣</option>
+                  <option value="宜蘭縣">宜蘭縣</option>
+                  <option value="花蓮縣">花蓮縣</option>
+                  <option value="台東縣">台東縣</option>
+                  <option value="澎湖縣">澎湖縣</option>
+                  <option value="金門縣">金門縣</option>
+                  <option value="連江縣">連江縣</option>
+                </select>
+                <select
+                  name="p_zone"
+                  id="p_zone"
+                  class="must_check1 option_w93 w93_s_mr10"
+                >
+                  <option value="">區域</option>
+                </select>
+                <input
+                  type="text"
+                  name="address"
+                  id="address"
+                  class="must_check1 input_w500"
+                  placeholder="若沒有實體店面，不需填寫"
+                  value=""
+                  maxlength="50"
+                />
+                <br />
+              </div>
+              <!-- <span id="address_err" class="s_mt16_negative hide" style="color:#FF0000;">請輸入縣市區域</span> -->
+            </li>
+            <!-- 暫停 -->
+            <li class="listTime">
+              <section>
+                <span
+                  class="icon"
+                  style="background-image: url(./img/introduce/calendar.png)"
+                ></span
+                >營業時間*
+              </section>
+              <ul>
+                <!-- 星期一 START -->
+                <li class="listDate timeOn">
+                  <div>星期一</div>
+                  <div class="openingHour">
+                    <input
+                      type="checkbox"
+                      name="openingHour"
+                      class="openingHour-checkbox"
+                      id="mondayOpeningHour"
+                      checked
+                    />
+                    <label class="openingHour-label" for="openingHour">
+                      <span class="openingHour-inner"></span>
+                      <span class="openingHour-switch"></span>
+                    </label>
+                  </div>
+                  <div class="timeCheck">
+                    <div class="on">
+                      <!-- <div>
+                            <input type="time" name="" id=""><spam>~</spam><input type="time" name="" id="">
+                          </div> -->
+                      <div class="time">
+                        <span class="timeText">營業時間</span>
+                        <div class="timeGroup">
+                          <select
+                            name="monday_start_hour"
+                            id="monday_start_hour" class="time24h"
+                          >
+                            <option value="">--</option>
+                            <option value="24h" selected="selected">24h</option>
+                            <option value="00">00</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                          </select>
+                          <span> : </span>
+                          <select name="monday_start_min" id="monday_start_min">
+                            <option value="">--</option>
+                            <option value="00">00</option>
+                            <option value="05">05</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                            <option value="35">35</option>
+                            <option value="40">40</option>
+                            <option value="45">45</option>
+                            <option value="50">50</option>
+                            <option value="55">55</option>
+                          </select>
+                          <span>~</span>
+                          <select
+                            name="monday_close_hour"
+                            id="monday_close_hour"
+                          >
+                            <option value="">--</option>
+                            <option value="00">00</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                          </select>
+                          <span> : </span>
+                          <select name="monday_close_min" id="monday_close_min">
+                            <option value="">--</option>
+                            <option value="00">00</option>
+                            <option value="05">05</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                            <option value="35">35</option>
+                            <option value="40">40</option>
+                            <option value="45">45</option>
+                            <option value="50">50</option>
+                            <option value="55">55</option>
+                          </select>
+                        </div>
+                      </div>
+                      <a class="addBtn" href="javascript:;"
+                        ><span>+</span>新增</a
+                      >
+                    </div>
+                    <div class="off">
+                      <span>本日公休</span>
+                    </div>
+                  </div>
+                </li>
+                <!-- 星期一 END -->
+                <!-- 星期二 START -->
+                <li class="listDate timeOn">
+                  <div>星期二</div>
+                  <div class="openingHour">
+                    <input
+                      type="checkbox"
+                      name="openingHour"
+                      class="openingHour-checkbox"
+                      id="tuesdayOpeningHour"
+                      checked
+                    />
+                    <label class="openingHour-label" for="openingHour">
+                      <span class="openingHour-inner"></span>
+                      <span class="openingHour-switch"></span>
+                    </label>
+                  </div>
+                  <div class="timeCheck">
+                    <div class="on">
+                      <div class="time">
+                        <span class="timeText">營業時間</span>
+                        <div class="timeGroup">
+                          <select
+                            name="tuesday_start_hour"
+                            id="tuesday_start_hour"
+                          >
+                            <option value="">--</option>
+                            <option value="24h">24h</option>
+                            <option value="00">00</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09" selected="selected">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                          </select>
+                          <span> : </span>
+                          <select
+                            name="tuesday_start_min"
+                            id="tuesday_start_min"
+                          >
+                            <option value="">--</option>
+                            <option value="00" selected="selected">00</option>
+                            <option value="05">05</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                            <option value="35">35</option>
+                            <option value="40">40</option>
+                            <option value="45">45</option>
+                            <option value="50">50</option>
+                            <option value="55">55</option>
+                          </select>
+                          <span>~</span>
+                          <select
+                            name="tuesday_close_hour"
+                            id="tuesday_close_hour"
+                          >
+                            <option value="">--</option>
+                            <option value="00">00</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18" selected="selected">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                          </select>
+                          <span> : </span>
+                          <select
+                            name="tuesday_close_min"
+                            id="tuesday_close_min"
+                          >
+                            <option value="">--</option>
+                            <option value="00" selected="selected">00</option>
+                            <option value="05">05</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                            <option value="35">35</option>
+                            <option value="40">40</option>
+                            <option value="45">45</option>
+                            <option value="50">50</option>
+                            <option value="55">55</option>
+                          </select>
+                        </div>
+                      </div>
+                      <a class="addBtn" href="javascript:;"
+                        ><span>+</span>新增</a
+                      >
+                    </div>
+                    <div class="off">
+                      <span>本日公休</span>
+                    </div>
+                  </div>
+                </li>
+                <!-- 星期二 END -->
+                <!-- 星期三 START -->
+                <li class="listDate timeOn">
+                  <div>星期三</div>
+                  <div class="openingHour">
+                    <input
+                      type="checkbox"
+                      name="openingHour"
+                      class="openingHour-checkbox"
+                      id="WednesdayOpeningHour"
+                      checked
+                    />
+                    <label class="openingHour-label" for="openingHour">
+                      <span class="openingHour-inner"></span>
+                      <span class="openingHour-switch"></span>
+                    </label>
+                  </div>
+                  <div class="timeCheck">
+                    <div class="on">
+                      <div class="time">
+                        <span class="timeText">營業時間</span>
+                        <div class="timeGroup">
+                          <select
+                            name="Wednesday_start_hour"
+                            id="Wednesday_start_hour"
+                          >
+                            <option value="">--</option>
+                            <option value="24h">24h</option>
+                            <option value="00">00</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09" selected="selected">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                          </select>
+                          <span> : </span>
+                          <select
+                            name="Wednesday_start_min"
+                            id="Wednesday_start_min"
+                          >
+                            <option value="">--</option>
+                            <option value="00" selected="selected">00</option>
+                            <option value="05">05</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                            <option value="35">35</option>
+                            <option value="40">40</option>
+                            <option value="45">45</option>
+                            <option value="50">50</option>
+                            <option value="55">55</option>
+                          </select>
+                          <span>~</span>
+                          <select
+                            name="Wednesday_close_hour"
+                            id="Wednesday_close_hour"
+                          >
+                            <option value="">--</option>
+                            <option value="00">00</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18" selected="selected">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                          </select>
+                          <span> : </span>
+                          <select
+                            name="Wednesday_close_min"
+                            id="Wednesday_close_min"
+                          >
+                            <option value="">--</option>
+                            <option value="00" selected="selected">00</option>
+                            <option value="05">05</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                            <option value="35">35</option>
+                            <option value="40">40</option>
+                            <option value="45">45</option>
+                            <option value="50">50</option>
+                            <option value="55">55</option>
+                          </select>
+                        </div>
+                      </div>
+                      <a class="addBtn" href="javascript:;"
+                        ><span>+</span>新增</a
+                      >
+                    </div>
+                    <div class="off">
+                      <span>本日公休</span>
+                    </div>
+                  </div>
+                </li>
+                <!-- 星期三 END -->
+                <!-- 星期四 START -->
+                <li class="listDate timeOn">
+                  <div>星期四</div>
+                  <div class="openingHour">
+                    <input
+                      type="checkbox"
+                      name="openingHour"
+                      class="openingHour-checkbox"
+                      id="ThursdayOpeningHour"
+                      checked
+                    />
+                    <label class="openingHour-label" for="openingHour">
+                      <span class="openingHour-inner"></span>
+                      <span class="openingHour-switch"></span>
+                    </label>
+                  </div>
+                  <div class="timeCheck">
+                    <div class="on">
+                      <div class="time">
+                        <span class="timeText">營業時間</span>
+                        <div class="timeGroup">
+                          <select
+                            name="Thursday_start_hour"
+                            id="Thursday_start_hour"
+                          >
+                            <option value="">--</option>
+                            <option value="24h">24h</option>
+                            <option value="00">00</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09" selected="selected">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                          </select>
+                          <span> : </span>
+                          <select
+                            name="Thursday_start_min"
+                            id="Thursday_start_min"
+                          >
+                            <option value="">--</option>
+                            <option value="00" selected="selected">00</option>
+                            <option value="05">05</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                            <option value="35">35</option>
+                            <option value="40">40</option>
+                            <option value="45">45</option>
+                            <option value="50">50</option>
+                            <option value="55">55</option>
+                          </select>
+                          <span>~</span>
+                          <select
+                            name="Thursday_close_hour"
+                            id="Thursday_close_hour"
+                          >
+                            <option value="">--</option>
+                            <option value="00">00</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12" selected="selected">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                          </select>
+                          <span> : </span>
+                          <select
+                            name="Thursday_close_min"
+                            id="Thursday_close_min"
+                          >
+                            <option value="">--</option>
+                            <option value="00" selected="selected">00</option>
+                            <option value="05">05</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                            <option value="35">35</option>
+                            <option value="40">40</option>
+                            <option value="45">45</option>
+                            <option value="50">50</option>
+                            <option value="55">55</option>
+                          </select>
+                        </div>
+                      </div>
+                      <a class="addBtn" href="javascript:;"
+                        ><span>+</span>新增</a
+                      >
+                    </div>
+                    <div class="off">
+                      <span>本日公休</span>
+                    </div>
+                  </div>
+                </li>
+                <!-- 星期四 END -->
+                <!-- 星期五 START -->
+                <li class="listDate timeOn">
+                  <div>星期五</div>
+                  <div class="openingHour">
+                    <input
+                      type="checkbox"
+                      name="openingHour"
+                      class="openingHour-checkbox"
+                      id="FridayOpeningHour"
+                      checked
+                    />
+                    <label class="openingHour-label" for="openingHour">
+                      <span class="openingHour-inner"></span>
+                      <span class="openingHour-switch"></span>
+                    </label>
+                  </div>
+                  <div class="timeCheck">
+                    <div class="on">
+                      <div class="time">
+                        <span class="timeText">營業時間</span>
+                        <div class="timeGroup">
+                          <select
+                            name="Friday_start_hour"
+                            id="Friday_start_hour"
+                          >
+                            <option value="">--</option>
+                            <option value="24h">24h</option>
+                            <option value="00">00</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09" selected="selected">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                          </select>
+                          <span> : </span>
+                          <select
+                            name="Friday_start_min"
+                            id="Friday_start_min"
+                          >
+                            <option value="">--</option>
+                            <option value="00" selected="selected">00</option>
+                            <option value="05">05</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                            <option value="35">35</option>
+                            <option value="40">40</option>
+                            <option value="45">45</option>
+                            <option value="50">50</option>
+                            <option value="55">55</option>
+                          </select>
+                          <span>~</span>
+                          <select
+                            name="Friday_close_hour"
+                            id="Friday_close_hour"
+                          >
+                            <option value="">--</option>
+                            <option value="00">00</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12" selected="selected">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                          </select>
+                          <span> : </span>
+                          <select
+                            name="Friday_close_min"
+                            id="Friday_close_min"
+                          >
+                            <option value="">--</option>
+                            <option value="00" selected="selected">00</option>
+                            <option value="05">05</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                            <option value="35">35</option>
+                            <option value="40">40</option>
+                            <option value="45">45</option>
+                            <option value="50">50</option>
+                            <option value="55">55</option>
+                          </select>
+                        </div>
+                        <div class="timeGroup">
+                          <select
+                            name="Friday_start_hour"
+                            id="Friday_start_hour"
+                          >
+                            <option value="">--</option>
+                            <option value="24h">24h</option>
+                            <option value="00">00</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14" selected="selected">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                          </select>
+                          <span> : </span>
+                          <select
+                            name="Friday_start_min"
+                            id="Friday_start_min"
+                          >
+                            <option value="">--</option>
+                            <option value="00" selected="selected">00</option>
+                            <option value="05">05</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                            <option value="35">35</option>
+                            <option value="40">40</option>
+                            <option value="45">45</option>
+                            <option value="50">50</option>
+                            <option value="55">55</option>
+                          </select>
+                          <span>~</span>
+                          <select
+                            name="Friday_close_hour"
+                            id="Friday_close_hour"
+                          >
+                            <option value="">--</option>
+                            <option value="00">00</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19" selected="selected">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                          </select>
+                          <span> : </span>
+                          <select
+                            name="Friday_close_min"
+                            id="Friday_close_min"
+                          >
+                            <option value="">--</option>
+                            <option value="00" selected="selected">00</option>
+                            <option value="05">05</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                            <option value="35">35</option>
+                            <option value="40">40</option>
+                            <option value="45">45</option>
+                            <option value="50">50</option>
+                            <option value="55">55</option>
+                          </select>
+                        </div>
+                      </div>
+                      <a class="addBtn" href="javascript:;"
+                        ><span>+</span>新增</a
+                      >
+                    </div>
+                    <div class="off">
+                      <span>本日公休</span>
+                    </div>
+                  </div>
+                </li>
+                <!-- 星期五 END -->
+                <!-- 星期六 START -->
+                <li class="listDate timeOff">
+                  <div>星期六</div>
+                  <div class="openingHour">
+                    <input
+                      type="checkbox"
+                      name="openingHour"
+                      class="openingHour-checkbox"
+                      id="SaturdayOpeningHour"
+                      
+                    />
+                    <label class="openingHour-label" for="openingHour">
+                      <span class="openingHour-inner"></span>
+                      <span class="openingHour-switch"></span>
+                    </label>
+                  </div>
+                  <div class="timeCheck">
+                    <div class="on">
+                      <div class="time">
+                        <span class="timeText">營業時間</span>
+                        <div class="timeGroup">
+                          <select
+                            name="Saturday_start_hour"
+                            id="Saturday_start_hour"
+                          >
+                            <option value="">--</option>
+                            <option value="24h">24h</option>
+                            <option value="00">00</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09" selected="selected">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                          </select>
+                          <span> : </span>
+                          <select
+                            name="Saturday_start_min"
+                            id="Saturday_start_min"
+                          >
+                            <option value="">--</option>
+                            <option value="00" selected="selected">00</option>
+                            <option value="05">05</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                            <option value="35">35</option>
+                            <option value="40">40</option>
+                            <option value="45">45</option>
+                            <option value="50">50</option>
+                            <option value="55">55</option>
+                          </select>
+                          <span>~</span>
+                          <select
+                            name="Saturday_close_hour"
+                            id="Saturday_close_hour"
+                          >
+                            <option value="">--</option>
+                            <option value="00">00</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12" selected="selected">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                          </select>
+                          <span> : </span>
+                          <select
+                            name="Saturday_close_min"
+                            id="Saturday_close_min"
+                          >
+                            <option value="">--</option>
+                            <option value="00" selected="selected">00</option>
+                            <option value="05">05</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                            <option value="35">35</option>
+                            <option value="40">40</option>
+                            <option value="45">45</option>
+                            <option value="50">50</option>
+                            <option value="55">55</option>
+                          </select>
+                        </div>
+                      </div>
+                      <a class="addBtn" href="javascript:;"
+                        ><span>+</span>新增</a
+                      >
+                    </div>
+                    <div class="off">
+                      <span>本日公休</span>
+                    </div>
+                  </div>
+                </li>
+                <!-- 星期六 END -->
+                <!-- 星期日 START -->
+                <li class="listDate timeOff">
+                  <div>星期日</div>
+                  <div class="openingHour">
+                    <input
+                      type="checkbox"
+                      name="openingHour"
+                      class="openingHour-checkbox"
+                      id="SundayOpeningHour"
+                      
+                    />
+                    <label class="openingHour-label" for="openingHour">
+                      <span class="openingHour-inner"></span>
+                      <span class="openingHour-switch"></span>
+                    </label>
+                  </div>
+                  <div class="timeCheck">
+                    <div class="on">
+                      <div class="time">
+                        <span class="timeText">營業時間</span>
+                        <div class="timeGroup">
+                          <select
+                            name="Sunday_start_hour"
+                            id="Sunday_start_hour"
+                          >
+                            <option value="">--</option>
+                            <option value="24h">24h</option>
+                            <option value="00">00</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09" selected="selected">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                          </select>
+                          <span> : </span>
+                          <select
+                            name="Sunday_start_min"
+                            id="Sunday_start_min"
+                          >
+                            <option value="">--</option>
+                            <option value="00" selected="selected">00</option>
+                            <option value="05">05</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                            <option value="35">35</option>
+                            <option value="40">40</option>
+                            <option value="45">45</option>
+                            <option value="50">50</option>
+                            <option value="55">55</option>
+                          </select>
+                          <span>~</span>
+                          <select
+                            name="Sunday_close_hour"
+                            id="Sunday_close_hour"
+                          >
+                            <option value="">--</option>
+                            <option value="00">00</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12" selected="selected">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                          </select>
+                          <span> : </span>
+                          <select
+                            name="Sunday_close_min"
+                            id="Sunday_close_min"
+                          >
+                            <option value="">--</option>
+                            <option value="00" selected="selected">00</option>
+                            <option value="05">05</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                            <option value="35">35</option>
+                            <option value="40">40</option>
+                            <option value="45">45</option>
+                            <option value="50">50</option>
+                            <option value="55">55</option>
+                          </select>
+                        </div>
+                      </div>
+                      <a class="addBtn" href="javascript:;"
+                        ><span>+</span>新增</a
+                      >
+                    </div>
+                    <div class="off">
+                      <span>本日公休</span>
+                    </div>
+                  </div>
+                </li>
+                <!-- 星期日 END -->
+              </ul>
+            </li>
+            <li class="listTime listDateTime">
+              <section>
+                <span
+                  class="icon"
+                  style="background-image: url(./img/introduce/calendar.png)"
+                ></span
+                >營業時間*
+              </section>
+              <ul>
+                <li class="listDate timeOff">
+                  <div><input type="date" value="2023-01-01" /></div>
+                  <div class="openingHour">
+                    <input
+                      type="checkbox"
+                      name="openingHour"
+                      class="openingHour-checkbox"
+                      id="openingHour"
+                    />
+                    <label class="openingHour-label" for="openingHour">
+                      <span class="openingHour-inner"></span>
+                      <span class="openingHour-switch"></span>
+                    </label>
+                  </div>
+                  <div class="timeCheck">
+                    <div class="on">
+                      <!-- <div>
+                            <input type="time" name="" id=""><spam>~</spam><input type="time" name="" id="">
+                          </div> -->
+                      <div class="time">
+                        <span>營業時間</span>
+                        <select name="start_hour" id="start_hour">
+                          <option value="">--</option>
+                          <option value="00">00</option>
+                          <option value="01">01</option>
+                          <option value="02">02</option>
+                          <option value="03">03</option>
+                          <option value="04">04</option>
+                          <option value="05">05</option>
+                          <option value="06">06</option>
+                          <option value="07">07</option>
+                          <option value="08">08</option>
+                          <option value="09">09</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                          <option value="13">13</option>
+                          <option value="14">14</option>
+                          <option value="15">15</option>
+                          <option value="16">16</option>
+                          <option value="17">17</option>
+                          <option value="18">18</option>
+                          <option value="19">19</option>
+                          <option value="20">20</option>
+                          <option value="21">21</option>
+                          <option value="22">22</option>
+                          <option value="23">23</option>
+                        </select>
+                        <span> : </span>
+                        <select name="start_min" id="start_min">
+                          <option value="">--</option>
+                          <option value="00">00</option>
+                          <option value="05">05</option>
+                          <option value="10">10</option>
+                          <option value="15">15</option>
+                          <option value="20">20</option>
+                          <option value="25">25</option>
+                          <option value="30">30</option>
+                          <option value="35">35</option>
+                          <option value="40">40</option>
+                          <option value="45">45</option>
+                          <option value="50">50</option>
+                          <option value="55">55</option>
+                        </select>
+                        <span>~</span>
+                        <select name="start_hour" id="start_hour">
+                          <option value="">--</option>
+                          <option value="00" selected="selected">00</option>
+                          <option value="01">01</option>
+                          <option value="02">02</option>
+                          <option value="03">03</option>
+                          <option value="04">04</option>
+                          <option value="05">05</option>
+                          <option value="06">06</option>
+                          <option value="07">07</option>
+                          <option value="08">08</option>
+                          <option value="09">09</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                          <option value="13">13</option>
+                          <option value="14">14</option>
+                          <option value="15">15</option>
+                          <option value="16">16</option>
+                          <option value="17">17</option>
+                          <option value="18">18</option>
+                          <option value="19">19</option>
+                          <option value="20">20</option>
+                          <option value="21">21</option>
+                          <option value="22">22</option>
+                          <option value="23">23</option>
+                        </select>
+                        <span> : </span>
+                        <select name="start_min" id="start_min">
+                          <option value="">--</option>
+                          <option value="00">00</option>
+                          <option value="05">05</option>
+                          <option value="10">10</option>
+                          <option value="15">15</option>
+                          <option value="20">20</option>
+                          <option value="25">25</option>
+                          <option value="30">30</option>
+                          <option value="35">35</option>
+                          <option value="40">40</option>
+                          <option value="45">45</option>
+                          <option value="50">50</option>
+                          <option value="55">55</option>
+                        </select>
+                      </div>
+                      <a class="addBtn" href="javascript:;"
+                        ><span>+</span>新增</a
+                      >
+                    </div>
+                    <div class="off">
+                      <span>本日公休</span>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="listPay">
+              <label>
+                <section>
+                  <span
+                    class="icon"
+                    style="
+                      background-image: url(./img/introduce/pay-per-click.png);
+                    "
+                  ></span
+                  >付款方式
+                </section>
+                <ul>
+                  <li class="payOpen">現金</li>
+                  <li class="payOpen">信用卡</li>
+                  <li class="payOpen">ATM/銀行轉帳</li>
+                  <li class="payOpen">Line Pay</li>
+                  <li class="">街口支付</li>
+                  <li class="">悠遊付</li>
+                  <li class="">Apple Pay</li>
+                  <li class="">Google Pay</li>
+                  <li class="">台灣 Pay</li>
+                  <li class="payOpen">超商取貨付款</li>
+                  <li class="payOpen">貨到付款</li>
+                  <li class="payOpen">支票</li>
+                </ul>
+                <input
+                  type="text"
+                  placeholder="請輸入商店名稱"
+                  value="支票"
+                />
+              </label>
+            </li>
+            <li class="listTextArea">
+              <label>
+                <section>
+                  <span
+                    class="icon"
+                    style="background-image: url(./img/introduce/info.png)"
+                  ></span
+                  >關於商店
+                </section>
+                <div class="aboutStore">
+                  <textarea
+                    type="text"
+                    autoHeight="true"
+                    name="aboutStore"
+                    rows="3"
+                  ></textarea>
+                </div>
+              </label>
+            </li>
+            <!-- 暫停 -->
+
+            <li class="listAll listNewLink">
+              <label>
+                <section>
+                  <span
+                    class="icon"
+                    style="background-image: url(./img/introduce/line.png)"
+                  ></span
+                  ><input
+                    class="text_blue"
+                    type="text"
+                    name=""
+                    id=""
+                    value="GoogleMap"
+                  />
+                </section>
+                <input
+                  type="url"
+                  placeholder=""
+                  value="https://maps.app.goo.gl/3UrRtZ8XKKCvbAnC8?g_st=il"
+                />
+              </label>
+
+              <label>
+                <section>
+                  <span
+                    class="icon"
+                    style="background-image: url(./img/introduce/line.png)"
+                  ></span
+                  ><input
+                    class="text_blue"
+                    type="text"
+                    name=""
+                    id=""
+                    value="FaceBook"
+                  />
+                </section>
+                <input
+                  type="url"
+                  placeholder=""
+                  value="https://www.facebook.com/lucky156.1/"
+                />
+              </label>
+              <a class="addBtn" href="javascript:;"><span>+</span>新增</a>
+            </li>
+
+            <li class="">
+              <label>
+                <section>
+                  <span
+                    class="icon"
+                    style="background-image: url(./img/introduce/search.png)"
+                  ></span
+                  >人才招募
+                </section>
+                <a href="javascript:;"><p>正職人員</p></a>
+                <a href="javascript:;"><p>計時人員</p></a>
+              </label>
+            </li>
+          </ul>
+          <section class="belowBtn">
+            <a href="javascript:;" class="cancel">取消</a>
+            <a href="javascript:;">儲存</a>
+          </section>
+        </div>
+      </div>
+    </main>
+    <!--END 內容-->
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/swiper.js "></script>
+    <script src="js/index.js "></script>
+    <script>
+      window.onload = function () {
+        openingHour();
+        function openingHour() {
+          if ($(".openingHour-checkbox").is(":checked") == true) {
+            $(this)
+              .parents(".listDate")
+              .removeClass("timeOff")
+              .addClass("timeOn");
+          } else {
+            $(this)
+              .parents(".listDate")
+              .removeClass("timeOn")
+              .addClass("timeOff");
+          }
+        }
+
+        $(".listPay li").click(function () {
+          $(this).toggleClass("payOpen")
+        })
+
+      };
+    </script>
+  </body>
+</html>

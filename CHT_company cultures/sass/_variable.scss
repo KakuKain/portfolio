@@ -1,0 +1,26 @@
+$font-list: 12px 14px 16px 24px;
+$base-font-size: nth($font-list, 2);
+$base-line-height: 10px;
+$rhythm-unit: "px";
+$mainWidth: 1170px;
+$darkColor: #313131;
+$lightColor: #fff;
+$blueColor: #006592;
+$grayBlue: #6da1d6;
+$lightBlue: #80acd1;
+$orangeColor: #eba51c;
+$lightOrange: #edc68b;
+$greenColor: #32943a;
+$lightGreen: #b3cd92;
+
+$insideBlue: #00a0e9;
+$insideFooter: #036eb7;
+// $susy: ( columns:24, math:fluid, gutters:1/3, gutter-position:split);
+// $gutter: 10px;
+$susy: (
+  columns: 24,
+  math: fluid,
+  gutters: 1,
+  gutter-position: split,
+);
+$gutter: 20px;

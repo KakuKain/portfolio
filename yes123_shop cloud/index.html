@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+
+    <title></title>
+
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/grid12.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!--輪播-->
+    <link href="css/swiper.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body class="index">
+    <!--手機 頭-->
+
+    <header>
+      <ul class="indexHeader">
+        <li class="logoPhoto hasLogo">
+          <div><span>小</span></div>
+          <img src="./img/logo2.png" alt="">
+        </li>
+        <li class="storeInformation">
+          <p>小幸運早午餐店</p>
+          <p class="storepreview"><a href="javascript:;">前台預覽</a></p>
+          <p class="contractTime">合約到期<span>2023.11.11</span><a href="javascript:;" class="btn">續約付款</a></p>
+        </li>
+        <li class="login">
+          <a href="javascript:;">登出</a>
+        </li>
+      </ul>
+    </header>
+
+    <!--END 手機 頭-->
+
+    <!--內容-->
+    <main>
+      <!-- 訊息彈跳視窗 START -->
+      <div class="K_popup transform-out messagePopup">
+        <div class="popupBg"></div>
+        <div>
+          <div class="popupContent">
+            <div class="popupHeader">
+              <span class="popAdPage">儲存工作</span>
+              <button
+                type="button"
+                class="popupClose"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">× </span>
+              </button>
+            </div>
+            <div class="popupBody">
+              <!-- 儲存工作 -->
+              <!-- <ul>
+                <li>
+                  <input type="radio" name="saveJob" id="oldJobBox"> 
+                  <label for="oldJobBox">
+                    請選擇資料夾：
+                    <select name="" id="chooseJobBox" class="">
+                      <option value="preset">預設資料夾</option>
+                      <option value="preset">資料夾1號</option>
+                    </select>
+                  </label>
+                </li>
+                <li>
+                  <input type="radio" name="saveJob" id="newJobBox"> 
+                  <label for="newJobBox">
+                    新增資料夾：
+                    <div class="inlineBlock">
+                      <input type="text" name="addJobBox" id="newJobBox" placeholder="限 6 個字內">
+                      <label for="newJobBox">
+                        <p class="smallP textRed">　*提醒：請入資料夾名稱</p>
+                      </label>
+                    </div>
+                  </label>
+                </li>
+              </ul> -->
+              <!-- 儲存工作 -->
+              <!-- 刪除 -->
+              <ul>
+                <li>
+                  <h6 class="textCenter">追蹤企業</h6>
+                  <p>你將訂閱(1)家企業相關職缺，當企業有符合你希望職務的新職缺時，將用Email通知你，確定訂閱?</p>
+                  <p>你將取消訂閱(2)家企業相關職缺，當企業有符合你希望職務的新職缺時，將不再用Email通知你，確定取消訂閱?</p>
+                </li>
+              </ul>
+              <!-- 刪除 -->
+
+              <section class="popupBtn">
+                <button class="mt-20 close" type="button">取消</button>
+                <button class="mt-20" type="button">確認</button>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 訊息彈跳視窗 END -->
+      <nav class="menu">
+        <ul>
+          <li class="thisMenu">
+            <a href="javascript:;">
+              <span class="icon"><img src="./img/index/packet.png" alt=""><img src="./img/index/packet_white.png" alt=""></span>
+              <span>所有商品</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <span class="icon"><img src="./img/index/speaker.png" alt=""><img src="./img/index/speaker_white.png" alt=""></span>
+              <span>行銷活動</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <span class="icon"><img src="./img/index/growth.png" alt=""><img src="./img/index/growth_white.png" alt=""></span>
+              <span>成效表現</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <span class="icon"><img src="./img/index/store.png" alt=""><img src="./img/index/store_white.png" alt=""></span>
+              <span>商店介紹</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <span class="icon"><img src="./img/index/edit-image.png" alt=""><img src="./img/index/edit-image_white.png" alt=""></span>
+              <span>商店照片</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <span class="icon"><img src="./img/index/customer-support.png" alt=""><img src="./img/index/customer-support_white.png" alt=""></span>
+              <span>聯絡客服</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="CMScontent">
+        <section class="backEnd">
+          <iframe src="./page.html" frameborder="0"></iframe>
+        </section>
+      </div>
+    </main>
+    <!--END 內容-->
+
+    <!--底-->
+    <!-- <footer>
+      <div>
+        <div class="container">
+          <ul class="service">
+            <!- <li>客服專線</li> --
+            <li>
+              <ul>
+                <li>
+                  <span
+                    ><a href="call:0226560123#1"
+                      >電話：(02)2656-0123轉1</a
+                    ></span
+                  >
+                </li>
+                <li>
+                  <span> 服務時間：週一至週五　 上午9:00 ~ 下午6:00 </span>
+                </li>
+              </ul>
+              <ul class="serviceItem">
+                <li>
+                  <a href="javascript:;">yes企業芸</a>
+                </li>
+                <li>
+                  <a href="javascript:;">刊登服務契約</a>
+                </li>
+                <li>
+                  <a href="javascript:;">常見問題</a>
+                </li>
+                <li class="pad">
+                  <a href="javascript:;">app下載</a>
+                </li>
+              </ul>
+            </li>
+            <li class="appDownload">
+              <a href="javascript:;">
+                <picture>
+                  <source
+                    srcset="./img/appDownload.png"
+                    media="(max-width: 768px)"
+                  />
+                  <img src="./img/appDownload.png" alt="" />
+                </picture>
+                <span> APP下載 </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="container">＠yes123 All Rights Reservied.</div>
+      </div>
+    </footer> -->
+    <!--END 底-->
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/swiper.js "></script>
+    <script src="js/index.js "></script>
+  </body>
+</html>

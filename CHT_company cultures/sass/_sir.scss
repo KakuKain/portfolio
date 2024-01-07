@@ -1,0 +1,125 @@
+.FSir {
+    .bossText {
+        max-width: 680px;
+        margin: 0 auto;
+        letter-spacing: 3px;
+        text-align: justify;
+        padding-top: 950px;
+        padding-left: 20px;
+        padding-right: 20px;
+        
+
+        >div {
+            padding: 10% 0;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 25px;
+            line-height: 40px;
+            font-weight: bold;
+
+            br {
+                display: none;
+            }
+        }
+
+        .line {
+            width: 1px;
+            height: 50px;
+            background-color: $darkColor;
+            margin: 5% auto;
+        }
+
+        .bossIcon {
+            margin-top: 55px;
+
+            img {
+                margin: 0 auto;
+            }
+        }
+
+
+    }
+
+    .md_section2 {
+        background-image: url(../images/focus/sir/background_01.png);
+        height: 1460px;
+        background-position: center;
+        margin-top: -20%;
+        background-repeat: no-repeat;
+    }
+
+    .md_section3 {
+        background-image: url(../images/focus/sir/background_02.png);
+        height: 1460px;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .md_section4 {
+        background-image: url(../images/focus/sir/background_03.png);
+        height: 1460px;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+
+@include breakpoint(max-width 980px) {
+    .FSir {
+        .bossText {
+            padding-top: 650px;
+        }
+
+        .md_section2 {
+            margin-top: -30%;
+            background-size: 140%;
+            height: 1000px;
+        }
+
+        .md_section3 {
+            background-size: 140%;
+            height: 1000px;
+        }
+
+        .md_section4 {
+            background-size: 140%;
+            height: 1000px;
+        }
+    }
+}
+
+@include breakpoint(max-width 768px) {
+    .FSir {
+        .bossText {
+            h2 {
+                font-size: 20px;
+                line-height: 30px;
+            }
+        }
+    }
+}
+
+@include breakpoint(max-width 480px) {
+    .FSir {
+        .bossText {
+            padding-top: 400px;
+        }
+
+        .md_section2 {
+           
+            height: 650px;
+        }
+
+        .md_section3 {
+            
+            height: 650px;
+        }
+
+        .md_section4 {
+            
+            height: 650px;
+        }
+    }
+}

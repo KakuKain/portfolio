@@ -1,0 +1,249 @@
+.allContact {
+  .s1_bg {
+    background-image: url(../images/contact/contactbg_01.jpg);
+  }
+
+  .md_section4 {
+    // height: 728px;
+
+    h1 {
+      font-size: 24px;
+      line-height: 48px;
+      text-align: center;
+    }
+
+    .s4_arrow {
+      margin: 70px auto;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 26px;
+      font-weight: bolder;
+      color: $greenColor;
+      padding-top: 50px;
+      letter-spacing: 5px;
+      line-height: 30px;
+    }
+
+    .s4_item {
+      position: relative;
+      width: 500px;
+      margin: 0 auto;
+      margin-top: 30px;
+
+      h3 {
+        writing-mode: vertical-lr;
+        transform: rotate(180deg);
+        font-size: 62px;
+        color: #afc98e;
+        letter-spacing: 10px;
+        position: absolute;
+        left: -60px;
+        bottom: 60px;
+        height: 100%;
+      }
+
+      .s4_item_1 {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5px;
+        background-color: #1a6da4;
+        padding: 10px;
+
+        .s4_item_1_1 {
+          display: flex;
+          justify-content: space-between;
+          width: 450px;
+          background-color: white;
+
+          p {
+            font-size: 17px;
+            font-family: "微軟正黑體";
+            letter-spacing: 3px;
+            line-height: 30px;
+            padding-left: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .md_section2 {
+    background-image: url("../images/contact/s2_bg.jpg");
+    width: 100%;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: -1;
+    margin-top: 100px;
+    padding-top: 60px;
+    padding-bottom: 80px;
+
+    .s2_item {
+      position: relative;
+      width: 870px;
+      margin: 0 auto;
+      padding: 0 10px;
+      > img {
+        position: absolute;
+        top: -60px;
+      }
+
+      .yt {
+        margin-top: 30px;
+        display: flex;
+        align-items: flex-end;
+
+        > div {
+          margin: 0 10px;
+          > img {
+            margin-bottom: 10px;
+          }
+        }
+      }
+
+      h3 {
+        color: $lightColor;
+        display: inline-flex;
+        writing-mode: vertical-lr;
+        font-family: "微軟正黑體";
+        letter-spacing: 1.5px;
+      }
+    }
+  }
+
+  .md_section3 {
+    margin-top: 120px;
+
+    img {
+      margin: 0 auto;
+    }
+
+    p {
+      margin-top: 20px;
+      font-size: 26px;
+      font-weight: bold;
+      font-family: "微軟正黑體";
+      text-align: center;
+    }
+
+    .s3_item {
+      cursor: pointer;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      margin-top: 30px;
+      padding: 0 20%;
+
+      img {
+        width: 50%;
+      }
+    }
+
+    .map {
+      max-width: 1170px;
+      margin: 0 auto;
+      margin-top: 120px;
+    }
+  }
+}
+
+@include breakpoint(max-width 980px) {
+  .allContact {
+    .md_section2 {
+      padding-bottom: 20px;
+      // .s2_item {
+      //   h3 {
+      //     writing-mode: unset;
+      //     position: relative;
+      //     right: 0;
+      //     bottom: 0;
+      //     line-height: 2;
+      //   }
+      // }
+    }
+
+    .md_section3 {
+      .s3_item {
+        padding: 0 15%;
+      }
+    }
+  }
+}
+
+@include breakpoint(max-width 768px) {
+  .allContact {
+    .s1_bg {
+      background-image: url(../images/contact/contactbg_01_m.jpg);
+    }
+
+    .md_section4 {
+      height: 900px;
+    }
+
+    .md_section2 {
+      .s2_item {
+        width: 100%;
+        .yt {
+          flex-wrap: wrap;
+          > div {
+            margin-top: 10px;
+          }
+          img {
+            float: left;
+            margin: 0 10px;
+          }
+        }
+        h3 {
+          writing-mode: unset;
+          line-height: 2;
+        }
+      }
+    }
+
+    .md_section3 {
+      .s3_item {
+        padding: 0 5%;
+      }
+    }
+  }
+}
+
+@include breakpoint(max-width 500px) {
+  .allContact {
+    .md_section4 {
+      .s4_item {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@include breakpoint(max-width 480px) {
+  .allContact {
+    .md_section4 {
+      .s4_item {
+        .s4_item_1 {
+          display: none;
+        }
+      }
+    }
+
+    .md_section3 {
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@include breakpoint(max-width 320px) {
+  .allContact {
+    .md_section3 {
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+}

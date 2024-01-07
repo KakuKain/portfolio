@@ -1,0 +1,419 @@
+﻿/* robin: white & dark */
+/* ----- admPage master page ----- begin */
+body.admPageBody
+{
+  margin-top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 12px;
+  font-family: Arial, 細明體, Verdana, Helvetica, sans-serif; 
+  /*background-color: #DADAE9;*/
+  background-color: #FFFFFF;
+  letter-spacing: 0.1em;
+}
+/* 設定 letter-spacing 會導致 IE 中的 <br> 失效，解決方案 */
+br
+{
+  letter-spacing: normal;
+}
+div.bodyDiv
+{
+  text-align: left;
+  border: 0px solid #CCCCCC;
+  padding-top: 0px;
+  margin-top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1000px;
+  /*background-color: #DADAE9;*/
+  background-color: #FFFFFF;
+}
+table.bodyHeadTb
+{
+  text-align: center;
+  padding: 0px;
+  margin-top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0px; /*background-color: #FBFBFC;*/
+}
+td.bodyHeadTbLeftTd
+{
+  vertical-align: bottom;
+  text-align: center;
+  padding: 6px 6px 6px 6px;
+  width: 148px;
+  font-size: 12px; font-family:Arial, "Arial Narrow";
+  font-weight: normal;
+  color: #909090; /*#003366;*/
+}
+td.bodyHeadTbMidTd
+{
+  vertical-align: bottom;
+  text-align: center;
+  padding: 6px 6px 6px 6px; /*width: 100%;*/
+  font-size: 24px;
+  font-weight: bold;
+  color: #606060; /*#003366;*/
+}
+td.bodyHeadTbRightTd
+{
+  text-align: right;
+  vertical-align: bottom;
+  padding: 10px 6px 10px 6px;
+  width: 150px;
+  font-size: 12px;
+  font-weight: normal;
+}
+td.bodyTbLeftTd
+{
+  text-align: center;
+  padding: 4px 0px 4px 0px;
+  width: 148px;
+  vertical-align: top;
+}
+td.bodyTbRightTd
+{
+  text-align: center;
+  padding: 4px 2px 4px 2px;
+  vertical-align: top;
+  color: #404040;
+}
+/* ----- vMenu style ----- */
+table.menuTable
+{
+  text-align: left;
+  padding: 0px;
+  margin-top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 140px;
+  border-collapse: collapse;
+  border-spacing: 0px;
+  background-color: #FFFFFF;
+}
+td.menuTitle
+{
+  font-weight: bold;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #808080;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+td.menuGap
+{
+  padding: 0px;
+  height: 4px;
+  background-color:#FFFFFF; /* #F0F0F0;*/
+}
+td.menuHeader
+{
+  text-align: center;
+  font-weight: bold;
+  background-color: #F0F0F0;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  color: #606060; /*#003366;*/
+}
+td.menuHeader a:hover
+{
+  text-align: center;
+  font-weight: bold;
+  /*background-color: #EAE4FF;*/
+  color: #000000;
+  text-decoration: underline;
+  cursor: pointer;
+}
+/* .menuHeader a, a:link, a:visited, a:active */
+td.menuHeader a
+{
+  color: #606060; /*#003366;*/
+  text-align: center;
+  font-weight: bold;
+  /*background-color: #EAE4FF;*/
+}
+td.menuHeaderItem
+{
+  text-align: center;
+  background-color: #FFFFFF;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+td.menuSubTitle
+{
+  text-align: left;
+  font-weight: bold;
+  color: #606060; /*#003366; 006600;*/
+  background-color: #F0F0F0;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 4px;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: #FFFFFF;
+  cursor: pointer;
+}
+td.menuSubTitlemsover, td.menuSubTitle:hover
+{
+  text-align: left;
+  font-weight: bold;
+  color: #000000; /* cc3300 003366 */
+  background-color: #F0F0F0;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 4px;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: #FFFFFF;
+  cursor: pointer;
+  text-decoration: underline;
+}
+td.menuSubItemTd
+{
+  padding: 0px;
+  border: none 0px;
+  margin: 0px;
+}
+div.menuSubItemDiv
+{
+  padding: 0px;
+  border: none 0px;
+  margin: 0px;
+}
+table.menuSubItemTable
+{
+  text-align: left;
+  border: 0px none #CCCCCC;
+  padding: 0px;
+  margin: 0px;
+  border-collapse: collapse;
+  border-spacing: 0px;
+  width: 100%;
+}
+td.menuSubItem
+{
+  text-align: left;
+  color: #000000;
+  border: 0px solid #FFFFFF;
+  background-color: #FFFFFF;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 4px;
+  cursor: pointer;
+}
+td.menuSubItemmsover, td.menuSubItem:hover
+{
+  text-align: left;
+  color: #303030;
+  border: 0px solid #006600;
+  background-color: #FFFFFF;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 4px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+/* ----- admPage master page ----- begin */
+
+
+/* data grid page 中的 grid table 為 item */
+table.item
+{
+  border-collapse: collapse;
+  background-color: #FFFFFF; /* margin:0 auto; */
+}
+table.item td
+{
+  padding: 4px 2px;
+  border: 1px solid #E0E0E0;
+  line-height: 14px;
+  vertical-align: middle;
+  text-align: center;
+  font-family: Arial, 細明體, Verdana, Helvetica, sans-serif; 
+}
+table.item td.left
+{
+  text-align: left;
+}
+table.item td.title
+{
+  padding: 4px 2px 4px 2px;
+  background-color: #EBEBEB;
+  border: 1px solid #CBCBCB;
+  line-height: 14px;
+  vertical-align: middle;
+  text-align: center;
+  font-family: Arial, 細明體, Verdana, Helvetica, sans-serif; 
+}
+
+/* page 中各個 view 中的 table 為 tbMain */
+table.tbMain
+{
+  border: 1px #F0F0F0 solid;
+  background-color: #FFFFFF;
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: separate;
+}
+th.headC, td.headC
+{
+  background-color: #808080;
+  padding: 4px 2px;
+  vertical-align: middle;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 20px;
+  text-align: center;
+  font-family: Arial, 細明體, Verdana, Helvetica, sans-serif;
+}
+td.dark, td.darkL, td.darkC
+{
+  background-color: #F4F4F4;
+  padding: 4px 2px;
+  vertical-align: middle;
+}
+td.darkL, table.item td.darkL
+{
+  text-align: left;
+}
+td.darkC, table.item td.darkC
+{
+  text-align: center;
+}
+
+td.light, td.lightL, td.lightC
+{
+  background-color: #FFFFFF;
+  padding: 4px 2px;
+  vertical-align: middle;
+}
+td.lightL, table.item td.ligthL
+{
+  text-align: left;
+}
+td.lightC, table.item td.lightC
+{
+  text-align: center;
+}
+
+select
+{
+  font-family: Arial, 細明體, Verdana, Helvetica, sans-serif; 
+  font-size: 12px;
+  font-weight: normal;
+  border: 1px solid #B1B4D1;
+}
+textarea
+{
+  font-family: Arial, 細明體, Verdana, Helvetica, sans-serif; 
+  font-size: 12px;
+  font-weight: normal;
+  border: 1px solid #B1B4D1;
+  line-height:20px; letter-spacing:0.1em;
+}
+select{height:22px; line-height:18px; padding:2px 0}
+input[type="text"], input[type="password"], input.txtBox
+{
+  font-family: Arial, 細明體, Verdana, Helvetica, sans-serif; 
+  font-size: 12px;
+  font-weight: normal;
+  border: 1px solid #B1B4D1;
+  margin-top:1px; margin-bottom:1px;
+}
+/* input 中的 readOnly*/
+.readOnly
+{
+  background-color: #E0E0E0;
+  border: 1px solid #B1B4D1;
+}
+
+/* 如果欄位內容僅為顯示資料時, 要能將 field height 定為同高 */
+td span, td label
+{
+  font-size: 12px;
+  line-height: 20px;
+}
+input[type="submit"], input[type="button"],  input[type="file"], input.cmd
+{
+  /*background-image:url('../images/btn_bk.gif');*/
+  background-color: #DDDDDD;
+  font-family: Arial, 細明體, Verdana, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  margin-top:1px; margin-bottom:1px;
+  color: #006666;
+  border: 1px solid #B1B4D1;
+  cursor: pointer;
+}
+
+input[type="checkbox"]
+{
+  font-family: Arial, 細明體, Verdana, Helvetica, sans-serif; 
+  font-size: 12px;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+input[type="radio"]
+{
+  font-family: Arial, 細明體, Verdana, Helvetica, sans-serif; 
+  font-size: 12px;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+a
+{
+  font: normal 12px Arial;
+  color: #596099;
+  text-decoration: none;
+  cursor:pointer;
+}
+a:hover, .tableOpCommandMsOver, tableOpCommand:hover .opCmdMsOver, .opCmd:hover
+{
+  font: normal 12px Arial;
+  color: #596099;
+  text-decoration: underline;
+  cursor:pointer;
+}
+/* 使用 a 的 command */
+.tableOpCommand, .opCmd
+{
+  font:normal 12px Arial;
+  color: #006666;
+  text-decoration: none;
+  cursor:pointer;
+}
+/* 訊息用的 */
+.message, .msg
+{
+  font-family: Arial, 細明體, Verdana, Helvetica, sans-serif;
+  color: #BB3300;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 20px;
+  vertical-align: middle;
+}
+/* 大字 醒目標題 */
+.f16B
+{
+  font-weight: bold;
+  font-size: 16px;
+  font-family: Arial, 細明體, Verdana, Helvetica, sans-serif;
+  color: #303030; /*#003366;*/
+}
+/* 特別 page 中 link command 用 */
+a.lnkCmd:link, a.lnkCmd:visited, a.lnkCmd:active
+{
+  color:#993300;
+  text-decoration:none;
+}
+a.lnkCmd:hover
+{
+  color: #6600CC;
+  text-decoration: underline;
+}

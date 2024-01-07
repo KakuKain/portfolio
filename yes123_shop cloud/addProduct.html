@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+
+    <title></title>
+
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/grid12.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!--輪播-->
+    <link href="css/swiper.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body class="introduce">
+    <!--END 手機 頭-->
+
+    <!--內容-->
+    <main>
+      <!-- 訊息彈跳視窗 START -->
+      <div class="K_popup transform-out messagePopup">
+        <div class="popupBg"></div>
+        <div>
+          <div class="popupContent">
+            <div class="popupHeader">
+              <span class="popAdPage">儲存工作</span>
+              <button
+                type="button"
+                class="popupClose"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">× </span>
+              </button>
+            </div>
+            <div class="popupBody">
+              <!-- 刪除 -->
+              <ul>
+                <li>
+                  <h6 class="textCenter">追蹤企業</h6>
+                  <p>
+                    你將訂閱(1)家企業相關職缺，當企業有符合你希望職務的新職缺時，將用Email通知你，確定訂閱?
+                  </p>
+                  <p>
+                    你將取消訂閱(2)家企業相關職缺，當企業有符合你希望職務的新職缺時，將不再用Email通知你，確定取消訂閱?
+                  </p>
+                </li>
+              </ul>
+              <!-- 刪除 -->
+
+              <section class="popupBtn">
+                <button class="mt-20 close" type="button">取消</button>
+                <button class="mt-20" type="button">確認</button>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 訊息彈跳視窗 END -->
+
+      <div class="container">
+        <div class="row">
+          <ul class="listAll">
+            <li>
+              <div class="avatar-upload" id="pic_upload_1">
+                <div class="avatar-edit">
+                  <input
+                    type="file"
+                    name="pic_name_1"
+                    id="pic_name_1"
+                    accept=".gif, .png, .jpg, .jpeg"
+                    onchange=""
+                  />
+                   <label for="pic_name_1">選取相片</label>
+                </div>
+                <div class="avatar-preview">
+                  <img src="./img/merchandise/歐姆蛋套餐.jpg" alt="" id="pic_preview_1" />
+                </div>
+              </div>
+            </li>
+            <li class="listText">
+              <label>
+                <section>
+                  <span
+                    class="icon"
+                    style="background-image: url(./img/merchandise/icon/productName.png)"
+                  ></span>商品名稱*
+
+                </section>
+                <input
+                  type="text"
+                  placeholder="請輸入商品/服務內容"
+                  value="歐姆蛋套餐"
+									maxlength="20"
+                  required
+                />
+              </label>
+            </li>
+            <li class="listText">
+              <label>
+                <section>
+                  <span
+                    class="icon"
+                    style="background-image: url(./img/merchandise/icon/productPrice.png)"
+                  ></span
+                  >價格
+                </section>
+                <input type="text" placeholder="幣值：新台幣" value=""  maxlength="20"/>
+              </label>
+            </li>
+
+            <li class="listText">
+              <label>
+                <section>
+                  <span
+                    class="icon"
+                    style="background-image: url(./img/merchandise/icon/productSize.png)"
+                  ></span
+                  >規格/尺寸
+                </section>
+                <input
+                  type="text"
+                  placeholder="請輸入商品規格/尺寸 (非必填)"
+                  value=""
+									maxlength="15"
+                />
+              </label>
+            </li>
+
+						<li class="listTextArea">
+							<label>
+								<section><span class="icon" style="background-image: url(./img/merchandise/icon/productIntroduce.png);" ></span>商品介紹</section>
+								<div class="aboutProduct">
+									<textarea type="text" autoHeight="true" name="aboutProduct" rows="2" placeholder="商品介紹、內容物、注意事項" maxlength="60"></textarea>
+								</div>
+							</label>
+						</li>
+
+            <li class="listText">
+              <label>
+                <section>
+                  <span
+                    class="icon"
+                    style="background-image: url(./img/merchandise/icon/productClass.png)"
+                  ></span
+                  >商品分類
+                </section>
+                <input type="text" placeholder="商品分類" value=""  maxlength="20"/>
+              </label>
+            </li>
+
+            <li class="listText">
+              <label>
+                <section>
+                  <span
+                    class="icon"
+                    style="background-image: url(./img/merchandise/icon/productHastag.png)"
+                  ></span
+                  >標籤
+                </section>
+                <input type="text" placeholder="請輸入 Hastag 標籤。例如:熱門,限冰飲 " value="" />
+              </label>
+            </li>
+          </ul>
+          <section class="belowBtn">
+            <a href="javascript:;" class="cancel">取消</a>
+            <a href="javascript:;">儲存</a>
+          </section>
+        </div>
+      </div>
+    </main>
+    <!--END 內容-->
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/swiper.js "></script>
+    <script src="js/index.js "></script>
+    <script>
+      window.onload = function () {};
+    </script>
+  </body>
+</html>

@@ -1,0 +1,150 @@
+.FBoss {
+  // .boss_bg {
+  //   background-image: url(../images/focus/boss/background.png);
+  // background-size: 100%;
+  // background-repeat: no-repeat;
+  // background-position: center;
+  // background-position-x: 0;
+  // background-position-y: -250px;
+  // position: absolute;
+  // width: 1660px;
+  // left: 50%;
+  // transform: translateX(-50%);
+  // height: 100%;
+  // z-index: -1;
+  // }
+  .md_section2 {
+    .bossPhoto {
+      max-width: 680px;
+      margin: 0 auto;
+      margin-bottom: 20vw;
+      img {
+        width: 100%;
+      }
+    }
+    .bossIcon {
+      display: none;
+    }
+    .bossText {
+      max-width: 680px;
+      margin: 0 auto;
+      letter-spacing: 1px;
+      text-align: justify;
+      .haveBr {
+        h2 {
+          br {
+            display: inline;
+          }
+        }
+        p {
+          font-size: 17px;
+        }
+      }
+      > div {
+        padding: 10% 0;
+        margin: 0 auto;
+      }
+      h2 {
+        font-size: 25px;
+        line-height: 40px;
+        font-weight: bold;
+        text-align: center;
+        br {
+          display: none;
+        }
+      }
+      .line {
+        width: 1px;
+        height: 50px;
+        background-color: $darkColor;
+        margin: 5% auto;
+      }
+      p {
+        font-size: 20px;
+        line-height: 35px;
+        padding-top: 30px;
+      }
+      .num {
+        font-size: 40px;
+        line-height: 45px;
+        color: #4d4d4d;
+        font-style: italic;
+        font-weight: 200;
+        padding-bottom: 30px;
+      }
+    }
+  }
+}
+
+@include breakpoint(max-width 1600px) {
+  .FBoss {
+    .boss_bg {
+      background-size: 105%;
+      background-position-x: -170px;
+      width: 100%;
+    }
+  }
+}
+
+@include breakpoint(max-width 1170px) {
+  .FBoss {
+    .boss_bg {
+      background-size: 125%;
+      background-position-x: -220px;
+    }
+  }
+}
+
+@include breakpoint(max-width 980px) {
+  .FBoss {
+    .boss_bg {
+      background-size: 85%;
+      background-position-x: 100px;
+      width: 1600px;
+    }
+  }
+}
+
+@include breakpoint(max-width 768px) {
+  .FBoss {
+    .boss_bg {
+      display: none;
+    }
+    .md_section2 {
+      margin-top: 15%;
+      .bossIcon {
+        display: block;
+        margin: 5% auto;
+        img {
+          margin: 0 auto;
+        }
+      }
+      .bossText {
+        max-width: 480px;
+        h2 {
+          font-size: 20px;
+          line-height: 30px;
+          br {
+            display: inline;
+          }
+        }
+        p {
+          font-size: 15px;
+          line-height: 25px;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint(max-width 480px) {
+  .FBoss {
+    .md_section2 {
+      .bossText {
+        max-width: 290px;
+      }
+    }
+  }
+}
+@include breakpoint(max-width 320px) {
+}

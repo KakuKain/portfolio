@@ -1,0 +1,332 @@
+@charset "utf-8";
+@import "extend";
+
+
+@media screen and (max-width: 320px) {
+  .xheaders {
+    padding: 0 12px;
+  }
+}
+
+.pad {
+  display: none;
+}
+
+.phone {
+  display: none;
+}
+
+.web {
+  display: block;
+}
+
+@media screen and (max-width: 767px) {
+  .web {
+    display: none;
+  }
+
+  .phone {
+    display: none;
+  }
+
+  .padOnliy {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .web {
+    display: none;
+  }
+
+  .pad {
+    display: inline-block;
+  }
+
+  .padOnliy {
+    display: none;
+  }
+
+  .phone {
+    display: block;
+  }
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  height: 100%;
+  padding-top:30px;
+}
+
+.clear {
+  clear: both;
+}
+
+
+.blackbar {
+  width: 100%;
+  height: 30px;
+  position: fixed;
+  top: 0;
+  background-color: #000;
+  z-index: 999;
+}
+
+.blackbar_s {
+  width: 950px;
+  height: 30px;
+  margin: 0 auto;
+  line-height: 30px;
+  font-size: 13px;
+  span {
+    color: #fff;
+  }
+  > a {
+    float: left;
+  }
+}
+
+.linkbox_r {
+  width: 365px;
+  float: right;
+  text-align: right;
+}
+
+.text_white {
+  color: #fff !important;
+  text-decoration: none;
+}
+
+
+.K_popup {
+  z-index: 9;
+
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  content: "";
+  // background: rgba(0, 0, 0, 0.85);
+  transition: all 0.5s;
+
+  > div:nth-of-type(2) {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+  }
+}
+
+.popupBg {
+  @extend %flexCenter;
+  z-index: 9;
+  width: 100%;
+  height: 100vh;
+  // position: fixed;
+  // top: 0px;
+  // left: 0px;
+  background: rgba($color: #000000, $alpha: 0.4);
+}
+
+.popupContent {
+  // @extend %boxShadow;
+  // width: 50%;
+  // padding: 1rem 1.5rem;
+  // box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  background: #fff;
+  text-align: left;
+  z-index: 10;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+}
+
+.popupHeader {
+  @extend %flexCenter;
+  position: relative;
+  background: $companyBlue;
+  color: #fff;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  border-bottom: 1px solid #dee2e6;
+  padding: 0.25rem 1rem;
+  font-size: 18px;
+}
+
+.popupClose {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: lighter;
+  background-color: transparent;
+  border: 0;
+  padding: 1rem 0.5rem;
+  // margin: -1rem -1rem -1rem auto;
+  position: absolute;
+  right: 5px;
+  cursor: pointer;  
+}
+
+.popupBody {
+  padding: 1rem;
+}
+
+.popupContent .adPosition {
+  text-align: left;
+}
+
+
+.transform-in,
+.transform-out {
+  display: block;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+.transform-in {
+  opacity: 1;
+}
+
+.transform-out {
+  opacity: 0;
+  display: none;
+}
+
+.slideBanner {
+  img {
+    width: 100%;
+    vertical-align: top;
+  }
+}
+
+@media screen and (min-width: 980px) {
+  /*footer*/
+  .service {
+    br {
+      display: none;
+    }
+  }
+
+  .appDownload {
+    width: 120px;
+
+    span {
+      display: block;
+      width: 100%;
+      background: $companyBlue;
+      color: #fff;
+    }
+
+    img {
+      border: 6px solid #fff;
+    }
+  }
+
+  /*footer*/
+}
+
+@media screen and (max-width: 980px) {
+  /*header*/
+
+  .theLogin {
+    width: 100%;
+    flex-direction: column-reverse;
+    margin: auto;
+  }
+
+  header {
+    top: 30px;
+    height: 44px;
+  }
+
+  .menu {
+    width: 100%;
+  }
+
+  .menu > li {
+    width: calc(100% / 4);
+    border-right: 0px solid #eee;
+  }
+
+  .menu > li a {
+    font-size: 16px;
+    text-align: center;
+    line-height: 46px;
+    height: 44px;
+    padding: 0 0px;
+  }
+
+  /*header*/
+  /*footer*/
+
+  footer {
+    height: 122px;
+
+    ul {
+      flex-direction: column;
+      justify-content: center;
+      padding: 0;
+    }
+  }
+
+  .service {
+    flex-direction: column;
+    padding: 8px 0;
+
+    li {
+      padding: 0;
+    }
+
+    > li li {
+      margin-bottom: 4px;
+    }
+  }
+
+  .serviceItem {
+    flex-direction: row;
+    font-size: 14px;
+
+    li {
+      padding: 0;
+    }
+
+    a {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
+
+  .appDownload {
+    display: none;
+  }
+
+  /*footer*/
+  .K_popup > div:nth-of-type(2) {
+    width: 100%;
+  }
+
+  .popupContent {
+    width: 95%;
+    margin: auto;
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  p.popAdPrice {
+    font-size: 38px;
+  }
+
+  .popupBody {
+    padding: 0.5rem;
+  }
+}
+

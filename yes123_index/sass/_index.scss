@@ -1,0 +1,2128 @@
+// 活動專區
+.clearFloat {
+  clear: both;
+}
+.specialArea {
+  @extend %pagePadding;
+  @extend %pagePaddingTB;
+  @extend %pageContent;
+  overflow: hidden;
+  > div {
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      /*隱藏滾輪*/
+      height: 4px;
+      opacity: 0;
+    }
+  }
+  ul {
+    min-width: 100%;
+    width: 1140px;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+  li {
+    box-sizing: border-box;
+    margin: 0.5rem 0;
+    width: calc((100% - 150px) / 6);
+    min-width: 170px;
+    float: left;
+    margin-right: 22px;
+    &:last-of-type {
+      margin-right: 0;
+    }
+    > a {
+      @extend %flexCenter;
+      padding: 5px 10px;
+      border-radius: 8px;
+      border: 1px solid #dcdcdc;
+      transition: all 0.3s;
+      &:hover {
+        box-shadow: none;
+        border: 1px solid $companyPink;
+        span {
+          color: $companyColor;
+        }
+      }
+    }
+    .sAIcon {
+      img {
+        display: block;
+        width: 35px;
+        margin: auto 4px auto;
+      }
+      }
+  }
+  span {
+    font-size: 20px;
+    letter-spacing: 0;
+    transition: all 0.3s;
+  }
+  @include pad {
+    padding-top: $mainSpaceM;
+    padding-bottom: $mainSpaceM;
+    ul {
+      padding-left: 4px;
+      width: 880px;
+    }
+    li {
+      min-width: auto;
+      width: auto;
+      margin-right: 12px;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .sAIcon {
+      transform: scale(0.8);
+    }
+    span {
+      font-size: 16px;
+    }
+  }
+  @include mobile {
+    li {
+      > a {
+        padding: 0 8px;
+        border-radius: 6px;
+      }
+    }
+  }
+}
+// END 活動專區
+
+// Banner
+.slider {
+  @extend %pageContent;
+  @extend %pagePadding;
+
+  picture {
+    display: block;
+    text-align: center;
+  }
+  img {
+    width: 100%;
+  }
+  .mySwiper {
+    @extend %boxShadow;
+  }
+  .swiper-pagination-bullet-active {
+    background: #ffa4d3;
+    opacity: 0.8;
+  }
+  @include pad {
+    margin-bottom: $mainSpaceM;
+    .swiper-pagination {
+      bottom: -6px;
+      span {
+        width: 4px;
+        height: 4px;
+        border-radius: 0;
+        &:first-of-type {
+          border-top-left-radius: 4px;
+          border-bottom-left-radius: 4px;
+        }
+        &:last-of-type {
+          border-top-right-radius: 4px;
+          border-bottom-right-radius: 4px;
+        }
+      }
+    }
+    .swiper-container-horizontal
+      > .swiper-pagination-bullets
+      .swiper-pagination-bullet {
+      margin: 0 4px;
+    }
+  }
+}
+// END Banner
+
+// 履歷
+// 履歷框架
+.resume {
+  @extend %pageContent;
+  @extend %pagePadding;
+  @extend %pagePaddingTB;
+  display: none;
+  justify-content: center;
+  flex-wrap: wrap;
+  > div {
+    @extend %boxShadow;
+    width: 564px;
+    border-radius: 6px;
+    // @include computer {
+    //   width: 100%;
+    //   margin-left: 0;
+    // }
+  }
+  .rRight {
+    margin-left: $mainPaddingTB;
+  }
+  @include computerMedium {
+    > div {
+      width: 100%;
+    }
+    .rRight {
+      margin-left: 0;
+      margin-top: $mainPaddingTB;
+    }
+  }
+  @include pad {
+    padding-top: 6px;
+    padding-bottom: 0;
+    order: 2;
+    > div {
+      width: 100%;
+      margin-top: 0;
+      box-shadow: none;
+      border: 1px solid $grayColor;
+      // background: #f7f7f7;
+    }
+  }
+}
+//履歷左邊
+.rLeft {
+  display: flex;
+  flex-direction: column;
+  > div {
+    padding: 20px;
+    @include pad {
+      padding: 10px;
+      &.rL1 > div {
+        display: none;
+      }
+    }
+  }
+  div {
+    @extend %mainFont;
+  }
+}
+//履歷左1
+.rL1 {
+  border-bottom: 1px solid $grayColor;
+  display: flex;
+  > div:first-child {
+    width: 135px;
+    height: 135px;
+    border-radius: 50%;
+    margin: auto;
+    border: 1px solid $grayColor;
+    overflow: hidden;
+    @include mobile {
+      width: 85px;
+      height: 85px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  > div:last-child {
+    padding-left: 20px;
+  }
+  @include pad {
+    .web {
+      display: none;
+    }
+    .mobile {
+      display: block;
+    }
+  }
+}
+//履歷左一文字
+.rL1Text {
+  display: inline-block;
+  padding-left: 20px;
+  flex: 1;
+  @include pad {
+    padding-left: 0;
+    li:nth-of-type(2) {
+      flex: 1;
+    }
+  }
+  @include mobile {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    // padding-left: 10px;
+    span {
+      letter-spacing: 0;
+      font-size: 1.2rem;
+    }
+  }
+  li {
+    display: flex;
+    justify-content: space-between;
+    line-height: $rL1TextHeight;
+    &:hover {
+      a {
+        // color: $companyColor;
+        color: $companyBlue;
+      }
+    }
+  }
+  select {
+    width: 170px;
+    height: 28px;
+    font-size: 16px;
+    margin: $rL1SelectMargin 0;
+  }
+  .rLName {
+    display: none;
+  }
+  .subscribe {
+    position: relative;
+    font-size: 1.3rem;
+  }
+  label {
+    position: relative;
+    display: inline-block;
+    background-color: #ffffff;
+    width: 40px;
+    height: 20px;
+    padding: 0;
+    border: 2px solid #dadada;
+    border-radius: 20px;
+    margin-right: 6px;
+    line-height: 20px;
+    vertical-align: middle;
+    transition: background-color 0.3s ease-in;
+    overflow: hidden;
+    cursor: pointer;
+    &:before {
+      content: "";
+      background: #ffffff;
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 22px;
+      bottom: 0;
+      width: 16px;
+      margin: 0px;
+      height: 16px;
+      border: 2px solid #dadada;
+      border-radius: 20px;
+      transition: all 0.3s ease-in 0s;
+    }
+  }
+  input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    &:checked + label {
+      border: 2px solid $companyBlue;
+      background-color: $companyBlue;
+      &:before {
+        border: 2px solid transparent;
+      }
+    }
+  }
+  input:checked + label:before {
+    animation: subscribeBtn 0.3s;
+    right: 0px;
+  }
+  @keyframes subscribeBtn {
+    from {
+      right: 22px;
+    }
+    to {
+      right: 0;
+    }
+  }
+  .mobile {
+    display: none;
+  }
+  @include pad {
+    .mobile {
+      display: block;
+    }
+  }
+  @include padOnly {
+    .li span {
+      font-size: 2.5rem;
+      line-height: 40px;
+      vertical-align: middle;
+    }
+  }
+}
+
+// 履歷左1 會員編號
+.member {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  li {
+    display: block;
+  }
+}
+// 履歷左1 會員名字
+.rLName {
+  div {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(../images/index/rL1.png) no-repeat;
+    background-size: auto 40px;
+    background-position: -120px 0;
+  }
+}
+// 履歷左1 更新時間
+.updateTime {
+  display: flex;
+  align-items: center;
+  span {
+    line-height: $rL1TextHeight;
+    height: $rL1TextHeight;
+  }
+  .update {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: auto;
+    background: url("../images/index/rL1.png") no-repeat;
+    background-position: (-($rL1FunIconSize * 1)) 0;
+    &:hover {
+      animation: updateSpin 3s linear infinite;
+    }
+  }
+}
+@keyframes updateSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+// 履歷左1 密碼變更
+.changePassword {
+  position: relative;
+  font-size: 12px;
+  line-height: 20px;
+  padding-right: 20px;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: -4px;
+    right: 0;
+    background-image: url("../images/index/rL1.png");
+    background-position: 0 0;
+  }
+}
+// 履歷左1 功能
+.resumeFun {
+  width: calc(100% - 20px);
+  display: flex;
+  // justify-content: space-between;
+  @include computerMedium {
+    justify-content: flex-start;
+    li {
+      margin-right: 16px;
+    }
+  }
+  li {
+    margin-right: 8px;
+    transition: all 0.3s;
+    a {
+      display: flex;
+      align-items: center;
+      line-height: $rL1TextHeight;
+    }
+    &:nth-child(2) div {
+      background-position: (-($rL1FunIconSize * 3)) $rL1FunIcon;
+    }
+    &:nth-child(3) div {
+      background-position: (-($rL1FunIconSize * 4)) $rL1FunIcon;
+    }
+    &:nth-child(4) div {
+      background-position: (-($rL1FunIconSize * 5)) $rL1FunIcon;
+    }
+    &:hover {
+      span {
+        color: $companyBlue;
+      }
+      &:nth-child(1) div {
+        background-position: (-($rL1FunIconSize * 2)) (-$rL1FunIconSize);
+      }
+      &:nth-child(2) div {
+        background-position: (-($rL1FunIconSize * 3)) (-$rL1FunIconSize);
+      }
+      &:nth-child(3) div {
+        background-position: (-($rL1FunIconSize * 4)) (-$rL1FunIconSize);
+      }
+      &:nth-child(4) div {
+        background-position: (-($rL1FunIconSize * 5)) (-$rL1FunIconSize);
+      }
+    }
+  }
+  span {
+    line-height: $rL1TextHeight;
+  }
+  div {
+    width: 20px;
+    height: 20px;
+    // margin-right: 4px;
+    background: url("../images/index/rL1.png") no-repeat;
+    // background-position: -50px $rL1FunIcon;
+    background-position: (-($rL1FunIconSize * 2)) 0;
+    background-size: auto 40px;
+    // transition: all 0.3s;
+  }
+}
+// 履歷左1 訂閱
+li.subscribe {
+  display: inline-block;
+  span {
+    line-height: $rL1TextHeight;
+  }
+  input {
+    width: 15px;
+    height: 15px;
+    line-height: $rL1TextHeight;
+    border-radius: 8px;
+    vertical-align: middle;
+  }
+  label {
+    font-size: 1.3rem;
+  }
+}
+// 履歷左2
+.rL2 {
+  border-bottom: 1px solid $grayColor;
+
+  ul {
+    display: flex;
+    justify-content: space-around;
+    li {
+      text-align: center;
+      &:hover {
+        span {
+          color: $companyColor;
+        }
+      }
+    }
+    div {
+      display: inline-block;
+      margin: auto;
+      width: 50px;
+      height: 50px;
+      background: url("../images/index/rL2_01.png");
+      // background-position: 0px 0px;
+    }
+    span {
+      display: inline-block;
+      transition: all 0.3s;
+    }
+  }
+  .web {
+    li {
+      &:nth-child(2) {
+        // order: 1;
+        div {
+          background-image: url("../images/index/rL2_02.png");
+          // background-position: -50px 0px;
+        }
+      }
+      &:nth-child(3) {
+        // order: 2;
+        div {
+          background-image: url("../images/index/rL2_03.png");
+          // background-position: -100px 0px;
+        }
+      }
+      &:nth-child(4) {
+        order: 3;
+        div {
+          background-image: url("../images/index/rL2_04.png");
+          // background-position: -150px 0px;
+        }
+      }
+      &:nth-child(5) {
+        order: 5;
+        div {
+          background-image: url("../images/index/rL2_05.png");
+          // background-position: -200px 0px;
+        }
+      }
+    }
+  }
+  .mobile {
+    display: none;
+  }
+  @include pad {
+    .web {
+      display: none;
+    }
+    .mobile {
+      display: flex;
+      flex-wrap: wrap;
+
+      li {
+        width: 25%;
+        div {
+          background: url(../images/index/rL2_01_m.png) no-repeat;
+          background-size: auto 100%;
+        }
+        &:nth-child(2) {
+          div {
+            background-image: url(../images/index/rL2_02_m.png);
+          }
+        }
+        &:nth-child(3) {
+          div {
+            background-image: url(../images/index/rL2_03_m.png);
+          }
+        }
+        &:nth-child(4) {
+          div {
+            background-image: url(../images/index/rL2_04_m.png);
+          }
+        }
+        &:nth-child(5) {
+          div {
+            background-image: url(../images/index/rL2_05_m.png);
+          }
+        }
+        &:nth-child(6) {
+          div {
+            background-image: url(../images/index/rL2_06_m.png);
+          }
+        }
+        &:nth-child(7) {
+          div {
+            background-image: url(../images/index/rL2_07_m.png);
+          }
+        }
+        &:nth-child(8) {
+          div {
+            background-image: url(../images/index/rL2_08_m.png);
+          }
+        }
+      }
+    }
+  }
+  @include mobile {
+    ul li {
+      div {
+        transform: scale(0.8);
+      }
+      span {
+        transform: translateY(-8px);
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+.rL3 {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .title {
+    font-size: 1.8rem;
+    color: #3a3a3a;
+  }
+  .content {
+    padding-top: 24px;
+    // max-width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+    z-index: 1;
+    > div > div {
+      width: 100%;
+    }
+    .swiper-slide {
+      opacity: 0;
+      &.swiper-slide-active {
+        animation: contentOpactiy 0.3s;
+        opacity: 1;
+      }
+    }
+    @keyframes contentOpactiy {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+      filter: grayscale(100%);
+      filter: gray;
+      border: 1px solid #a3a3a3;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      margin-top: -10px;
+      border-radius: 40px;
+      background-image: url(../images/index/arrow_01.png);
+      background-size: 40px 40px;
+      background-position: 0px;
+      z-index: 2;
+      cursor: pointer;
+    }
+    .swiper-button-prev {
+      left: 20px;
+    }
+    .swiper-button-next {
+      right: 20px;
+    }
+  }
+  button {
+    box-sizing: border-box;
+    display: inline-block;
+    background: inherit;
+    border: 1px solid #787878;
+    border-radius: 4px;
+    height: 30px;
+    padding: 0 12px;
+    margin: 0 6px;
+    font-size: 16px;
+    line-height: 30px;
+    color: #787878;
+    text-decoration: none;
+    transition: all 0.3s;
+    &:hover {
+      color: #ffffff;
+      border: 1px solid transparent;
+      background: #787878;
+    }
+    &:nth-child(2) {
+      border: 1px solid transparent;
+      background: $companyColor;
+      color: $white;
+      opacity: 0.8;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  .theButton {
+    button {
+      display: block;
+      &:last-of-type {
+        display: none;
+        &:hover {
+          background: inherit;
+          color: inherit;
+          border-color: inherit;
+          cursor: inherit;
+        }
+      }
+    }
+    &.check {
+      button {
+        display: none;
+        &:last-of-type {
+          display: block;
+        }
+      }
+    }
+  }
+  figure {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    img {
+      width: 20%;
+      height: auto;
+    }
+    + div {
+      margin-top: 12px;
+      margin-right: -12%;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+  figcaption {
+    padding-left: 8px;
+  }
+}
+
+.rL3AD {
+  img {
+    width: 100%;
+  }
+}
+
+.rL3.rL3v1 {
+  .rL3v1 {
+    display: block;
+  }
+  .rL3v2 {
+    display: none;
+  }
+  .rL3AD {
+    display: none;
+  }
+}
+.rL3.rL3v2 {
+  .rL3v1 {
+    display: none;
+  }
+  .rL3v2 {
+    display: block;
+  }
+  .rL3AD {
+    display: none;
+  }
+}
+
+.rL3.rL3AD {
+  .rL3v1 {
+    display: none;
+  }
+  .rL3v2 {
+    display: none;
+  }
+  .rL3AD {
+    display: block;
+  }
+}
+
+// 進度條
+.progress {
+  width: 100%;
+  height: 0.5em;
+  margin-top: 12px;
+  position: relative;
+  background-color: #f1f1f1;
+  border-radius: 16px;
+}
+.progressbar {
+  width: 25%;
+  background-color: $companyColor;
+  background: linear-gradient(to right, $companyColor, #ff72bb);
+  height: 100%;
+  position: absolute;
+  line-height: inherit;
+  border-radius: 16px;
+}
+
+div.speechBubble {
+  position: absolute;
+  top: -10px;
+  right: 0;
+  background: #ffffff;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  border-radius: 32px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 1px 1px $companyColor;
+  span {
+    font-size: 12px;
+    letter-spacing: 0;
+  }
+}
+
+// 履歷右 input radio 取消
+input[name="rRTab"] {
+  display: none;
+}
+
+// 履歷右 標籤
+label[name="rRTab"] {
+  appearance: none;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  opacity: 0.5;
+  width: calc((100% - 12px) / 4);
+  height: 64px;
+  line-height: 64px;
+  font-size: 1.3rem;
+  color: $darkBlack;
+  margin: 0;
+  padding: 0;
+  // padding-left: 40px;
+  text-align: center;
+  border-top: 2px solid transparent;
+  border-radius: 0;
+  cursor: pointer;
+  div {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    margin-right: 8px;
+    background: url(../images/index/rR1.png) no-repeat;
+    background-position: 0 0;
+  }
+}
+
+// 履歷右 標籤2
+#rRTab2 {
+  & + label {
+    div {
+      left: 2%;
+      background-position: (-(+ $rRIcon)) 0;
+    }
+    &::after {
+      left: 15%;
+    }
+  }
+}
+
+// 履歷右 標籤3
+#rRTab3 {
+  & + label {
+    div {
+      // left: 5%;
+      background-position: (-(+ $rRIcon * 2)) 0;
+    }
+  }
+}
+// 履歷右 被選擇的標籤
+input[name="rRTab"]:checked + label {
+  border-top: 2px solid $companyColor;
+  box-shadow: 0px -3px 5px 0px #e2e2e2;
+  opacity: 1;
+  z-index: 2;
+}
+
+// 履歷右 未被選擇的標籤
+// 紅色線
+label[name="rRTab"] .new::after {
+  content: "N";
+  display: block;
+  position: absolute;
+  top: -10%;
+  right: -20%;
+  width: $rRNum;
+  height: $rRNum;
+  background: $red;
+  border-radius: $rRNum;
+  border: 3px solid $white;
+  line-height: $rRNum - 5;
+  font-size: 16px;
+  color: $white;
+  text-align: center;
+  transform: scale(0.8);
+}
+
+// 履歷右 被選取的input所對應的標籤內容開啟
+input[name="rRTab"][value="0"]:checked ~ .rRTab1,
+input[name="rRTab"][value="1"]:checked ~ .rRTab2,
+input[name="rRTab"][value="2"]:checked ~ .rRTab3,
+input[name="rRTab"][value="3"]:checked ~ .rRTab4 {
+  display: block;
+}
+
+// 履歷右 標籤內容
+[class*="rRTab"] {
+  display: none;
+  text-align: left;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  > div {
+    padding: 8px 20px;
+    position: relative;
+    transition: all 0.3s;
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: $shadow;
+      position: absolute;
+      top: -1px;
+      left: 0;
+    }
+    &:hover {
+      background-color: $companyYellow;
+    }
+  }
+  div:last-of-type {
+    text-align: right;
+    padding: 8px 20px;
+    &:hover {
+      background-color: transparent;
+    }
+    a {
+      color: $companyColor;
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+  ul {
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: auto 25% 15%;
+    column-gap: 5px;
+  }
+  li {
+    @extend %omit;
+    // &:last-of-type {
+    //   text-align: right;
+    // }
+  }
+}
+
+// 履歷右 標籤內容
+.rRTab1,
+.rRTab4 {
+  h6 {
+    @extend %omit;
+    @extend %rR;
+    font-weight: bold;
+  }
+  p {
+    @extend %rR;
+    @extend %omitMore;
+    color: $fontColor;
+    height: 40px;
+  }
+  span {
+    @extend %rR;
+    color: $companyBlue;
+    padding-right: 10px;
+  }
+  a {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+.rRTab2,
+.rRTab3 {
+  > div {
+    &:first-of-type a {
+      color: $companyBlue;
+    }
+  }
+}
+
+.rRTab3 {
+  ul {
+    grid-template-columns: auto 25% 25%;
+  }
+}
+// END 履歷
+
+// ADBanner
+.ADBanner {
+  display: none;
+  @extend %pageContent;
+  @extend %pagePadding;
+  @extend %pagePaddingTB;
+  order: 3;
+  img {
+    width: 100%;
+  }
+}
+
+// END ADBanner
+
+// 職缺
+// 區塊
+.vacancies {
+  // @extend %pageContent;
+  @include pad {
+    padding: 0;
+  }
+  .forWeb {
+    position: relative;
+    @extend %pageSlideContent;
+    @extend %pagePadding;
+    @include pad {
+      padding: 0;
+    }
+  }
+  .swiper-container {
+    padding-top: 4px;
+  }
+}
+// 網頁版職缺列表
+.vacancies {
+  .swiper-slide {
+    transition: all 0.2s;
+    transform: scale(0.98);
+    &:hover {
+      button {
+        color: $companyBlue;
+      }
+    }
+    a {
+      @extend %boxShadow;
+    }
+  }
+  @include mobile {
+    button {
+      display: none;
+    }
+    .swiper-slide {
+      &:last-of-type {
+        &::before {
+          content: "查看更多 ＋";
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: rgba($white, 0.8);
+          font-size: 20px;
+          line-height: 117px;
+          font-weight: bold;
+          text-align: center;
+          z-index: 3;
+        }
+      }
+    }
+  }
+}
+
+// 手機版職缺列表
+.vacancies {
+  .mobile {
+    display: none;
+    position: fixed;
+    top: -100%;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 60px;
+    overflow-y: auto;
+    background: $white;
+    animation: mobileOpen 0.8s;
+    .name {
+      width: 100%;
+      height: 35px;
+      background: $companyColor;
+      p {
+        flex: 1;
+        font-size: 1.4rem;
+        line-height: 35px;
+        letter-spacing: 2px;
+        color: #fff;
+        text-align: center;
+      }
+    }
+    .vBox + .vBox {
+      border-top: 1px solid $grayColor;
+    }
+    .mobileBtn {
+      @extend %boxShadow;
+      position: fixed;
+      display: block;
+      left: 50%;
+      bottom: 8px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      font-size: 20px;
+      line-height: 60px;
+      text-align: center;
+      background: url("../images/close.png"), $white center no-repeat;
+      background-size: 30% auto;
+      background-repeat: no-repeat;
+      background-position: center;
+      transform: translateX(-50%);
+      animation: mobileBtn 0.8s;
+      cursor: pointer;
+      z-index: 10;
+    }
+    &.open {
+      display: block;
+      // animation: mobileClose 0.8s;
+      top: 0;
+    }
+    section {
+      display: flex;
+      padding: 0 8px 8px;
+      a {
+        border: 1px solid #aeaeae;
+        width: 50%;
+        font-size: 14px;
+        margin: 4px;
+        text-align: center;
+        img {
+          display: inline-block;
+          width: 20px;
+          margin-right: 4px;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+  @keyframes mobileBtn {
+    from {
+      bottom: 100%;
+    }
+    to {
+      bottom: 8px;
+    }
+  }
+  @keyframes mobileOpen {
+    from {
+      top: -100%;
+    }
+    to {
+      top: 0;
+    }
+  }
+  @keyframes mobileClose {
+    from {
+      top: 0;
+    }
+    to {
+      top: -100%;
+    }
+  }
+  @include pad {
+    order: 1;
+  }
+}
+
+//職缺物件樣式
+.vBox {
+  //網頁版右上紅框
+  div {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 14px;
+    color: $companyColor;
+    padding: 0 8px;
+    border: 1px solid $companyColor;
+    border-radius: 4px;
+  }
+  //內容
+  a {
+    position: relative;
+    display: block;
+    padding-top: 25px;
+    border-radius: 4px;
+  }
+  //職缺內容不換行
+  h5,
+  h6,
+  p {
+    @extend %omit;
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+  // 有icon段落
+  p {
+    padding-left: 30px;
+    margin-left: 25px;
+    margin-right: 25px;
+    position: relative;
+    transition: all 0.3s;
+    &::before {
+      content: "";
+      display: block;
+      width: 25px;
+      height: 25px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: url(../images/index/v.png);
+      background-position: -25px 0;
+    }
+    &:nth-of-type(1) {
+      color: $fontColor;
+      &::before {
+        background-position: 0 0;
+      }
+    }
+  }
+  button {
+    width: 100%;
+    background: #fff;
+    color: $darkBlack;
+    border: none;
+    border-top: 1px solid $lightColor;
+    border-radius: 0 0 4px 4px;
+    margin-top: 8px;
+    padding: 8px 0 8px 25px;
+    text-align: left;
+  }
+  @include pad {
+    a {
+      padding: 10px 15px;
+    }
+    h5,
+    h6,
+    p {
+      margin-left: 8px;
+      margin-right: 8px;
+      line-height: 25px;
+    }
+  }
+}
+// END 職缺物件樣式
+// END 職缺
+
+// 功能型主題
+.functionalTheme {
+  @extend %pageContent;
+  @extend %pagePadding;
+  @extend %pagePaddingTB;
+  // AD + 版位
+  > div {
+    display: flex;
+    align-content: space-between;
+    align-items: center;
+  }
+  // AD
+  .fTBanner {
+    position: relative;
+    width: 400px;
+    a {
+      line-height: 0;
+    }
+    img {
+      width: 100%;
+    }
+    & + div {
+      margin-left: 12px;
+      width: auto;
+      flex: 1;
+    }
+    @include pad {
+      display: none;
+      & + div {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+  }
+  // 版位
+  .fTIcon {
+    position: relative;
+    > div {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+    @include pad {
+      > div {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+    }
+  }
+  // 物件
+
+  .fTIcon a {
+    > .new::after {
+      content: "!";
+      display: block;
+      position: absolute;
+      top: 5%;
+      right: -15px;
+      width: 30px;
+      height: 30px;
+      background: #ff0222;
+      border-radius: 30px;
+      border: 3px solid #ffffff;
+      line-height: 25px;
+      font-size: 16px;
+      color: #ffffff;
+      text-align: center;
+      -webkit-transform: scale(0.8);
+      transform: scale(0.8);
+    }
+  }
+
+  figure {
+    padding-top: $mainSpaceM;
+    // hover 效果
+    &:hover {
+      div {
+        border: 1px solid $companyBlue;
+        // background-color: $indexBGBlue;
+      }
+      figcaption {
+        color: $companyBlue;
+      }
+    }
+    // ICON
+    div {
+      // @extend %boxShadow;
+
+      position: relative;
+      display: block;
+      width: $fTIcon;
+      height: $fTIcon;
+      margin: auto;
+      border-radius: $fTIcon;
+      background: url("../images/index/fTIcon_01.png") no-repeat;
+      background-position: center;
+      background-size: auto 63px;
+      border: 1px solid #dcdcdc;
+      transition: all 0.5s;
+    }
+    // 文字
+    figcaption {
+      font-size: 1.5rem;
+      line-height: 1.6;
+      // color: $companyBlue;
+      text-align: center;
+      padding-top: 6px;
+      padding-bottom: 6px;
+      transition: all 0.3s;
+      @include computerMedium {
+        font-size: 1.2rem;
+        padding-top: 12px;
+        padding-bottom: 12px;
+      }
+      @include pad {
+        font-size: 1.2rem;
+        padding-top: 2px;
+        padding-bottom: $mainSpaceM;
+      }
+      @include mobile {
+        font-size: 1rem;
+      }
+    }
+    // 下列為ICON位置
+    &:nth-child(2) {
+      div {
+        background-image: url("../images/index/fTIcon_02.png");
+        // background-position: 0 $fTIcon;
+      }
+    }
+    &:nth-child(3) {
+      div {
+        background-image: url("../images/index/fTIcon_03.png");
+      }
+    }
+    &:nth-child(4) {
+      div {
+        background-image: url("../images/index/fTIcon_04.png");
+        // background-position: (-(+ $fTIcon)) $fTIcon;
+      }
+    }
+    &:nth-child(5) {
+      div {
+        // background-position: ((-(+ $fTIcon)) * 2) 0;
+        background-image: url("../images/index/fTIcon_05.png");
+      }
+    }
+    &:nth-child(6) {
+      div {
+        background-image: url("../images/index/fTIcon_06.png");
+        // background-position: ((-(+ $fTIcon)) * 2) $fTIcon;
+      }
+    }
+    &:nth-child(7) {
+      div {
+        background-image: url("../images/index/fTIcon_07.png");
+        // background-position: ((-(+ $fTIcon)) * 3) 0;
+      }
+    }
+    &:nth-child(8) {
+      div {
+        background-image: url("../images/index/fTIcon_08.png");
+        // background-position: ((-(+ $fTIcon)) * 3) $fTIcon;
+      }
+    }
+    &:nth-child(9) {
+      div {
+        background-image: url("../images/index/fTIcon_09.png");
+        // background-position: 0 $fTIcon;
+      }
+    }
+    &:nth-child(10) {
+      div {
+        background-image: url("../images/index/fTIcon_10.png");
+      }
+    }
+    &:nth-child(11) {
+      div {
+        background-image: url("../images/index/fTIcon_11.png");
+        // background-position: (-(+ $fTIcon)) $fTIcon;
+      }
+    }
+    &:nth-child(12) {
+      div {
+        // background-position: ((-(+ $fTIcon)) * 2) 0;
+        background-image: url("../images/index/fTIcon_12.png");
+      }
+    }
+  }
+  // 手機版
+  @include pad {
+    order: 3;
+    padding-bottom: $mainSpaceM;
+    padding-top: 0px;
+  }
+  // 手機板
+  @include mobile {
+    figure {
+      // 縮小ICON
+      div {
+        width: $fTIcon * 0.85;
+        height: $fTIcon * 0.85;
+        background-size: auto 53px;
+        border-radius: ($fTIcon * 0.85);
+      }
+      // 下列為ICON位置
+      &:nth-child(2) {
+        div {
+          background-image: url("../images/index/fTIcon_02.png");
+        }
+      }
+      &:nth-child(3) {
+        div {
+          background-image: url("../images/index/fTIcon_03.png");
+        }
+      }
+      &:nth-child(4) {
+        div {
+          background-image: url("../images/index/fTIcon_04.png");
+        }
+      }
+      &:nth-child(5) {
+        div {
+          background-image: url("../images/index/fTIcon_05.png");
+        }
+      }
+      &:nth-child(6) {
+        div {
+          background-image: url("../images/index/fTIcon_06.png");
+        }
+      }
+      &:nth-child(7) {
+        div {
+          background-image: url("../images/index/fTIcon_07.png");
+        }
+      }
+      &:nth-child(8) {
+        div {
+          background-image: url("../images/index/fTIcon_08.png");
+        }
+      }
+    }
+  }
+}
+// END 功能型主題
+
+// 企業職缺
+// 區塊
+.corporateVacancies {
+  @extend %pageContent;
+  @extend %pagePadding;
+  padding-top: 12px;
+  padding-bottom: 82px;
+  img {
+    width: 100%;
+  }
+}
+// 物件
+.cVBoxVideo {
+  display: inline-block;
+}
+.cVBox {
+  @extend %boxShadow;
+  position: relative;
+  div {
+    opacity: 1;
+    transition: all 0.3s;
+    &:last-child {
+      @extend %boxShadow;
+      height: 58px;
+      width: 100%;
+      padding: 15px 20px;
+      background: $white;
+      position: absolute;
+      bottom: -58px;
+      overflow: hidden;
+    }
+  }
+  // 主標部分
+  h5 {
+    display: flex;
+    align-items: center;
+    // 主標 ICON
+    span {
+      display: inline-block;
+      background: url("../images/index/vA.png");
+      background-position: 40% 60%;
+      width: 35px;
+      height: 35px;
+      transform: rotate(180deg);
+    }
+    a {
+      @extend %omit;
+      display: inline-block;
+      font-size: 20px;
+      color: $companyBlue;
+    }
+    .cVBoxVideo {
+      width: 48px;
+      border: 1px solid #e40077;
+      border-radius: 4px;
+      margin-right: 8px;
+      color: #e40077;
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+  // 內容文字
+  p {
+    @extend %omit;
+    vertical-align: middle;
+    font-size: 16px;
+    opacity: 0;
+    &:last-of-type a {
+      color: $companyPink;
+      // 左方內容文字ICON(箭頭)
+      span {
+        position: relative;
+        background: transparent;
+        color: $companyPink;
+        vertical-align: text-bottom;
+        &::before {
+          content: "";
+          display: block;
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          right: 0;
+          top: 2px;
+          border: 1px solid $companyPink;
+          border-radius: 20px;
+        }
+      }
+    }
+  }
+  // ICON (徵)
+  span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    color: $white;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 4px;
+    vertical-align: middle;
+    background: $companyColor;
+    margin-top: -2px;
+  }
+  // hover 效果
+  &:hover {
+    div {
+      // 圖片區塊 透明度減低
+      &:first-child {
+        opacity: 0.6;
+      }
+      // 內容物件顯示
+      &:last-child {
+        animation: slideUp 0.2s ease-in;
+        height: 75%;
+        @include computerMedium {
+          height: 85%;
+        }
+      }
+    }
+    p {
+      opacity: 1;
+      &:last-child:hover {
+        a {
+          color: $companyColor;
+        }
+        // ICON(箭頭圓圈)
+        span {
+          color: $companyColor;
+          &::before {
+            border-color: $companyColor;
+          }
+        }
+      }
+    }
+    // hover時箭頭消失
+    h5 {
+      span {
+        display: none;
+      }
+    }
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    height: 58px;
+  }
+  100% {
+    height: 75%;
+  }
+}
+// END 企業職缺
+
+// 主題式工作
+// 區塊
+.themeJob {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  background: $indexBGBlue;
+  @include pad {
+    padding: 0;
+    background-color: inherit;
+    order: 4;
+  }
+  > div {
+    @extend %pagePadding;
+    @extend %pageSlideContent;
+    position: relative;
+    @include pad {
+      max-width: 100%;
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-bottom: 5px;
+    }
+    > div {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: auto;
+    }
+  }
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+  .tJTabContent {
+    transition: all 0.3s;
+    transform: scale(0.97);
+    &:hover {
+      transform: scale(0.97) translate(0, -10px);
+      // h5 {
+      //   color: $companyColor;
+      // }
+    }
+  }
+}
+// 主題式工作 a設定
+.themeJob {
+  .tJTab {
+    > div {
+      width: 100%;
+    }
+    > a {
+      display: inline-block;
+      opacity: 0.4;
+      cursor: pointer;
+      width: calc((100% - (28px * 3)) / 4);
+      height: auto;
+      transition: all 0.3s;
+      border-radius: 8px;
+      overflow: hidden;
+      &:not(:last-of-type) {
+        margin-right: $tJSpace;
+      }
+      @include pad {
+        width: calc((100% - 28px) / 2);
+        margin-bottom: $tJSpace;
+        &:not(:last-of-type) {
+          margin-right: 0;
+        }
+        &:nth-of-type(2n + 1) {
+          margin-right: $tJSpace;
+        }
+      }
+      @include mobile {
+        width: calc((100% - 12px) / 2);
+        margin-bottom: $mainSpaceM;
+        &:nth-of-type(2n + 1) {
+          margin-right: $mainSpaceM;
+        }
+      }
+    }
+  }
+}
+// 主題式工作 tab設定
+div[class*="tJTab"] {
+  > .tJTabContent {
+    @extend %boxShadow;
+    background: $white;
+    padding: 15px 20px;
+    margin-top: 24px;
+    height: auto;
+    width: calc((100% - 72px) / 4);
+    &:not(:nth-child(4n+4)){
+      margin-right: 24px;
+    }
+    * {
+      @extend %omit;
+    }
+  }
+  h5 {
+    color: $companyBlue;
+  }
+}
+
+.tJTab1 {
+  height: 285px;
+  display: flex;
+    flex-wrap: wrap;
+  overflow: hidden;
+}
+
+a[class^="tJTab"].on {
+  display: block;
+  opacity: 1;
+  z-index: 2;
+}
+
+// END 主題式工作
+
+// 文章
+// 區塊
+.article {
+  @extend %pageContent;
+  @extend %pagePadding;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  width: 100%;
+  article > div {
+    flex: 1;
+  }
+  .web {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .mobile {
+    display: none;
+  }
+  @include pad {
+    // @extend %pagePadding;
+    padding-top: $mainSpaceM;
+    padding-bottom: $mainSpaceM;
+    order: 10;
+    .web {
+      display: none;
+    }
+    .mobile {
+      display: block;
+    }
+  }
+}
+
+// 文章 網頁版(文字區)
+.aSlide {
+  width: 50%;
+  height: 380px;
+  padding-left: $mainSpace;
+  overflow-y: auto;
+  article {
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition: all 0.3s;
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: #dcdcdc;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+    &:first-child {
+      padding-top: 0;
+    }
+    &:last-child {
+      padding-bottom: 0;
+      &::before {
+        display: none;
+      }
+    }
+    * {
+      color: $fontColor;
+    }
+  }
+  .active {
+    margin-left: -20px;
+    margin-right: 20px;
+    h5,
+    p {
+      color: $black;
+    }
+    span {
+      a {
+        color: $companyBlue;
+      }
+    }
+  }
+  h5 {
+    @extend %omit;
+  }
+  p {
+    @extend %omitMore;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+// 文章 網頁板(圖片)
+.articlePhoto {
+  width: 50%;
+  > div {
+    position: relative;
+    max-width: 100%;
+    padding-bottom: 67.01%;
+    max-height: 100%;
+    background-color: #f1f1f1;
+    overflow: hidden;
+  }
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    // float: left
+  }
+}
+
+// 文章 手機版
+.article {
+  .mobile {
+    section {
+      display: flex;
+      &:not(:last-of-type) {
+        margin-bottom: 8px;
+      }
+      > div {
+        position: relative;
+        width: 30%;
+        padding-bottom: 20.10%;
+        overflow: hidden;
+        // padding-right: 8px;
+      }
+      article {
+        width: 70%;
+        padding-left: $mainSpace;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+      }
+      @include mobile {
+        // flex-direction: column;
+        // > div {
+        //   width: 40%;
+        // }
+        > article {
+          width: 60%;
+          justify-content: flex-start;
+        }
+        h5 {
+          font-size: 1.2rem;
+          line-height: 22px;
+          height: 44px;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          white-space: break-spaces;
+          letter-spacing: 0;
+        }
+        p {
+          font-size: 1rem;
+          line-height: 24px;
+          height: 48px;
+          display: none;
+        }
+        a {
+          font-size: 1rem;
+        }
+      }
+    }
+    img {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      object-fit: cover
+    }
+    h5 {
+      @extend %omit;
+      font-size: 2rem;
+      color: $black;
+    }
+    p {
+      @extend %omitMore;
+      font-size: 1.4rem;
+      line-height: 32px;
+      height: 64px;
+      color: $black;
+    }
+    span {
+      a {
+        color: $companyBlue;
+      }
+    }
+  }
+}
+
+// 文章的ScrollBar設定
+.article {
+  .mCSB_scrollTools .mCSB_draggerRail {
+    background: $grayColor;
+  }
+  .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background: $companyColor;
+  }
+  #mCSB_1_container {
+    padding-left: 20px;
+  }
+}
+// END 文章
+
+// 熱門公司
+.hotCompany {
+  padding: 50px 0 38px;
+  background: $indexBGBlue;
+  > div {
+    @extend %pagePadding;
+    @extend %pageSlideContent;
+    position: relative;
+  }
+  .swiper-slide {
+    transform: scale(0.98);
+    flex-direction: column;
+    justify-content: flex-start;
+    div {
+      width: 100%;
+    }
+    .logo {
+      max-height: 100px;
+      flex: none;
+      border-right: none;
+      overflow: hidden;
+      // border-bottom: 1px solid $grayColor;
+      img {
+        max-height: 100px;
+        width: auto;
+        // padding-top: 8px;
+      }
+    }
+    @include pad {
+      flex-direction: column;
+      opacity: 0.6;
+      &.swiper-slide-active {
+        opacity: 1;
+      }
+      .logo {
+        max-height: 80px;
+      }
+    }
+  }
+  .logo {
+    @extend %flexCenter;
+    width: 35%;
+    height: 100%;
+    img {
+      width: 100%;
+    }
+    + div {
+      border-top: 1px solid $grayColor;
+    }
+  }
+
+  [class*="job"] {
+    width: 65%;
+    // height: 100%;
+    padding: 12px 12px;
+    h5,
+    span {
+      @extend %omit;
+      transition: all 0.3s;
+      &:hover {
+        img {
+          width: 15px;
+          padding-right: 4px;
+          animation: pImg 0.5s;
+        }
+      }
+    }
+    h5 {
+      color: $companyBlue;
+      line-height: 24px;
+    }
+    span {
+      display: block;
+      height: 24px;
+      line-height: 16px;
+    }
+    a {
+      transition: all 0.3s;
+    }
+    img {
+      width: 0;
+    }
+    &.jobFix span {
+      word-wrap: break-word;
+      white-space: inherit;
+      overflow: inherit;
+      line-height: 24px;
+      height: inherit;
+      a {
+        line-height: 18px;
+      }
+    }
+  }
+
+  @keyframes pImg {
+    from {
+      width: 0;
+    }
+    to {
+      width: 15px;
+    }
+  }
+
+  // @include computer {
+  //   > div {
+  //     max-width: 1170px;
+  //   }
+  // }
+  @include pad {
+    order: 6;
+    background-color: inherit;
+    padding: 0;
+    padding-bottom: 12px;
+
+    > div {
+      width: 100%;
+      max-width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    [class*="job"] {
+      padding: 8px 12px;
+      h5,
+      span {
+        line-height: 16px;
+        height: inherit;
+      }
+      &.jobFix span {
+        line-height: 16px;
+        a {
+          line-height: 1.5;
+        }
+      }
+    }
+    [class*="swiper-button"] {
+      display: none;
+    }
+  }
+}
+// END 熱門公司

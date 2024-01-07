@@ -1,0 +1,163 @@
+﻿    /* 2011.5.13 robCalender v2.0 for IE6/IE7/IE8/FireFox/Chrome **beg** */
+    .robCalendarStyle_table
+    {
+      border-collapse: collapse;
+      margin-top: 0px;
+      line-height:16px;
+    }
+    .robCalendarStyle_YearTableTdTitle
+    {
+      color: #800000;
+      background-color: #FFCC99;
+      border: 1px solid #800000;
+      padding: 4px 2px;
+      cursor: default;
+      text-align: center;
+      font-family: Arial, 細明體, Helvetica, sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+    .robCalendarStyle_YearTableTd
+    {
+      width: 30px;
+      color: #800000;
+      background-color: #FFE0A2;
+      border: 1px solid #800000;
+      padding: 4px 2px;
+      cursor: pointer;
+      text-align: center;
+      font-family: Arial, 細明體, Helvetica, sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+    .robCalendarStyle_YearTableTdSelected
+    {
+      width: 30px;
+      color: #000000;
+      background-color: #FF9B59;
+      border: 1px solid #800000;
+      padding: 4px 2px;
+      cursor: default;
+      text-align: center;
+      font-family: Arial, 細明體, Helvetica, sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+    .robCalendarStyle_MonthTableTdTitle
+    {
+      color: #006600;
+      background-color: #66FFB3;
+      border: 1px solid #006600;
+      padding: 4px 2px;
+      cursor: default;
+      text-align: center;
+      font-family: Arial, 細明體, Helvetica, sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+    .robCalendarStyle_MonthTableTd
+    {
+      width: 30px;
+      color: #006600;
+      background-color: #C2FEB4;
+      border: 1px solid #006600;
+      padding: 4px 2px;
+      cursor: pointer;
+      text-align: center;
+      font-family: Arial, 細明體, Helvetica, sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+    .robCalendarStyle_MonthTableTdSelected
+    {
+      width: 30px;
+      color: #006600;
+      background-color: #8CD98C;
+      border: 1px solid #006600;
+      padding: 4px 2px;
+      cursor: default;
+      text-align: center;
+      font-family: Arial, 細明體, Helvetica, sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+    .robCalendarStyle_DateTableTdTitle
+    {
+      color: #003399;
+      background-color: #9DDDFF;
+      border: 1px solid #003399;
+      padding: 4px 2px;
+      cursor: default;
+      text-align: center;
+      font-family: Arial, 細明體, Helvetica, sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+    .robCalendarStyle_DateTableTd
+    {
+      width: 30px;
+      color: #003399;
+      background-color: #FFFFFF;
+      border: 1px solid #003399;
+      padding: 4px 2px;
+      cursor: pointer;
+      text-align: center;
+      font-family: Arial, 細明體, Helvetica, sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+    .robCalendarStyle_DateTableTdSelected
+    {
+      width: 30px;
+      color: #003399;
+      background-color: #9FBFDF;
+      border: 1px solid #003399;
+      padding: 4px 2px;
+      cursor: default;
+      text-align: center;
+      font-family: Arial, 細明體, Helvetica, sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+    .robCalendarStyle_DateTableTdWeek
+    {
+      width: 30px;
+      color: #003399;
+      background-color: #9DFFFD;
+      border: 1px solid #003399;
+      padding: 4px 2px;
+      cursor: default;
+      text-align: center;
+      font-family: Arial, 細明體, Helvetica, sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+    .robCalendarStyle_DateTableTdToday
+    {
+      width: 30px;
+      color: #FF00AA;
+      background-color: #FFFFFF;
+      border: 1px solid #003399;
+      padding: 4px 2px;
+      cursor: pointer;
+      text-align: center;
+      font-family: Arial, 細明體, Helvetica, sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+    .robCalendarStyle_DateTableTdNone
+    {
+      width: 30px;
+      /*color: #003399;*/
+      color:#88AAFF;
+      background-color: #DDDDDD;
+      border: 1px solid #003399;
+      padding: 4px 2px;
+      cursor: default;
+      text-align: center;
+      font-family: Arial, 細明體, Helvetica, sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+    /* 2011.5.13 robCalender v2.0 for IE6/IE7/IE8/FireFox/Chrome **end** */
+

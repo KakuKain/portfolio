@@ -1,0 +1,10 @@
+// 固定樣式
+
+@import 'variable'; //載入_variable.sass
+@import 'reset';
+@import 'grid12';
+@import 'botton';
+
+// 頁面樣式
+@import 'carousel';
+@import 'index';

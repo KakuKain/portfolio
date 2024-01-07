@@ -1,0 +1,237 @@
+@import 'variable'; //載入_variable.sass
+/*----------------------------------footer------------------------------------*/
+
+
+.box_link {
+  width: 100%;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 12px 15px;
+}
+
+.box_link ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.box_link li a {
+  font-size: 12px;
+  text-decoration: none;
+  color: #486dbd;
+}
+
+.box_link li img {
+  width: 100%;
+  max-width: 30px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.box_link li:nth-child(2) a {
+  color: #00a500;
+}
+
+.box_link li:nth-child(3) a {
+  color: $companyColor;
+}
+
+.box_footer_t {
+  width: 100%;
+  // height: 170px;
+  background-color: #efefef;
+  font-family: Arial, "æ–‡æ³‰é©›æ­£é»‘", "WenQuanYi Zen Hei", "å„·é»‘ Pro",
+    "LiHei Pro", "å¾®è»Ÿæ­£é»‘é«”", "Microsoft JhengHei", "æ–°ç´°æ˜Žé«”",
+    PMingLiU, sans-serif;
+  // margin-top: 20px;
+}
+
+.box_footer_t_main {
+  display: flex;
+  justify-content: space-between;
+  width: 950px;
+  // height: 170px;
+  margin: 0 auto;
+  // overflow: hidden;
+  box-sizing: border-box;
+  padding-top: 15px;
+}
+
+.box_footer_t_main .left_main {
+  width: 664px;
+  min-height: 170px;
+  // float: left;
+  display: flex;
+}
+
+.footer_map {
+  width: 166px;
+}
+
+.footer_map ul {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.footer_map li a {
+  color: #333;
+  font-size: 14px;
+  text-decoration: none;
+  line-height: 1.65;
+  letter-spacing: 0;
+}
+
+.footer_map li span {
+  letter-spacing: 0;
+  font-size: 14px;
+}
+
+.footer_map li a:hover {
+  text-decoration: underline;
+}
+
+.box_footer_t .right_main {
+  display: flex;
+  width: 270px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.box_footer_t .right_main a {
+  font-size: 13px;
+}
+
+.box_footer_t .right_main .footer_map {
+  margin-left: 12px;
+}
+
+.box_footer_m {
+  width: 100%;
+  // height: 64px;
+  background-color: #ddd;
+  border-top: 1px solid #d2d2d2;
+  font-family: Arial, "æ–‡æ³‰é©›æ­£é»‘", "WenQuanYi Zen Hei", "å„·é»‘ Pro",
+    "LiHei Pro", "å¾®è»Ÿæ­£é»‘é«”", "Microsoft JhengHei", "æ–°ç´°æ˜Žé«”",
+    PMingLiU, sans-serif;
+}
+
+.box_footer_m_main {
+  max-width: 950px;
+  // padding-left: 15px;
+  // padding-right: 15px;
+  // height: 64px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  overflow: hidden;
+  color: #333;
+}
+
+.box_footer_m_main span {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.box_footer_m_main > div a {
+  line-height: 1;
+}
+
+.box_footer_m_main .service_l,
+.box_footer_m_main .service_m,
+.box_footer_m_main .service_r {
+  height: 64px;
+  // float: left;
+  line-height: 1.65;
+  font-size: 14px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-top: 7px;
+}
+
+.box_footer_m_main .service_l {
+  width: 384px;
+}
+
+.service_l + div {
+  display: flex;
+}
+
+.box_footer_m_main .service_m img,
+.box_footer_m_main .service_r img {
+  float: left;
+}
+
+.box_footer_m_main .service_m {
+  width: 348px;
+}
+
+.box_footer_m_main .service_r {
+  width: 218px;
+}
+
+.box_footer_b {
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  background-color: #666;
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+  font-family: Arial, "æ–‡æ³‰é©›æ­£é»‘", "WenQuanYi Zen Hei", "å„·é»‘ Pro",
+    "LiHei Pro", "å¾®è»Ÿæ­£é»‘é«”", "Microsoft JhengHei", "æ–°ç´°æ˜Žé«”",
+    PMingLiU, sans-serif;
+}
+
+.text_red {
+  color: $companyColor;
+}
+
+@include computerMedium {
+  .box_footer_t_main {
+    flex-direction: column;
+    width: 100%;
+  }
+  .box_footer_t_main .left_main, .box_footer_t_main .right_main {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+/*-------------------------footer--------------------------------*/
+.footer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.footer_top {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 8px 24px;
+  background-color: #8e8e8e;
+}
+
+.footer_top ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.footer_top li a {
+  color: #fff;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.footer_bottom {
+  width: 100%;
+  height: 20px;
+  line-height: 20px;
+  color: #fff;
+  font-size: 10px;
+  background-color: #515151;
+  text-align: center;
+  margin-bottom: 58px;
+}

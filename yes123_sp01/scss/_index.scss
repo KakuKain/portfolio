@@ -1,0 +1,926 @@
+/*index main*/
+.index {
+  display: flex;
+  flex-direction: column;
+  main {
+    padding-top: 124px;
+    padding-bottom: 64px;
+    flex: 1;
+  }
+}
+
+main {
+  position: relative;
+  display: block;
+  width: 100%;
+  flex: 1;
+  overflow: hidden;
+}
+/* For 程式 */
+.SPindex form {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+/* For 程式 */
+
+.ifLogin {
+  .loginBlock {
+    display: block;
+  }
+  .loginNone {
+    display: none;
+
+  }
+}
+
+.ifLogout {
+  .loginBlock {
+    display: none;
+  }
+  .loginNone {
+    display: block;
+
+  }
+}
+
+
+.SPBar {
+  background:radial-gradient(circle,rgba(0,0,0,0.2),rgba(0,0,0,1)), url(../img/BG.jpg) repeat;
+  width: 100%;
+  min-height: calc(100vh - 30px);
+  padding-top: 30px;
+  > section {
+    @extend %pageContent ;
+    display: flex;
+    justify-content: space-between;
+    @include pad {
+      flex-direction: column;
+    }
+  }
+  .BarLeft {
+    max-width: 620px;
+    width: calc(70% - 40px);
+    @include pad {
+      width: 78%;
+      margin: auto
+    }
+  }
+  .slogan {
+    @extend %neonPurple;
+    @extend %pagePaddingTB;
+    @extend %pagePadding;
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+  .slotHead {
+    position: relative;
+    margin: 0 auto ;
+    max-width: 140px;
+    width: 100%;
+    transform: scale(0.8);
+    span {
+      @extend %neonWhite;
+      display: block;
+      width: 25px;
+      height: 0;
+      background-color: #ffffff;
+      position: absolute;
+      &:nth-of-type(1) {
+        left: 0;
+        bottom: 0;
+      }
+      &:nth-of-type(2) {
+        transform: rotate(35deg) translateY(-50%);
+        left: 10%;
+        top: 40%;
+      }
+      &:nth-of-type(3) {
+        transform: rotate(90deg);
+        left: 40%;
+        top: 15%;
+      }
+      &:nth-of-type(4) {
+        transform: rotate(-35deg) translateY(-50%);
+        right: 10%;
+        top: 40%;
+      }
+      &:nth-of-type(5) {
+        right: 0;
+        bottom: 0;
+      }
+    }
+    @include pad {
+      margin-top: 10px;
+      transform: scale(0.5);
+    }
+  }
+  .slotLight {
+    margin: auto;
+    width: 70px;
+    height: 70px;
+    
+
+    border-bottom: transparent;
+    border-radius: 40px 40px 0 0;
+
+    background: radial-gradient(circle at bottom, rgba(255,0,0,0) 17%, $lightRed 24%, $lightYellow 31%, $lightRed 39%, rgba(255,0,0,0) 46%);
+    position: relative;
+    
+    &:before{
+      @extend %point;
+      
+      left: 0;
+    }
+    &:after{
+      @extend %point;
+      right: 0;
+    }
+  
+   
+  }
+  .slotBody {
+    position: relative;
+    width: 100%;
+    .slotNum {
+      ul {
+        @extend %neonPurple;
+        display: flex;
+        justify-content: space-between;
+        max-width: 400px;
+        width: 100%;
+        margin: 20px auto 28px;
+        padding: 25px;
+        border-radius: 20px;
+      }
+      li {
+        @extend %neonWhite;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100px;
+        width: 100%;
+        height: 120px;
+        overflow: hidden;
+      }
+      span {
+        font-family: 'Trebuchet MS', Courier, monospace;
+        font-size: 60px;
+        font-weight: bold;
+        // filter: drop-shadow(0 0 4px rgba($lightYellow,0.5));
+          text-shadow: 0 0 4px $lightYellow, 0 0 8px $lightOrange, 0 0 12px $lightRed, 0 0 16px $lightRed;
+          animation: textYOR 0.8s ease-in-out infinite alternate;
+          color: #141f64;
+
+      }
+      @include pad {
+        margin-top: -20px;
+        li {
+          max-width: 75px;
+          height: 100px;
+        }
+      }
+    }
+    .slotPole {
+      position: absolute;
+      top: -30px;
+      right: 5%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      .circle {
+        width: 100%;
+        li {
+          @extend %neonYOR;
+          display: block;
+          width: 50px;
+          height: 50px;
+          border-radius: 50px;
+        }
+      }
+      .right {
+        position: relative;
+        width: 100%;
+        height: 80px;
+        li {
+          @extend %neonWhite;
+          position: absolute;
+          &:nth-of-type(1) {
+            width: 2px;
+            height: 70px;
+            right: 22px;
+            top: 10px;
+          }
+          
+          &:nth-of-type(2) {
+            width: 30px;
+            height: 0;
+            right: 28px;
+            bottom: 0;
+          }
+        }
+      }
+      .left {
+        position: relative;
+        width: 50%;
+        height: 80px;
+        li {
+          @extend %neonWhite;
+          position: absolute;
+          &:nth-of-type(1) {
+            width: 30px;
+            height: 0;
+            right: 28px;
+            top: 50px;
+          }
+          
+          &:nth-of-type(2) {
+            width: 0;
+            height: 50px;
+            right: 28px;
+            top: 50px;
+          }
+          &:nth-of-type(3) {
+            width: 30px;
+            height: 0;
+            right: 28px;
+            bottom: -25px;
+          }
+        }
+      }
+      @include pad {
+        transform: scale(0.5);
+        margin-right: -74px;
+      }
+    }
+    .slotLogo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 400px;
+      width: 100%;
+      margin: 20px auto 28px;
+      display: grid;
+      grid-template-columns: 40px auto 40px;
+      img {       
+        max-width: 350px;
+        width: 100%;
+        padding-left: 24px;
+        padding-right: 24px;
+        filter: drop-shadow(0 0 10px rgba($white,0.5));
+        animation: logoWhite 0.8s ease-in-out infinite alternate;
+      }
+      li:nth-of-type(odd) {
+        @extend %neonWhite;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: $white;
+
+      }
+      li:nth-of-type(even) {
+        @extend %neonYOR;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: $lightYellow;
+
+      }
+      li+li {
+        margin-top: 16px; 
+      }
+      @include pad {
+        grid-template-columns: 20px auto 20px;
+        img {
+          padding-left: 12px;
+          padding-right: 12px;
+        }
+        li:nth-of-type(4) {
+          display: none;
+        }
+      }
+    }
+    .slotTitle {
+      max-width: 400px;
+      width: 100%;
+      margin: 20px auto;
+      img {
+        margin: 15px auto;
+        width: 100%;
+        filter: drop-shadow(0 0 10px rgba($lightRed,0.5));
+        animation: fontRed 0.8s ease-in-out infinite alternate;
+      }
+      .titleLine {
+        @extend %neonWhite;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: $white;
+      }
+
+    }
+    .slotBtn {
+      // background-image: linear-gradient(to left, $gradientBLue, $gradientPurple);
+      max-width: 350px;
+      width: 100%;
+      margin: 28px auto 0;
+      button {
+        @extend %buttonBG;
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 80px;
+        border-radius: 80px;
+        font-size: 40px;
+        line-height: 80px;
+        font-weight: bold;
+        text-align: center;
+        
+        cursor: pointer;
+      }
+    }
+  }
+  
+  @keyframes logoWhite {
+    to {
+      filter: drop-shadow(0 0 20px rgba($white,0.5))
+    }
+  }
+  @keyframes fontRed {
+    to {
+      filter: drop-shadow(0 0 20px rgba($lightRed,0.5))
+    }
+  }
+  @keyframes textYOR {
+    to {
+      text-shadow: 0 0 8px $lightYellow, 0 0 12px $lightOrange, 0 0 16px $lightRed, 0 0 20px $lightRed;
+    }
+  }
+  @keyframes btnBG {
+    to {
+      background-image: linear-gradient(to right, $gradientBLue, $gradientPurple);
+    }
+  }
+  
+  .BarRight {
+    @extend %pagePaddingTB;
+    @extend %pagePadding;
+    @extend %neonPurple;
+    box-sizing: border-box;
+    max-width: 340px;
+    width: 30%;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $white;
+    @include pad {
+      max-width: calc(100% - 60px);
+      width: 100%;
+      margin: 40px auto 0;
+    }
+    
+    .goBtn {
+      @extend %buttonBG;
+      // position: absolute;
+      // top: 0;
+      // right: 0;
+      margin-top: 20px;
+      margin-right: 40px;
+      display: block;
+      width: 90%;
+      margin: 20px auto;
+      // width: 90px;
+      // height: 90px;
+      text-align: center;
+      font-size: 24px;
+      // line-height: 100px;
+      font-weight: bold;
+      // background-color: $gradientBLue;
+      
+      // border-radius: 100px;
+    }
+    h4 {
+      // max-width: 100%;
+      position: relative;
+      margin-top: 1rem;
+      font-size: 24px;
+      line-height: 1.5;
+      font-weight: bold;
+      background-image: linear-gradient(110deg,
+      $gradientBLue,
+      $gradientBLue,
+      $companyDarkPurple,
+      $gradientPurple);  
+      background-size: 50% 100%;
+      background-repeat: no-repeat;
+      -webkit-background-clip: text;
+      color: transparent;  
+      span {
+        position: absolute;
+        top: 50%;
+        display: inline-block;
+        margin-left: 8px;
+        width: 30%;
+        height: 2px;
+        background-image: linear-gradient(110deg,
+          $gradientBLue,
+          $gradientBLue,
+          $companyDarkPurple,
+          $gradientPurple);  
+      }
+    }
+    li {
+      button {
+        @extend %buttonBG;
+        font-size: 16px;
+        padding: 8px 12px;
+        margin: 12px 0;
+        background: transparent;
+        border: 4px solid $gradientPurple;
+        border-radius: 8px;
+        cursor: pointer;
+        &:hover {
+          @extend %buttonBG;  
+          border: 4px solid transparent;
+
+        }
+      }
+    }
+    
+  }
+  .pointList {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    ul {
+      display: flex;
+      text-align: center;
+      padding-top: 30px;
+    }
+    li {
+      box-sizing: border-box;
+      width: 60px;
+      padding: 4px;
+      img {
+        width: 100%;
+      }
+    }
+    .arrows {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 40px;
+      display: flex;
+      justify-content: space-between;
+      span {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        cursor: pointer;
+        &:nth-of-type(1) {
+          border-width: 8px 16px 8px 0;
+          border-color: transparent #ffffff transparent transparent;
+
+        }
+        &:nth-of-type(2) {
+          border-width: 8px 0 8px 16px;
+          border-color: transparent transparent transparent #ffffff;
+        }
+      }
+      .end {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .pointText {
+    padding-top: 16px;
+    li {
+      width: 150px;
+      display: grid;
+      grid-template-columns: 50% auto 15%;
+      span {
+        text-align: center;
+      }
+    }
+  }
+
+  .tips {
+    font-size: 14px;
+    color: $grayColor;
+  }
+
+  .listMore {
+    position: absolute;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    font-size: 0px;
+    cursor: pointer;
+    &::before,&::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      width: 2px;
+      height: 10px;
+      background: #fff;
+      transform: translateX(-50%) translateY(-50%) rotate(90deg);
+      backface-visibility: hidden;
+    }
+    
+  }
+
+  .listClose {
+    + .activityList {
+      display: none;
+    }
+    .listMore {
+      &::before {
+        transform: translateX(-50%) translateY(-50%) rotate(90deg);
+      }
+      &::after {
+        transform: translateX(-50%) translateY(-50%) rotate(180deg);
+        animation: minusHorizontal 0.5s ease forwards;
+      }
+    }
+  }
+
+  @keyframes openListHeight {
+    from { max-height: 0px; }
+    to { max-height: 250px; }
+  }
+  
+  .activityList {
+    padding-right: 12px;
+    max-height: 250px;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: justify;
+    overflow-y: auto;
+    animation: openListHeight 0.8s ease forwards;
+    
+    &::-webkit-scrollbar {
+      margin-left: 4px;
+      width: 5px;
+      // height: 6px;
+      background-color: $companyPurple;
+      border-radius: 26px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 26px;
+      background-color: #ccc;
+      background: linear-gradient(to bottom,$gradientBLue,$gradientPurple);
+    }
+    @include pad {
+      max-height: 250px;
+    }
+  }
+
+  @include pad {
+    padding-top: 0;
+    padding-bottom: 60px;
+  }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.sign_popup {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  .popupContent {
+    @extend %neonPurple;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 500px;
+    width: 100%;
+    padding: 0;
+    color: $white;
+    text-align: center;
+    overflow: hidden;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.2), black), url(../img/BG.jpg) repeat;
+  }
+  .popupHeader {
+    padding: 18px;
+    background-color: rgba($black,0.3);
+  }
+  .popupClose {
+    top: 0;
+    padding-top: 0;
+  }
+  h3 {
+    margin-bottom: 8px;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 38px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .checkedBtn {
+    a {
+      @extend %buttonBG;
+      display: inline-block;
+      margin: 24px auto;
+      padding-left: 20px;
+      padding-right: 20px;
+      min-width: 185px;
+      height: 58px;
+      border-radius: 8px;
+      font-size: 24px;
+      line-height: 50px;
+      font-weight: bold;
+      color: $white;
+      border: 4px solid transparent;
+      // background: $companyBlue;
+    }
+    a + a {
+      margin-left: 15px;
+    }
+    .btnClose {
+      // @extend %buttonBG;
+      border: 4px solid $gradientPurple;
+
+      background: transparent;
+
+    }
+    @include pad {
+      a {
+        min-width: 40%;
+      }
+      a + a {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+.joblist {
+  main {
+    background-color: #ffffe3;
+    overflow: hidden;
+  }
+
+  @media (min-width: 980px) {
+    .container {
+      width: 960px;
+    }
+  }
+
+  @media (min-width: 1400px) {
+    .container {
+      width: 1280px;
+    }
+  }
+}
+
+.specialProject {
+  padding-top: 60px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  input {
+    display: none;
+    &:checked + label + div {
+      display: block;
+    }
+    &:checked + label .arrow {
+      display: block
+    }
+  }
+  label {
+    @extend %boxShadow2;
+    position: relative;
+    max-width: 240px;
+    width: 100%;
+    margin: 0 8px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    > div {
+      &:nth-of-type(1) {
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        overflow: hidden;
+        img {
+          width: 100%;
+        }
+      }
+      &:nth-of-type(2) {        
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        overflow: hidden;
+        padding: 12px 15px;
+        background-color: $white;
+      }
+    }
+
+    h3 {
+      font-size: 20px;
+      line-height: 32px;
+      font-weight: bold;
+      padding-bottom: 8px;
+    }
+
+    li {
+      display: inline-block;
+      padding: 4px;
+      color: #656565;
+      background-color: #ededed;
+      border-radius: 4px;
+    }
+    .arrow {
+      display: none;
+    }
+    .arrowIn {
+      width:0px;
+      height:0px;
+      border-width:15px;
+      border-style:solid;
+      border-color:#b6b6b6 transparent transparent transparent ;
+      position: absolute;
+      bottom: -30px;
+      right: calc(50% - 15px);   
+    }
+    .arrowOut {
+      width:0px;
+      height:0px;
+      border-width:15px;
+      border-style:solid;
+      border-color:#fff transparent transparent transparent ;
+      position: absolute;
+      bottom: -30px;
+      right: calc(50% - 15px);   
+    }
+
+
+    + .projectList {
+      display: none;
+    }
+    
+    @include pad {
+      max-width: 100%;
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+  }
+  @include pad {
+    padding-top: 20px;
+  }
+  
+}
+
+.projectList {
+  order: 1;
+  width: 100%;
+  top: 100px;
+  margin-bottom: 40px;
+  > * {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+  }
+  ul {
+    @extend %boxShadow2;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+  }
+  li {
+    font-family: $mainFont;
+    display: grid;
+    grid-template-columns: 35% auto 200px;
+    background-color: $white;
+    > div {
+      padding: 15px 24px;
+      font-size: 18px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    &:not(:last-of-type) {
+      border-bottom: 1px solid #ddd;
+    }
+  }
+  a {
+    position: relative;
+    display: block;
+    margin-right: 28px;
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: bold;
+    text-align: right;
+    color: $companyOrange;
+    &::before {
+      content: "";
+      position: absolute;
+      right: -20px;
+      margin-top: 8px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 7.5px 0 7.5px 13px;
+      border-color: transparent transparent transparent $companyOrange;
+    }
+  }
+  .SPjobName {
+    font-weight: bold;
+    color: $companyBlue;
+    // max-width: 479px;
+  }
+  @include allPC {
+    .SPjobCompany {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 1;
+      grid-row-end: 2;
+    }
+  }
+  @include pad {
+    display: block;
+    order: initial;
+    ul {
+      margin-left: 15px;
+      margin-right: 15px;
+      margin-bottom: 4px;
+    }
+    li {
+      grid-template-columns: 100%;
+      padding: 12px 15px;
+      > div {
+        padding: 0;
+        line-height: 28px;
+      }
+      &:nth-of-type(7),&:nth-of-type(8) {
+        display: none;
+      }
+    }
+    a {
+      margin-right: 40px;
+    }
+  }
+}
+
+
+// the lottery
+
+.dataNums {
+  // position: absolute;
+  // top: 37%;
+  display: block;
+  width: 100%;
+  text-align: center;
+  .dataOne {
+    width: 100px;
+    height: 120px;
+    text-align: center;
+  }
+  .dataBoc {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .tt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    span {
+      width: 100%;
+      height: 100%;
+      line-height: 120px;
+    }
+    @include pad {
+      span {
+        line-height: 100px;
+      }
+    }
+  }
+  li,span {
+    display: inline-block;
+    letter-spacing: normal;
+    word-spacing: normal;
+  }
+}

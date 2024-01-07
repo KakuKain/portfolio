@@ -1,0 +1,281 @@
+// Number
+$w100: 100%;
+$pageMaxWidth: 1170px;
+$headerSpace: 12px;
+$headerFont: 16px;
+$mainSpace: 12px;
+$mainPaddingTB: 12px;
+$sAIcon: 40px;
+$rL1TextHeight: 32px;
+$rL1SelectMargin: ($rL1TextHeight - 27px) / 2;
+$rL1UpdateIcon: ($rL1TextHeight - 27px) / 2;
+$rL1FunIcon: ($rL1TextHeight - 26px) / 2;
+$rL1FunIconHover: ($rL1TextHeight - 77px) / 2;
+$rRNum: 30px;
+$rRIcon: 40px;
+$fTIcon: 80px;
+$tJSpace: 24px;
+$tJNum: 3;
+$tJAllSpace: $tJSpace * $tJNum;
+// $tJWidth:calc((100% - ($tJSpace*$tJNum)) / 4);
+$footerSpace: 12px;
+
+// Color
+$white: #ffffff;
+$black: #202020;
+$red: #e60002;
+$darkBlack: #444;
+$lightColor: #eeeeee;
+$lightGray: #ebebeb;
+$grayColor: #c4c4c4;
+$indexBGBlue: #e9fdff;
+$companyColor: #e40077;
+$companyBlue: #007de9;
+$companyDarkBlue: #004e92;
+$companyOrange: #ff8d17;
+$companyPurple: #e8baff;
+$companyDarkPurple: #7345ff;
+$companyPink: #f06fb2;
+$fontColor: #424242;
+$buttonBg: #e40077;
+$shadow: #838383;
+$focusBox: #ff4f4f;
+//漸層顏色
+$gradientBLue:#0091d4;
+$gradientPurple:#a70fff;
+
+$lightYellow: #fff100;
+$lightOrange: #ff7200;
+$lightRed: #ff2400;
+
+// Code
+
+$mobile_media: 480px;
+$pad_media: 768px;
+$pcsmall_media: 980px;
+$pc_media: 1200px;
+$pcbig_media: 1980px;
+
+// 電腦版
+// @mixin computer {
+//   @media (min-width: $pad_media) and (max-width: 1320px) {
+//     @content;
+//   }
+// }
+// 電腦版 低於1200
+@mixin computerMedium {
+  @media (max-width: $pc_media) {
+    @content;
+  }
+}
+// 平板版 低於980
+@mixin pad {
+  @media (max-width: $pcsmall_media) {
+    @content;
+  }
+}
+// 只限平板
+@mixin padOnly {
+  @media (min-width: $mobile_media) and (max-width: $pcsmall_media) {
+    @content;
+  }
+}
+//手機版
+@mixin mobile {
+  @media (max-width: $mobile_media) {
+    @content;
+  }
+}
+
+//手機版
+@mixin allPC {
+  @media (min-width: $pcsmall_media) {
+    @content;
+  }
+}
+
+div.web {
+  @include pad {
+    display: none;
+  }
+}
+
+div.mobile {
+  display: none;
+  @include pad {
+    display: block;
+  }
+}
+
+// 頁面內容寬度
+%pageContent {
+  max-width: $pcsmall_media;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  // @include computer {
+  //   max-width: 1170px;
+  // }
+  @include computerMedium {
+    max-width: 100%;
+  }
+}
+
+
+// 一般模組的左右Padding
+%pagePadding {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+// 滿版模組的左右Padding
+%pageNoPadding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+%max950 {
+  max-width: 950px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+//一般模組的上下Padding
+%pagePaddingTB {
+  padding-top: $mainPaddingTB;
+  padding-bottom: $mainPaddingTB;
+}
+
+%mainFont {
+  font-size: 18px;
+  line-height: 28px;
+  vertical-align: middle;
+}
+
+%rR {
+  font-size: 14px;
+  line-height: 20px;
+  vertical-align: middle;
+}
+//單行溢出省略
+%omit {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+//多行溢出省略  需再html添加 style="-webkit-box-orient: vertical" 並設定高度
+%omitMore {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; //預設多行行數為2
+  -webkit-box-orient: vertical;
+}
+// 水平垂直置中
+%flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+// 物件陰影
+%boxShadow {
+  box-shadow: 1px 1px 3px 1px $shadow;
+}
+
+%boxShadow2 {
+  box-shadow: 1px 1px 3px 1px rgba(#ddd,0.5);
+}
+
+// 字體群組
+$mainFont: Arial, "文泉驛正黑", "WenQuanYi Zen Hei", "儷黑 Pro", "LiHei Pro",
+  "微軟正黑體", "Microsoft JhengHei", "新細明體", "PMingLiU", sans-serif;
+
+//SHADOW
+$box-shadow: 0 0.5rem 1rem rgba($black, 0.15);
+$box-shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.075);
+$box-shadow-lg: 0 1rem 3rem rgba($black, 0.175);
+$box-shadow-inset: inset 0 1px 2px rgba($black, 0.075);
+
+
+%neon {
+  border: 4px solid $lightYellow;
+  border-radius: 8px;
+  @include pad {
+    border-width: 2px;
+  }
+}
+
+
+%neonPurple {
+  @extend %neon;
+  border-color: $companyPurple;
+  filter: drop-shadow(0 0 4px rgba($companyPurple,0.5));
+    box-shadow: 0 0 4px $companyPurple, 0 0 8px $companyPurple, 0 0 12px $companyDarkPurple, 0 0 16px $companyDarkPurple, 0 0 4px $companyPurple inset, 0 0 8px $companyPurple inset, 0 0 12px $companyDarkPurple inset, 0 0 16px $companyDarkPurple inset;;
+    animation: purple 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes purple {
+  to {
+    box-shadow: 0 0 8px $companyPurple, 0 0 12px $companyDarkPurple, 0 0 16px $companyDarkPurple, 0 0 20px $companyDarkPurple, 0 0 8px $companyPurple inset, 0 0 12px $companyDarkPurple inset, 0 0 16px $companyDarkPurple inset, 0 0 20px $companyDarkPurple inset;
+  }
+}
+
+
+
+%neonYOR {
+  @extend %neon;
+  border-color: $lightYellow;
+
+  filter: drop-shadow(0 0 4px rgba($lightYellow,0.5));
+    box-shadow: 0 0 4px $lightYellow, 0 0 8px $lightOrange, 0 0 12px $lightRed, 0 0 16px $lightRed,
+     0 0 4px $lightYellow inset, 0 0 8px $lightOrange inset, 0 0 12px $lightRed inset, 0 0 16px $lightRed inset;
+    animation: YOR 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes YOR {
+  to {
+    box-shadow: 0 0 8px $lightYellow, 0 0 12px $lightOrange, 0 0 16px $lightRed, 0 0 20px $lightRed,
+     0 0 8px $lightYellow inset, 0 0 12px $lightOrange inset, 0 0 16px $lightRed inset, 0 0 20px $lightRed inset;
+  }
+}
+
+
+
+%neonWhite {
+  @extend %neon;
+  border-color: $white;
+  filter: drop-shadow(0 0 4px rgba($white,0.5));
+    box-shadow: 0 0 4px $white, 0 0 8px $lightGray, 0 0 12px $grayColor, 0 0 16px $grayColor,
+     0 0 4px $white inset, 0 0 8px $lightGray inset, 0 0 12px $grayColor inset, 0 0 16px $grayColor inset;
+    animation: white 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes white {
+  to {
+    box-shadow: 0 0 8px $white, 0 0 12px $lightGray, 0 0 16px $grayColor, 0 0 20px $grayColor,
+     0 0 8px $white inset, 0 0 12px $lightGray inset, 0 0 16px $grayColor inset, 0 0 20px $grayColor inset;
+  }
+}
+
+
+%buttonBG {
+  color: $white;
+  background-image: linear-gradient(to left, $gradientPurple, $gradientBLue, $gradientPurple);
+  background-size: 300% 100%;
+  box-shadow: 0 0 15px rgba($gradientPurple,0.5);
+  border: none;
+  transition: all 0.8s;
+
+  &:hover {
+    background-position: 100% 0;
+  }
+}
+
+
+%point {
+  content: '';
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  background: radial-gradient(circle at top, #fff100 0%, #ff2400 25%, rgba(255, 0, 0, 0) 50%);
+  bottom: -30%;
+}

@@ -1,0 +1,690 @@
+@charset "utf-8";
+@import "extend";
+
+.pad {
+  display: none;
+}
+
+.phone {
+  display: none;
+}
+
+.web {
+  display: block;
+}
+
+@include pad {
+  .web {
+    display: none;
+  }
+
+  .phone {
+    display: none;
+  }
+
+  .padOnliy {
+    display: block;
+  }
+}
+
+@include mobile {
+  .web {
+    display: none;
+  }
+
+  .pad {
+    display: inline-block;
+  }
+
+  .padOnliy {
+    display: none;
+  }
+
+  .phone {
+    display: block;
+  }
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  height: 100%;
+  // padding-top: 30px;
+  // display: flex;
+  // flex-direction: column;
+}
+
+@include pad {
+  body.index2 {
+    padding-bottom: 64px;
+  }
+}
+
+.clearFloat {
+  clear: both;
+}
+
+.text_white {
+  color: #fff;
+  text-decoration: none;
+}
+
+.text_blue {
+  color: $companyBlue;
+  text-decoration: none;
+}
+
+.K_popup {
+  z-index: 9;
+
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  content: "";
+  // background: rgba(0, 0, 0, 0.85);
+  transition: all 0.5s;
+
+  > div:nth-of-type(2) {
+    max-width: 500px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+  }
+}
+
+.messagePopup {
+  > div:nth-of-type(2) {
+    max-width: 500px;
+  }
+}
+
+.popupBg {
+  @extend %flexCenter;
+  z-index: 9;
+  width: 100%;
+  height: 100vh;
+  // position: fixed;
+  // top: 0px;
+  // left: 0px;
+  background: rgba($color: #000000, $alpha: 0.4);
+}
+
+.popupContent {
+  // @extend %boxShadow;
+  // width: 50%;
+  // padding: 1rem 1.5rem;
+  // box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  background: #fff;
+  text-align: left;
+  z-index: 10;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+}
+
+.popupHeader {
+  @extend %flexCenter;
+  background: $companyColor;
+  color: #fff;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  border-bottom: 1px solid #dee2e6;
+  padding: 0.25rem 1rem;
+  font-size: 18px;
+}
+
+.popupClose {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: lighter;
+  background-color: transparent;
+  border: 0;
+  // padding: 1rem 1rem;
+  margin: -1rem -1rem -1rem auto;
+  position: absolute;
+  right: 25px;
+  cursor: pointer;
+
+  @include pad {
+    right: 35px;
+  }
+}
+
+.popupBody {
+  padding: 1rem;
+  h6 {
+    font-size: 22px;
+    color: #004e92;
+  }
+  p {
+    font-size: 18px;
+    padding-top: 12px;
+  }
+  .pInline {
+    display: inline;
+  }
+  button {
+    display: block;
+    max-width: 220px;
+    width: calc((100% - 12px) / 2);
+    height: 40px;
+    background: $companyColor;
+    box-sizing: border-box;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+  }
+  iframe {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    margin: auto;
+  }
+  .smallP {
+    font-size: 13px;
+  }
+  .textRight {
+    text-align: end;
+  }
+  .textCenter {
+    text-align: center;
+  }
+  .textRed {
+    color: $red;
+  }
+  .inlineBlock {
+    display: inline-block;
+  }
+  div {
+    vertical-align: text-top;
+  }
+  ul {
+    font-size: 1rem;
+    line-height: 1.5;
+    // padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  li {
+    padding: 0.5rem 1rem;
+  }
+  select {
+    vertical-align: middle;
+    height: 36px;
+    padding: 0.375rem 1.75rem 0.375rem 0.75rem;
+    margin: 0 8px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    appearance: none;
+    background: url("../img/down-arrow.png") no-repeat;
+    background-size: auto 30%;
+    background-position: 85% center;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  }
+  option {
+    color: $fontColor;
+    &:hover {
+      color: $fontColor;
+    }
+  }
+  [type="text"] {
+    width: 140px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    padding: 0.375rem;
+    margin: 0 8px;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.popupBtn {
+  display: flex;
+  .close {
+    background-color: #a2a2a2;
+  }
+  button {
+    transition: all 0.3s;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.transform-in,
+.transform-out {
+  display: block;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+.transform-in {
+  opacity: 1;
+}
+
+.transform-out {
+  opacity: 0;
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  /*header*/
+
+  header {
+    //捲軸底色
+    &::-webkit-scrollbar-track {
+      // -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      background-color: #eeeeee;
+    }
+    //捲軸寬度
+    &::-webkit-scrollbar {
+      height: 4px;
+      background-color: black;
+    }
+    //捲軸本體顏色
+    &::-webkit-scrollbar-thumb {
+      background-color: #bbbbbb;
+    }
+  }
+
+  .K_popup > div:nth-of-type(2) {
+    width: 100%;
+  }
+
+  .popupContent {
+    width: 95%;
+    margin: auto;
+    h6 {
+      font-size: 20px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+
+  p.popAdPrice {
+    font-size: 38px;
+  }
+}
+
+.popupBody {
+  padding: 0.5rem;
+}
+
+// header start //
+
+.index {
+  overflow: hidden;
+  .indexHeader {
+    min-height: 60px;
+    display: grid;
+    grid-template-columns: 60px auto 50px;
+    align-items: center;
+    padding: 8px 15px;
+    background-color: $companyBlue;
+    font-size: 20px;
+    color: $white;
+    @include pad {
+      font-size: 18px;
+      min-height: 100px;
+      grid-template-columns: 70px auto 50px;
+    }
+  }
+  .logoPhoto {
+    display: flex;
+    width: 45px;
+    height: 45px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 45px;
+    border: 2px solid $white;
+    background-color: $companyColor;
+    overflow: hidden;
+    img {
+      display: none;
+      max-width: 100%;
+      max-height: 100%;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    &.hasLogo {
+      background-color: $white;
+      div {
+        display: none;
+      }
+      img {
+        display: block;
+      }
+    }
+    span {
+      font-size: 250%;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+  .storeInformation {
+    display: flex;
+    align-items: center;
+    line-height: 1.5;
+    p {
+      padding-right: 8px;
+    }
+    .storepreview {
+      color: $grayColor;
+    }
+    .contractTime {
+      color: $grayColor;
+      span {
+        padding-left: 8px;
+        margin-right: 8px;
+      }
+      a {
+        display: inline-block;
+        padding: 4px 8px;
+        border-radius: 8px;
+        background-color: $white;
+        font-weight: bold;
+        color: $companyBlue;
+        transition: all 0.3s;
+        &:hover {
+          color: $companyColor;
+        }
+      }
+    }
+    @include pad {
+      flex-direction: column;
+      align-items: flex-start;
+      .logoPhoto {
+        width: 60px;
+        height: 60px;
+        border: 4px solid $white;
+      }
+    }
+  }
+  .login {
+    text-align: right;
+  }
+}
+
+// header end //
+
+// nav start //
+
+.index {
+  .menu {
+    position: absolute;
+    left: 0;
+    max-width: 320px;
+    width: 100%;
+    ul {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    li {
+      padding: 12px 15px;
+      font-weight: bold;
+      position: relative;
+      a {
+        display: flex;
+        align-items: center;
+      }
+      img {
+        max-width: 30px;
+        width: 100%;
+      }
+      
+    }
+    
+    @include computerOnly {
+        box-shadow: 1px 1px 5px 1px $shadow;
+        height: calc(100vh - 60px);
+        background: #003c7d;
+        color:$white;
+        li {
+          &:hover, &.thisMenu {
+            transform: scale(1.1);
+            margin-left: 15px;
+            background-color: $white;
+            color: $fontColor;
+            .icon {
+              img {
+                &:nth-of-type(1) {
+                  display: block;
+                }
+                &:nth-of-type(2) {
+                  display: none;
+                }
+              }
+            }
+            &::before {
+              content: "";
+              display: block;
+              width: 8px;
+              height: 100%;
+              background-image: linear-gradient( 135deg, #5EFCE8 10%, #736EFE 100%);
+              position: absolute;
+              left: 0;
+              top: 0;
+            }
+          }
+        
+      }
+      
+      .icon {
+        img {
+        margin-right: 8px;
+
+          &:nth-of-type(1) {
+            display: none;
+          }
+        }
+      }
+    }
+    @include pad {
+      
+      background-image: none;
+      max-width: 100%;
+      padding-left: 12px;
+      padding-right: 12px;
+      padding-top: 20px;
+      ul {
+        flex-direction: inherit;
+        flex-wrap: wrap;
+      }
+      li {
+        width: 25%;
+        font-size: 16px;
+        padding: 4px 8px;
+        margin-bottom: 16px;
+        a {
+          justify-content: center;
+          flex-direction: column;
+        }
+        img {
+          max-width: 50px;
+          margin-bottom: 8px;
+        }
+        &:hover {
+          transform: scale(1.1);
+          margin-left: 0;
+          background-image: none;
+          background-size: inherit;
+          background-position: inherit;
+          color: $companyBlue;
+        }
+      }
+      
+      
+    .icon {
+      img {
+        &:nth-of-type(2) {
+          display: none;
+        }
+      }
+    }
+    }
+
+    @include mobile {
+      li {
+        img {
+          max-width: 40px;
+        }
+      }
+    }
+  }
+}
+
+// nav end //
+
+.CMScontent {
+  height: calc(100vh - 60px);
+  display: flex;
+  padding-left: 320px;
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    margin: 80px 0 5px 0;
+  }
+  ::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: rgb(219, 219, 219);
+  }
+  section {
+    @extend %boxShadow;
+    width: 100%;
+    height: 100%;
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  @include pad {
+    display: none;
+  }
+}
+
+
+// 麵包屑 start //
+
+.breadCrumb {
+  height: 60px;
+  ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  li {
+    line-height: 60px;
+    height: 60px;
+    transition: all 0.3s;
+    &:last-of-type, &:hover {
+      color: $companyBlue;
+    }
+  }
+  .back {
+    width: 30px;
+    height: 30px;
+    img {
+      display: block;
+      width: auto;
+      height: 100%;
+      filter: brightness(100);
+
+
+    }
+  }
+  @include pad {
+    background-color: $companyBlue;
+    height: 60px;
+    color: $white;
+    li {
+      color: $white;
+      &:last-of-type, &:hover {
+        color: $white;
+      }
+    }
+  }
+}
+
+// 麵包屑 end //
+
+
+.otherPage {
+  display: flex;
+  align-items: center;
+  div {
+    &:nth-of-type(1) {
+      width: 25%;
+    }
+  }
+  img {
+    display: block;
+    margin: auto;
+  }
+  h3 {
+    font-size: 18px;
+    margin-bottom: 4px;
+    color: $companyBlue;
+  }
+  p {
+    color: #444;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    span {
+      position: relative;
+      margin: 0 8px;
+      padding-left: 4px;
+      font-size: 22px;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: -2px;
+        display: block;
+        width: 25px;
+        height: 25px;
+        border: 1px solid #444;
+        border-radius: 25px;
+      }
+    }
+  }
+  @include pad {
+    flex-direction: column;
+    
+    div {
+      &:nth-of-type(1) {
+        width: 25%;
+      }
+    }
+  }
+}

@@ -1,0 +1,208 @@
+// Number
+$w100: 100%;
+$pageMaxWidth: 1170px;
+$headerSpace: 12px;
+$headerFont: 16px;
+$mainSpace: 12px;
+$mainSpaceM: 8px;
+$mainPaddingTB: 12px;
+$sAIcon: 40px;
+$rL1TextHeight: 32px;
+$rL1SelectMargin: ($rL1TextHeight - 27px) / 2;
+$rL1UpdateIcon: ($rL1TextHeight - 27px) / 2;
+$rL1FunIcon: 0;
+$rL1FunIconSize: 20px;
+$rL1FunIconHover: ($rL1TextHeight - 77px) / 2;
+$rRNum: 30px;
+$rRIcon: 40px;
+$fTIcon: 80px;
+$tJSpace: 24px;
+$tJNum: 3;
+$tJAllSpace: $tJSpace * $tJNum;
+// $tJWidth:calc((100% - ($tJSpace*$tJNum)) / 4);
+$footerSpace: 12px;
+
+// Color
+$white: #ffffff;
+$black: #202020;
+$red: #ff0222;
+$darkBlack: #444;
+$lightColor: #eeeeee;
+$grayColor: #dddddd;
+$indexBGBlue: #ecfdff;
+$companyColor: #e40077;
+$companyBlue: #007de9;
+$companyDarkBlue: #004e92;
+$companyOrange: #ff8d17;
+$companyYellow: #ffffe4;
+$companyPink: #f06fb2;
+$fontColor: #787878;
+$buttonBg: #e40077;
+$shadow: #e2e2e2;
+$focusBox:#ff4f4f;
+
+// Code
+
+$mobile_media:480px;
+$pad_media:768px;
+$pcsmall_media:980px;
+$pc_media:1280px;
+$pcbig_media:1980px;
+
+// 電腦版
+// @mixin computer {
+//   @media (min-width: $pad_media) and (max-width: 1320px) {
+//     @content;
+//   }
+// }
+// 電腦版 低於1200
+@mixin computerMedium {
+  @media (max-width: $pc_media) {
+    @content;
+  }
+}
+//電腦版 低於980
+@mixin computerSmall {
+  @media (max-width: $pcsmall_media) {
+    @content;
+  }
+}
+// 平板版
+@mixin pad {
+  @media (max-width: $pad_media) {
+    @content;
+  }
+}
+// 只限平板
+@mixin padOnly {
+  @media (min-width: $mobile_media) and (max-width: $pad_media) {
+    @content;
+  }
+}
+//手機版
+@mixin mobile {
+  @media (max-width: $mobile_media) {
+    @content;
+  }
+}
+
+div.web {
+  @include pad {
+    display: none;
+  }
+}
+
+div.mobile {
+  display: none;
+  @include pad {
+    display: block;
+  }
+}
+
+// 頁面內容寬度
+%pageContent {
+  max-width: $pageMaxWidth;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  // @include computer {
+  //   max-width: 1170px;
+  // }
+  @include computerMedium {
+    max-width: 100%;
+  }
+}
+
+//有左右按鈕的Slider專用
+%pageSlideContent {
+  max-width: $pageMaxWidth;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  > div:first-of-type {
+    width: 100%;
+  }
+  @include computerMedium {
+    > div:first-of-type {
+      width: 85%;
+        margin: auto;
+    }
+    .swiper-button-prev {
+      left: 25px;
+    }
+    .swiper-button-next {
+      right: 25px;
+    }
+  }
+  @include pad {
+    > div:first-of-type {
+      width: 100%;
+    }
+    [class*='swiper-button'] {
+      display: none;
+    }
+  }
+}
+
+// 一般模組的左右Padding
+%pagePadding {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+// 滿版模組的左右Padding
+%pageNoPadding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+//一般模組的上下Padding
+%pagePaddingTB {
+  padding-top: $mainPaddingTB;
+  padding-bottom: $mainPaddingTB;
+}
+
+%mainFont {
+  font-size: 18px;
+  line-height: 28px;
+  vertical-align: middle;
+}
+
+%rR {
+  font-size: 14px;
+  line-height: 20px;
+  vertical-align: middle;
+}
+//單行溢出省略
+%omit {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+//多行溢出省略  需再html添加 style="-webkit-box-orient: vertical" 並設定高度
+%omitMore {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; //預設多行行數為2
+  -webkit-box-orient: vertical;
+}
+// 水平垂直置中
+%flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+// 物件陰影
+%boxShadow {
+  // box-shadow: 1px 1px 5px 1px $shadow;
+  box-shadow: 0px 1px 3px 1px #e2e2e2;
+}
+// 字體群組
+$mainFont: Arial, '文泉驛正黑', 'WenQuanYi Zen Hei', '儷黑 Pro', 'LiHei Pro', '微軟正黑體', 'Microsoft JhengHei',
+  '新細明體', 'PMingLiU', sans-serif;
+
+//SHADOW
+$box-shadow: 0 0.5rem 1rem rgba($black, 0.15);
+$box-shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.075);
+$box-shadow-lg: 0 1rem 3rem rgba($black, 0.175);
+$box-shadow-inset: inset 0 1px 2px rgba($black, 0.075);

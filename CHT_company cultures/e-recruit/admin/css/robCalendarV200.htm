@@ -1,0 +1,594 @@
+﻿<%-- 2011.5.13 robCalender v2.0 for IE6/IE7/IE8/FireFox/Chrome **beg** 
+     2011.12.06 rob 更改 位置的選項, 以及透過 this 傳入, 而不是傳入 this.id 
+     2012.3.19 rob 修正日期處理問題 --%>  
+  <iframe id="robCalendarIFrame" style="position: absolute; z-index: 980; top: 0px; left: 0px; width: 40px; height:40px;  visibility:hidden; overflow:hidden;filter:alpha(opacity=50);-moz-opacity:.5;opacity: 0.5;"></iframe>
+  <div id="robCalendarDiv" style="border:solid 1px #ccccFF;position: absolute; z-index: 990; top: 0px; left: 0px; width: 800px;  visibility:hidden; overflow:hidden;" >
+    <div id="robCalendarInBox" style="position: absolute; top: 0px; left: 0px; background-color: #EEEEEE;
+      border: 1px solid #0000FF; font-family: Arial, Helvetica, sans-serif; font-size: 12px;
+      letter-spacing: 1px; padding: 5px; width: 400px; margin-left: auto; margin-right: auto;
+      z-index:999; ">
+      <table cellpadding="0" cellspacing="0" style="border-collapse: collapse; margin-left: auto; margin-right: auto;">
+        <tr>
+          <td id="robCalendarGap1" style="width: 6px;"></td>
+          <td id="robCalendarTdYear" style="vertical-align: top;">
+            <table id="robCalendarYearTable" cellpadding="0" cellspacing="0" class="robCalendarStyle_table">
+              <tr><td colspan="3" class="robCalendarStyle_YearTableTdTitle">年度</td></tr>
+              <tr><td class="robCalendarStyle_YearTableTd" onclick="robCalendar_selYear(12,19);">19</td><td class="robCalendarStyle_YearTableTd" onclick="robCalendar_selYear(3,0);">0</td><td class="robCalendarStyle_YearTableTd" onclick="robCalendar_selYear(4,0);">0</td></tr>
+              <tr><td class="robCalendarStyle_YearTableTdSelected" onclick="robCalendar_selYear(12,20);">20</td><td class="robCalendarStyle_YearTableTd" onclick="robCalendar_selYear(3,1);">1</td><td class="robCalendarStyle_YearTableTd" onclick="robCalendar_selYear(4,1);">1</td></tr>
+              <tr><td></td><td class="robCalendarStyle_YearTableTd" onclick="robCalendar_selYear(3,2);">2</td><td class="robCalendarStyle_YearTableTd" onclick="robCalendar_selYear(4,2);">2</td></tr>
+              <tr><td></td><td class="robCalendarStyle_YearTableTd" onclick="robCalendar_selYear(3,3);">3</td><td class="robCalendarStyle_YearTableTd" onclick="robCalendar_selYear(4,3);">3</td></tr>
+              <tr><td></td><td class="robCalendarStyle_YearTableTd" onclick="robCalendar_selYear(3,4);">4</td><td class="robCalendarStyle_YearTableTd" onclick="robCalendar_selYear(4,4);">4</td></tr>
+              <tr><td></td><td class="robCalendarStyle_YearTableTd" onclick="robCalendar_selYear(3,5);">5</td><td class="robCalendarStyle_YearTableTd" onclick="robCalendar_selYear(4,5);">5</td></tr>
+              <tr><td></td><td class="robCalendarStyle_YearTableTd" onclick="robCalendar_selYear(3,6);">6</td><td class="robCalendarStyle_YearTableTd" onclick="robCalendar_selYear(4,6);">6</td></tr>
+              <tr><td></td><td class="robCalendarStyle_YearTableTd" onclick="robCalendar_selYear(3,7);">7</td><td class="robCalendarStyle_YearTableTd" onclick="robCalendar_selYear(4,7);">7</td></tr>
+              <tr><td></td><td class="robCalendarStyle_YearTableTd" onclick="robCalendar_selYear(3,8);">8</td><td class="robCalendarStyle_YearTableTd" onclick="robCalendar_selYear(4,8);">8</td></tr>
+              <tr><td></td><td class="robCalendarStyle_YearTableTd" onclick="robCalendar_selYear(3,9);">9</td><td class="robCalendarStyle_YearTableTd" onclick="robCalendar_selYear(4,9);">9</td></tr>
+            </table>
+          </td>
+          <td id="robCalendarGap2" style="width: 6px;"></td>
+          <td id="robCalendarTdMonth" style="vertical-align: top;">
+            <table id="robCalendarMonthTable" cellpadding="0" cellspacing="0" class="robCalendarStyle_table">
+              <tr><td colspan="2" class="robCalendarStyle_MonthTableTdTitle">月份</td></tr>
+              <tr><td class="robCalendarStyle_MonthTableTdSelected" onclick="robCalendar_selMonth(1);">1</td><td class="robCalendarStyle_MonthTableTd" onclick="robCalendar_selMonth(11);">11</td></tr>
+              <tr><td class="robCalendarStyle_MonthTableTd" onclick="robCalendar_selMonth(2);">2</td><td class="robCalendarStyle_MonthTableTd" onclick="robCalendar_selMonth(12);">12</td></tr>
+              <tr><td class="robCalendarStyle_MonthTableTd" onclick="robCalendar_selMonth(3);">3</td><td></td></tr>
+              <tr><td class="robCalendarStyle_MonthTableTd" onclick="robCalendar_selMonth(4);">4</td><td></td></tr>
+              <tr><td class="robCalendarStyle_MonthTableTd" onclick="robCalendar_selMonth(5);">5</td><td></td></tr>
+              <tr><td class="robCalendarStyle_MonthTableTd" onclick="robCalendar_selMonth(6);">6</td><td></td></tr>
+              <tr><td class="robCalendarStyle_MonthTableTd" onclick="robCalendar_selMonth(7);">7</td><td></td></tr>
+              <tr><td class="robCalendarStyle_MonthTableTd" onclick="robCalendar_selMonth(8);">8</td><td></td></tr>
+              <tr><td class="robCalendarStyle_MonthTableTd" onclick="robCalendar_selMonth(9);">9</td><td></td></tr>
+              <tr><td class="robCalendarStyle_MonthTableTd" onclick="robCalendar_selMonth(10);">10</td><td></td></tr>
+            </table>
+          </td>
+          <td id="robCalendarGap3" style="width: 6px;"></td>
+          <td id="robCalendarTdDate" style="vertical-align: top;">
+            <table id="robCalendarDateTable" cellpadding="0" cellspacing="0" class="robCalendarStyle_table">
+              <tr>
+                <td class="robCalendarStyle_DateTableTdTitle" style="border-right-width:0px; cursor:pointer;" onclick="robCalendar_prevMonth();">&lt;&lt;</td>
+                <td class="robCalendarStyle_DateTableTdTitle" colspan="5">&nbsp;&nbsp;/&nbsp;&nbsp;</td>
+                <td class="robCalendarStyle_DateTableTdTitle" style="border-left-width:0px; cursor:pointer;" onclick="robCalendar_nextMonth();">&gt;&gt;</td>
+              </tr>
+              <tr>
+                <td class="robCalendarStyle_DateTableTdWeek">日</td>
+                <td class="robCalendarStyle_DateTableTdWeek">一</td>
+                <td class="robCalendarStyle_DateTableTdWeek">二</td>
+                <td class="robCalendarStyle_DateTableTdWeek">三</td>
+                <td class="robCalendarStyle_DateTableTdWeek">四</td>
+                <td class="robCalendarStyle_DateTableTdWeek">五</td>
+                <td class="robCalendarStyle_DateTableTdWeek">六</td>
+              </tr>
+              <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td colspan="7">&nbsp;</td></tr>
+              <tr>
+                <td colspan="7" style="text-align: center;">
+                <input type="button" value="到今日" id="robCalendarCmdToday" onclick="robCalendar_Today();" 
+                  style="font-family: Arial, 細明體, Helvetica, sans-serif; font-size: 12px; color: #006699; border: 1px solid #006699; background-color: #D2E1F0; padding-top: auto; padding-bottom: auto; height:28px; width: 50px; cursor:pointer;" />
+                  &nbsp;&nbsp;&nbsp;
+                  <input type="button" value="" id="robCalendarCmdSet" onclick="robCalendar_returnDate();"
+                  style="font-family: Arial, 細明體, Helvetica, sans-serif; font-size: 12px; color: #006699; border: 1px solid #006699; background-color: #D2E1F0; padding-top: auto; padding-bottom: auto; height:28px; width: 140px; cursor:pointer;" />
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td id="robCalendarGap4" style="width: 6px;"></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script type="text/javascript">
+    /**************** 
+    * 傳入 page HTML tag id, 並以期目前的內容來設定日曆的顯示日期
+    *****************/
+    function robCalendar_setDate(id1) {
+      // 由程式呼叫： onclick="robCalendar_setDate(this.id);"
+      // 如果找不到該 object id , 則離開
+      // var obj1 = document.getElementById(id1);
+      var obj1 = id1;
+      if (obj1 == undefined || obj1 == null || obj1 == "") { return false; }
+
+      // 重設 div 高度, 將遮蔽高度設為整個內容高
+      // document.getElementById("robCalendarDiv").style.height = (document.body.scrollHeight + 20) + "px";
+      //var setStyleHeight = (document.body.clientHeight < 500 ? 500 : document.body.clientHeight);
+      //document.getElementById("robCalendarIFrame").style.height = setStyleHeight + "px";
+      //document.getElementById("robCalendarDiv").style.height = setStyleHeight + "px";
+      
+      // var i1 = (document.body.scrollWidth - document.getElementById("robCalendarInBox").width) / 2;
+
+      // 設定 Calendar 的顯示位置, 水平置中, 高度中央與物件齊平
+      // document.getElementById("robCalendarInBox").style.left = (document.body.scrollWidth - document.getElementById("robCalendarInBox").scrollWidth) / 2 + "px";
+      var ix = (document.body.scrollWidth - document.getElementById("robCalendarInBox").scrollWidth) / 2;
+      // ix = document.getElementById(id1).offsetLeft;
+      ix = id1.offsetLeft;
+      if (ix > 20) { ix = ix - 20; }
+      var iy = obj1.offsetTop - (document.getElementById("robCalendarInBox").scrollHeight / 2);
+      if (iy < 20) { iy = 20; }
+      //document.getElementById("robCalendarInBox").style.top = iy + "px";
+      document.getElementById("robCalendarInBox").style.top = "20px";
+      document.getElementById("robCalendarInBox").style.left = "20px";
+
+      // 重設 div 高度, 設為 InBox 的 -20
+      var setStylei = document.getElementById("robCalendarInBox").offsetHeight + 40;
+      document.getElementById("robCalendarIFrame").style.height = setStylei + "px";
+      document.getElementById("robCalendarDiv").style.height = setStylei + "px";
+      setStylei = document.getElementById("robCalendarInBox").offsetWidth + 40;
+      document.getElementById("robCalendarIFrame").style.width = setStylei + "px";
+      document.getElementById("robCalendarDiv").style.width = setStylei + "px";
+
+      // 2011.12.6 robin 修正
+      // 取得目前 object 的位置, 往回找到 position=absolute 為止
+      var sID="", sTag;
+      ix = obj1.offsetLeft;
+      iy = obj1.offsetTop;
+      var obj0 = obj1;
+      /*
+      sID += "\n id=" + obj0.id + " tagName=" + obj0.tagName + " position=" + obj0.style.position
+            + "\n Top=" + obj0.offsetTop + " Left=" + obj0.offsetLeft
+            + "\n iy=" + iy + " ix=" + ix
+            ;
+      */
+      while (obj0 = obj0.offsetParent) {
+        /*
+        sID += "\n id=" + obj0.id + " tagName=" + obj0.tagName + " position=" + obj0.style.position
+            + "\n Top=" + obj0.offsetTop + " Left=" + obj0.offsetLeft 
+            + "\n iy=" + iy + " ix=" + ix
+            ;
+        */
+        if ((obj0.style.position == "absolute" || obj0.style.position == "relative")
+             && (obj0.tagName == "DIV" || obj0.tagName == "TABLE")) {
+          var obj9 = document.getElementById("robCalendarDiv");
+          /*
+          sID += "\n 最後:"
+            + "\n id=" + obj0.id + " tagName=" + obj0.tagName + " position=" + obj0.style.position
+            + "\n Top=" + obj0.offsetTop + " Left=" + obj0.offsetLeft
+            + "\n Height=" + obj0.offsetHeight + " Width=" + obj0.offsetWidth
+            + "\n iy=" + iy + " ix=" + ix
+            ;
+          sID += "\n obj9="
+            + "\n id=" + obj9.id + " tagName=" + obj9.tagName + " position=" + obj9.style.position
+            + "\n Top=" + obj9.offsetTop + " Left=" + obj9.offsetLeft
+            + "\n Height=" + obj9.offsetHeight + " Width=" + obj9.offsetWidth
+            ;
+          */
+          if ((iy + document.getElementById("robCalendarDiv").offsetHeight) > obj0.offsetHeight) {
+            iy = (obj0.offsetHeight ? obj0.offsetHeight : 0)
+               - (document.getElementById("robCalendarDiv").offsetHeight?document.getElementById("robCalendarDiv").offsetHeight:0)
+               - 20;
+            iy = (iy < 0 ? 0 : iy);
+          }
+          if ((ix + document.getElementById("robCalendarDiv").offsetWidth) > obj0.offsetWidth) {
+            ix = (obj0.offsetWidth ? obj0.offsetWidth : 0)
+               - (document.getElementById("robCalendarDiv").offsetWidth ? document.getElementById("robCalendarDiv").offsetWidth : 0)
+               - 20;
+            ix = (ix < 0 ? 0 : ix);
+          }
+          
+          break;
+        }
+        if (",TR,TBODY".indexOf(obj0.tagName) < 0) {
+          iy += obj0.offsetTop;
+          ix += obj0.offsetLeft;
+        }
+      }
+      
+      /*
+      sID += "\n 結束 -------- "
+            + "\n id=" + (obj0.id?obj0.id:"無") + " tagName=" + obj0.tagName + " position=" + obj0.style.position
+            + "\n Top=" + obj0.offsetTop + " Left=" + obj0.offsetLeft
+            + "\n iy=" + iy + " ix=" + ix;
+      */
+      
+      //alert(sID);
+      //setStylei = document.getElementById("robCalendarInBox").offsetTop - 20;
+      document.getElementById("robCalendarIFrame").style.top = iy + "px";
+      document.getElementById("robCalendarDiv").style.top = iy + "px";
+      //setStylei = document.getElementById("robCalendarInBox").offsetLeft - 20;
+      document.getElementById("robCalendarIFrame").style.left = ix + "px";
+      document.getElementById("robCalendarDiv").style.left = ix + "px";
+      // alert("top=" + iy + "/n left=" + ix+"/n"+sID);
+
+      // 試著取出 value 或 innerHTML 的值
+      var strDate = "";
+      if (obj1.value != undefined) { strDate = obj1.value; }
+      else if (obj1.innerHTML != undefined) { strDate = obj1.innerHTML; }
+
+      // 取得傳入的資料
+      robCalendar_arrDate[6] = id1;
+
+      // robin 產學要把日期改為 yyyy-mm-dd
+      var strDateNew = "";
+      for (var j = 0; j < strDate.length; j++) {
+        if (strDate.substr(j, 1) == "-") {
+          strDateNew += "/";
+        }
+        else
+        { strDateNew += strDate.substr(j, 1); }
+      }
+      strDate = strDateNew;
+
+      var i = Date.parse(strDate);
+      // debug 用: 看一下轉出的值
+      // document.getElementById("robCalendarCmdToday").setAttribute("value", i);
+      // 如果轉出不是正確的值，預設為今天的日期
+      if (isNaN(i)) { robCalendar_Today(); }
+      else {
+        // Calendar 顯示取入的日期
+        var date1 = new Date(Date.parse(strDate));
+        var str1 = date1.getFullYear() + "/" + (date1.getMonth() + 1) + "/" + date1.getDate();
+        robCalendar_Date(str1);
+      }
+      // 顯示 Calendar 於網頁上
+      document.getElementById("robCalendarIFrame").style.overflow = "";
+      document.getElementById("robCalendarIFrame").style.visibility = "visible";
+      
+      document.getElementById("robCalendarDiv").style.overflow = "";
+      document.getElementById("robCalendarDiv").style.visibility = "visible";
+      document.body.onscroll = "retrun false;";
+      // visibility: visible
+      //span1.style.visibility = "visible";
+      //span1.style.visibility = "hidden";
+    }
+
+    /**************** 
+    * 傳回日曆中所選定的日期
+    * [設定日期] button 呼叫此函數
+    *****************/
+    function robCalendar_returnDate() {
+      // 取回要傳回的 id
+      var id1 = robCalendar_arrDate[6];
+      //if (id1.length > 0) {
+      if (id1) {
+        //var obj1 = document.getElementById(id1);
+        var obj1 = id1;
+        var date1 = new Date(Date.parse(robCalendar_arrDate[5]));
+        var str1 = date1.getFullYear()
+            + "/" + (date1.getMonth() + 1 < 10 ? "0" : "") + (date1.getMonth() + 1)
+            + "/" + (date1.getDate() < 10 ? "0" : "") + date1.getDate();
+        if (obj1.value != undefined) { obj1.value = str1; }
+        else if (obj1.innerHTML != undefined) { obj1.innerHTML = str1; }
+      }
+      document.getElementById("robCalendarIFrame").style.visibility = "hidden";
+      document.getElementById("robCalendarDiv").style.visibility = "hidden";
+      document.body.onscroll = "";
+    }
+
+    /**************** 
+    * 設定日曆為今天日期
+    * [今日] button 呼叫此函數
+    *****************/
+    function robCalendar_Today() {
+      // 設定今日的日期變數
+      var date1 = new Date();
+      var str1 = date1.getFullYear() + "/" + (date1.getMonth() + 1) + "/" + date1.getDate();
+      robCalendar_Date(str1);
+    }
+
+    /**************** 
+    * 顯示日曆內容
+    *  傳入參數：日期字串
+    *  內部處理用
+    *****************/
+    function robCalendar_Date(strDate) {
+      // 設定顯示日期
+      var dateNow = new Date();
+      var date1 = new Date(Date.parse(strDate));
+      var obj1 = "";
+      var str1 = "";
+      // 設定年 - 頭兩位
+      obj1 = document.getElementById("robCalendarYearTable");
+      var iyear = date1.getFullYear();
+      var iy12 = Math.floor(iyear / 100);
+      str1 = (iy12 == 19) ? "select" : "unselect";
+      robCalendarSetStyle_YearTd(obj1.rows[1].cells[0], str1);
+
+      //obj1.rows[1].cells[0].setAttribute("onclick", (iy12 == 19) ? "" : "robCalendar_selYear(12,19);");
+
+      str1 = (iy12 == 20) ? "select" : "unselect";
+      robCalendarSetStyle_YearTd(obj1.rows[2].cells[0], str1);
+      // obj1.rows[2].cells[0].setAttribute("onclick", (iy12 == 20) ? "" : "robCalendar_selYear(12,20);");
+      // 設定年 - 第3/4位
+      var iy3 = Math.floor((iyear - iy12 * 100) / 10);
+      var iy4 = iyear - iy12 * 100 - iy3 * 10;
+      for (var i = 0; i <= 9; i++) {
+        str1 = (iy3 == i) ? "select" : "unselect";
+        robCalendarSetStyle_YearTd(obj1.rows[i + 1].cells[1], str1);
+        //obj1.rows[i + 1].cells[1].setAttribute("onclick", (iy3 == i) ? "" : "robCalendar_selYear(3," + i + ");");
+        str1 = (iy4 == i) ? "select" : "unselect";
+        robCalendarSetStyle_YearTd(obj1.rows[i + 1].cells[2], str1);
+        //obj1.rows[i + 1].cells[2].setAttribute("onclick", (iy4 == i) ? "" : "robCalendar_selYear(4," + i + ");");
+      }
+      // 設定月
+      obj1 = document.getElementById("robCalendarMonthTable");
+      var imonth = date1.getMonth() + 1;
+      for (var i = 1; i <= 12; i++) {
+        str1 = (imonth == i) ? "select" : "unselect";
+        if (i <= 10) {
+          robCalendarSetStyle_MonthTd(obj1.rows[i].cells[0], str1);
+          //obj1.rows[i].cells[0].setAttribute("onclick", (imonth == i) ? "" : "robCalendar_selMonth(" + i + ");");
+        }
+        else {
+          robCalendarSetStyle_MonthTd(obj1.rows[i - 10].cells[1], str1);
+          //obj1.rows[i - 10].cells[1].setAttribute("onclick", (imonth == i) ? "" : "robCalendar_selMonth(" + i + ");");
+        }
+      }
+      // 設定日
+      obj1 = document.getElementById("robCalendarDateTable");
+      // 今天日期
+      var idate = date1.getDate();
+      obj1.rows[0].cells[1].innerHTML = iyear + "&nbsp;&nbsp;/&nbsp;&nbsp;" + imonth;
+
+      // 設定本月的第一天
+      var date1st = new Date(date1.setDate(1));
+      // 設定本月的第一天 為星期幾
+      var dateWeek = date1st.getDay();
+      var iStart = 0;
+      // 2011.12.6 robin 修正, 改正最多的日期會跨到6週
+      for (var i = 2; i <= 7; i++) {
+        for (var j = 0; j <= 6; j++) {
+          if (iStart == 0 && j < dateWeek) {
+            var date2 = new Date(date1st);
+            date2.setDate(date2.getDate() + (j - dateWeek));
+            str1 = date2.getDate();
+            obj1.rows[i].cells[j].onclick = null;
+            obj1.rows[i].cells[j].className = "robCalendarStyle_DateTableTdNone";
+          }
+          else {
+            // 開始放入日期
+            iStart++;
+            var date0 = new Date(date1);
+            var date2 = new Date(date0.setDate(iStart));
+            if ((date2.getMonth() + 1) == imonth) {
+              //str1 = iStart;
+              str1=date2.getDate();
+              obj1.rows[i].cells[j].onclick = function() { robCalendar_selDate(this.innerHTML); }
+              if (date2.getDate() == idate) {
+                obj1.rows[i].cells[j].className = "robCalendarStyle_DateTableTdSelected";
+              }
+              else {
+                if (dateNow.toDateString() == date2.toDateString()) {
+                  obj1.rows[i].cells[j].className = "robCalendarStyle_DateTableTdToday";
+                }
+                else {
+                  obj1.rows[i].cells[j].className = "robCalendarStyle_DateTableTd";
+                }
+              }
+            }
+            else {
+              str1 = date2.getDate();
+              obj1.rows[i].cells[j].onclick = null;
+              obj1.rows[i].cells[j].className = "robCalendarStyle_DateTableTdNone";
+            }
+          }
+          obj1.rows[i].cells[j].innerHTML = str1;
+        }
+      }
+      str1 = iyear + "/" + imonth + "/" + idate;
+      //str2 = iyear + "-" + imonth + "-" + idate;
+      str2 = iyear + "/" + imonth + "/" + idate;
+      document.getElementById("robCalendarCmdSet").setAttribute("value", "傳回日期:" + str2);
+      robCalendar_arrDate[0] = iy12;
+      robCalendar_arrDate[1] = iy3;
+      robCalendar_arrDate[2] = iy4;
+      robCalendar_arrDate[3] = imonth;
+      robCalendar_arrDate[4] = idate;
+      robCalendar_arrDate[5] = str1;
+    }
+
+    /**************** 
+    * 點選日曆中的日期的 td 
+    *  傳入參數：日期中日的數值
+    *  內部處理用
+    *****************/
+    function robCalendar_selDate(idate) {
+      if (idate.toString().length == 0) { return; }
+      var date1 = new Date(robCalendar_arrDate[5]);
+      var date2 = new Date(date1.setDate(idate));
+      var str1 = date2.getFullYear() + "/" + (date2.getMonth() + 1) + "/" + date2.getDate();
+      //var obj1 = document.getElementById("robCalendarDateTable");
+      //obj1.rows[0].cells[1].innerHTML = str
+      robCalendar_Date(str1);
+    }
+    /**************** 
+    * 點選日曆中的 << 前一個月 的 td 
+    *  內部處理用
+    *****************/
+    function robCalendar_prevMonth() {
+      var date1 = new Date(robCalendar_arrDate[5]);
+      var date2 = new Date(date1.setDate(1));
+      // date2 = new Date(date2 - 1);
+      date2 = new Date(date2.setDate(0));
+      var idate = Math.min(date2.getDate(), robCalendar_arrDate[4]);
+      date2 = new Date(date2.setDate(idate));
+      // date1.setMonth = robCalendar_arrDate[3] - 2;
+      var str1 = date2.getFullYear() + "/" + (date2.getMonth() + 1) + "/" + date2.getDate();
+      //var obj1 = document.getElementById("robCalendarDateTable");
+      //obj1.rows[0].cells[1].innerHTML = str1;
+      robCalendar_Date(str1);
+    }
+    /**************** 
+    * 點選日曆中的 >> 下一個月 的 td 
+    *  內部處理用
+    *****************/
+    function robCalendar_nextMonth() {
+      var date1 = new Date(robCalendar_arrDate[5]);
+      var date2 = new Date(date1.setDate(63));
+      date2 = new Date(date2.setDate(0));
+      var idate = Math.min(date2.getDate(), robCalendar_arrDate[4]);
+      date2 = new Date(date2.setDate(idate));
+      var str1 = date2.getFullYear() + "/" + (date2.getMonth() + 1) + "/" + date2.getDate();
+      //var obj1 = document.getElementById("robCalendarDateTable");
+      //obj1.rows[0].cells[1].innerHTML = str1;
+      robCalendar_Date(str1);
+    }
+    /**************** 
+    * 點選日曆中的 月數 的 td 
+    *  傳入參數：日期中月的數值
+    *  內部處理用
+    *****************/
+    function robCalendar_selMonth(imonth) {
+      imonth--;
+      var date1 = new Date(robCalendar_arrDate[5]);
+      var date2 = new Date(date1.setMonth(imonth, 32));
+      date2 = new Date(date2.setDate(0));
+      var idate = Math.min(date2.getDate(), robCalendar_arrDate[4]);
+      date2 = new Date(date2.setDate(idate));
+      var str1 = date2.getFullYear() + "/" + (date2.getMonth() + 1) + "/" + date2.getDate();
+      //var obj1 = document.getElementById("robCalendarDateTable");
+      //obj1.rows[0].cells[1].innerHTML = str
+      robCalendar_Date(str1);
+    }
+    /**************** 
+    * 點選日曆中的 年數 的 td 
+    *  傳入參數：年的類別數值(12,3,4表示第幾位數), 日期中年的數值
+    *  內部處理用
+    *****************/
+    function robCalendar_selYear(iyno, i) {
+      var iyear = 0;
+      if (iyno == 12) {
+        iyear = i * 100 + robCalendar_arrDate[1] * 10 + robCalendar_arrDate[2]
+      }
+      else if (iyno == 3) {
+        iyear = robCalendar_arrDate[0] * 100 + i * 10 + robCalendar_arrDate[2]
+      }
+      else if (iyno == 4) {
+        iyear = robCalendar_arrDate[0] * 100 + robCalendar_arrDate[1] * 10 + i
+      }
+      var date1 = new Date(robCalendar_arrDate[5]);
+      var date2 = new Date(date1.setFullYear(iyear, robCalendar_arrDate[3] - 1, 32));
+      date2 = new Date(date2.setDate(0));
+      var idate = Math.min(date2.getDate(), robCalendar_arrDate[4]);
+      date2 = new Date(date2.setDate(idate));
+      var str1 = date2.getFullYear() + "/" + (date2.getMonth() + 1) + "/" + date2.getDate();
+      //var obj1 = document.getElementById("robCalendarDateTable");
+      //obj1.rows[0].cells[1].innerHTML = str
+      robCalendar_Date(str1);
+    }
+    /**************** 
+    * 初始設定並建立日曆的 HTML div table tag 到 page 中 
+    *  內部處理用
+    *****************/
+    function robCalendar_init() {
+      // 設定 CalendarDiv
+      robCalendar = document.getElementById("robCalendarDiv");
+      //robCalendar.style.visibility = "hidden";
+      //robCalendar.style.visibility = "visible";
+      //robCalendar.style.visibility = "hidden";
+      // 顯示日期
+      date1 = new Date();
+      str1 = date1.getFullYear() + "/" + (date1.getMonth() + 1) + "/" + date1.getDate();
+      // document.getElementById("robCalendarCmdSet").setAttribute("value", "設定日期:" + str1);
+      document.getElementById("robCalendarCmdSet").value = "設定日期:" + str1;
+    }
+    /**************** 
+    * 設定 年/月/日 三個 table 的屬性函數
+    * 傳入參數: table object
+    *  內部處理用
+    *****************/
+    function robCalendarSetStyle_table(obj1) {
+      // obj1.setAttribute("style", robCalendarStyle_table);
+      obj1.className = "robCalendarStyle_table";
+    }
+    /**************** 
+    * 設定 年 table 中 td 的屬性函數
+    * 傳入參數: td object, string(unselect,select,title)
+    *  內部處理用
+    *****************/
+    function robCalendarSetStyle_YearTd(obj1, par1) {
+      // 設定年度的顯示項目：傳入 object td, par1:title unselect select ''
+      if (par1 == "unselect") {
+        obj1.className = "robCalendarStyle_YearTableTd";
+      }
+      else if (par1 == "select") {
+        obj1.className = "robCalendarStyle_YearTableTdSelected";
+      }
+      else if (par1 == "title") {
+        obj1.className = "robCalendarStyle_YearTableTdTitle";
+      }
+      else {
+        obj1.className = "";
+      }
+    }
+    /**************** 
+    * 設定 月 table 中 td 的屬性函數
+    * 傳入參數: td object, string(unselect,select,title)
+    *  內部處理用
+    *****************/
+    function robCalendarSetStyle_MonthTd(obj1, par1) {
+      // 設定年度的顯示項目：傳入 object td, par1:title unselect select ''
+      if (par1 == "unselect") {
+        obj1.className = "robCalendarStyle_MonthTableTd";
+      }
+      else if (par1 == "select") {
+        obj1.className = "robCalendarStyle_MonthTableTdSelected";
+      }
+      else if (par1 == "title") {
+        obj1.className = "robCalendarStyle_MonthTableTdTitle";
+      }
+      else {
+        obj1.className = "";
+      }
+    }
+    /**************** 
+    * 設定 日 table 中 td 的屬性函數
+    * 傳入參數: td object, string(unselect,select,title,week,none,today)
+    *  內部處理用
+    *****************/
+    function robCalendarSetStyle_DateTd(obj1, par1) {
+      // 設定日期的顯示項目：傳入 object td, par1:title unselect select ''
+      if (par1 == "unselect") {
+        obj1.className = "robCalendarStyle_DateTableTd";
+      }
+      else if (par1 == "select") {
+        obj1.className = "robCalendarStyle_DateTableTdSelected";
+      }
+      else if (par1 == "title") {
+        obj1.className = "robCalendarStyle_DateTableTdTitle";
+      }
+      else if (par1 == "week") {
+        obj1.className = "robCalendarStyle_DateTableTdWeek";
+      }
+      else if (par1 == "today") {
+        obj1.className = "robCalendarStyle_DateTableTdToday";
+      }
+      else if (par1 == "none") {
+        obj1.className = "robCalendarStyle_DateTableTdNone";
+      }
+      else {
+        obj1.className = "";
+      }
+    }
+
+    // iy12,iy3, iy4, imonth, idate, 日期object, 傳入的物件id
+    var robCalendar_arrDate = [0, 0, 0, 0, 0, new Date(), ""];
+    // 初始設定
+    // document.getElementById("robCalendarDiv").style.visibility = "hidden";
+    //robCalendar_init();
+    //robCalendar_Today();
+    // 設定 Calendar 的顯示位置, 水平置中, 高度中央與物件齊平
+    // document.getElementById("robCalendarInBox").style.left = (document.body.scrollWidth - document.getElementById("robCalendarInBox").scrollWidth) / 2 + "px";
+    var ix = (document.body.scrollWidth - document.getElementById("robCalendarInBox").scrollWidth) / 2;
+    if (ix > 20) { ix = ix - 20; }
+    var iy = document.body.scrollHight - (document.getElementById("robCalendarInBox").scrollHeight / 2);
+    if (iy < 20) { iy = 20; }
+  </script>
+<%-- 
+    // 2011.5.13
+    // IE7,IE6 光是用 visibility:hidden 還不夠, 要再加上 overflow:hidden
+    // 但是在顯示時，要將 overflow 清除
+    //var robNavVer = navigator.userAgent;
+    //if (robNavVer.indexOf("MSIE 7") > 0 || robNavVer.indexOf("MSIE 6") > 0) {
+      // alert('find');
+      //robCalendar_init();
+      //robCalendar_Today();
+      //setTimeout("robCalendar_returnDate()", 1);
+    //} else {
+    //  document.getElementById("robCalendarDiv").style.visibility = "hidden";
+    //}
+
+--%>
+<%-- 2011.5.13 robCalender v2.0 for IE6/IE7/IE8/FireFox/Chrome **end** --%>  

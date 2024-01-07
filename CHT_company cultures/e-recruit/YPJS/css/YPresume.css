@@ -1,0 +1,234 @@
+﻿body
+{
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  font-size: 12px;
+  color: #1e1e1e;
+  font-family: Arial, 細明體, Verdana, Helvetica, sans-serif;
+  line-height: 24px;
+  letter-spacing: 0.1em;
+  text-align: left;
+}
+/* 設定 letter-spacing 會導致 IE 中的 <br> 失效，解決方案 */
+br
+{
+  letter-spacing: normal;
+}
+textarea
+{
+  font-family: Arial, 細明體, Verdana, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  border: 1px solid #B1B4D1;
+  letter-spacing: 0.1em;
+}
+SELECT
+{
+  border: 1px solid #B1B4D1;
+  font-size: 12px;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+.chinese
+{
+  line-height: 12px;
+}
+.english
+{
+  /* color:Green; */
+  font-family: Arial, Verdana, Helvetica, sans-serif, 細明體;
+  line-height: 12px;
+}
+a
+{
+  font: normal 12px Arial;
+  color: #1e1e1e;
+  text-decoration: none;
+}
+a:hover
+{
+  color: #596099; /* color: #FFFFFF; */
+  text-decoration: underline;
+}
+td.Vtitle
+{
+  color: #675C53;
+  background-color: #F0EFEC;
+  border: 1px solid #F0EFEC;
+  height: 32px;
+  width: 160px;
+  text-align: center;
+}
+td.Vitem
+{
+  border: 1px solid #F0EFEC;
+  height: 32px;
+  width: 160px;
+  text-align: center;
+}
+td.VitemLeft
+{
+  border: 1px solid #F0EFEC;
+  height: 32px;
+  width: 160px;
+  text-align: left;
+  line-height: 20px;
+  letter-spacing: 0em;
+}
+td.VitemSelected
+{
+  background-color: #F0EFEC;
+  border: 1px solid #F0EFEC;
+  height: 32px;
+  width: 160px;
+  text-align: center;
+  font-weight: bold;
+}
+td.VitemMouseOver
+{
+  background-color: #F0EFEC;
+  border: 1px solid #F0EFEC;
+  height: 32px;
+  width: 160px;
+  text-align: center;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+td.Hgap
+{
+  height: 22px;
+  width: 20px;
+  text-align: left;
+  font-weight: normal;
+}
+td.Htitle
+{
+  background-color: #F0EFEC;
+  border: 1px solid #F0EFEC;
+  height: 22px;
+  padding: 5px 5px;
+  text-align: center;
+  font-weight: normal;
+}
+td.Hitem
+{
+  border: 1px solid #F0EFEC;
+  height: 22px;
+  padding: 5px 5px;
+  text-align: center;
+  font-weight: normal;
+  width: 120px;
+}
+td.HitemSelected
+{
+  background-color: #F0EFEC;
+  border: 1px solid #F0EFEC;
+  height: 22px;
+  width: 120px;
+  text-align: center;
+  font-weight: bold;
+}
+td.HitemMouseOver
+{
+  background-color: #F0EFEC;
+  border: 1px solid #F0EFEC;
+  height: 22px;
+  padding: 5px 5px;
+  width: 120px;
+  text-align: center;
+  font-weight: normal;
+  cursor: pointer;
+}
+td.Hnavigation
+{
+  height: 22px;
+  width: 170px;
+  text-align: left;
+  font-weight: normal;
+  font-family: Arial, 細明體, Verdana, Helvetica, sans-serif;
+}
+.center
+{
+  text-align: center;
+}
+/* 訊息用的 */
+.message, .msg
+{
+  font-family: Arial, 細明體, Verdana, Helvetica, sans-serif;
+  color: Red;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 20px;
+  vertical-align: middle;
+}
+/*
+    input[type="text"], input[type="password"], input.txtBox
+    {
+      font-family: 細明體, Arial, Verdana, Helvetica, sans-serif;
+      font-size: 12px;
+      font-weight: normal;
+      border: 1px solid #B1B4D1;
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+    */
+/* input 中的 readOnly*/
+.readOnly
+{
+  background-color: #E0E0E0;
+  border: 1px solid #B1B4D1;
+}
+.redBorder
+{
+  border : 1px solid #FF0000;
+}
+input[type="text"], label
+{
+  vertical-align: middle;
+}
+input[type="submit"], input[type="button"], input.cmd
+{
+  /*background-image:url('../images/btn_bk.gif');*/
+  background-color: #DDDDDD;
+  height: 20px;
+  font-family: Arial, 細明體, Verdana, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: normal; /*line-height: 20px;*/
+  margin-top: auto;
+  margin-bottom: auto;
+  color: #006666;
+  border: 1px solid #B1B4D1;
+  cursor: pointer; /* cursor: hand; */
+}
+input[type="checkbox"]
+{
+  font-family: 細明體, Arial, Verdana, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  vertical-align: middle;
+}
+input[type="radio"]
+{
+  font-family: 細明體, Arial, Verdana, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  vertical-align: middle;
+}
+.opCmd
+{
+  font-family: Arial, 細明體, Verdana, Helvetica, sans-serif;
+  text-decoration: underline;
+  color: #006666;
+  cursor: pointer;
+}
+.opCmdMsOver
+{
+  font-family: Arial, 細明體, Verdana, Helvetica, sans-serif;
+  text-decoration: underline;
+  color: #596099;
+  cursor: pointer; /*       onmousemove="this.className='opCmdMsOver'" onmouseout="this.className='opCmd';"        */
+}

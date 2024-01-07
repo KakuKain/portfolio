@@ -1,0 +1,131 @@
+.slider {
+  position: relative;
+  .swiper-slide {
+    opacity: 0.4;
+  }
+  .swiper-slide-active {
+    opacity: 1;
+  }
+  .swiper-pagination-bullet-active {
+    background: $companyColor;
+  }
+}
+
+.vacancies {
+  .swiper-container {
+    padding: 12px 1px;
+  }
+}
+
+.swiper-wrapper {
+  align-content:space-between;
+}
+
+.companyBar {
+  // order: 3;
+  @extend %pageContent;
+  @extend %pagePadding;
+  @extend %boxShadow;
+  max-width: 1140px;
+  width: 100%;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  // border-top: 1px solid $grayColor;
+  // border-bottom: 1px solid $grayColor;
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-slide {
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .swiper-slide a {
+    text-decoration: none;
+  }
+
+  .teacherb {
+    width: 168px;
+    position: relative;
+    border-radius: 0px;
+    overflow: hidden;
+  }
+
+
+  .teacherb img {
+    margin-bottom: -3px;
+    max-width: 100%;
+  }
+
+  .teacherb h5 {
+    // display: none;
+    box-sizing: border-box;
+    background-color: #fff;
+    width: 100%;
+    padding: 12px 0px;
+    margin-top: -1px;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    text-overflow: ellipsis;
+    text-align: center;
+    color: #292929;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: normal;
+    transition: all 0.3s;
+  }
+  @include pad {
+    order: 3;
+    box-shadow: none;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    padding: 0;
+    .teacherb {
+      width: 158px;
+      h5 {
+        font-size: 14px;
+        padding: 4px 0;
+      }
+    }
+  }
+}
+
+.swiper-button-prev {
+  left: -60px;
+}
+.swiper-button-next {
+  right: -60px;
+}
+
+.themeJob {
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 65%;
+  }
+}
+
+.hotCompany .swiper-slide {
+  @extend %boxShadow;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  // height: calc((100% - 56px) / 2);
+  height: auto;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}
